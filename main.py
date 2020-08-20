@@ -101,7 +101,7 @@ async def showall(ctx):
     )
 
     embed.set_footer(text='yes')
-    embed.set_image(url='https://cdn.discordapp.com/attachments/691380666646003733/746089018747518996/gen1pokemon_sprites.png')
+    embed.set_image(url='https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/gen1pokemon_sprites.png')
 
     await ctx.send(embed=embed)
 
