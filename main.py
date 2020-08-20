@@ -1,6 +1,4 @@
 import json
-import Prandom
-import Pteam
 import discord
 from discord.ext import commands
 
