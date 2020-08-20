@@ -392,5 +392,7 @@ Pokemon_dictionary = {
 }
 
 Number_dictionary = {
-    'bulbasaur': 1
+    'bulbasaur': 1,
+    'ivysaur': 2,
+    'venusaur':3,
 }

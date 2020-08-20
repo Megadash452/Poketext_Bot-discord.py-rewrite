@@ -114,16 +114,23 @@ async def say(ctx, *, message):
 
 @client.command()
 async def info(ctx, mon):
-    if type(mon) == '<class \'str\'>':
+    try:
+        embed = discord.Embed(
+        title=Pokemon[int(mon)].name,
+        )
+
+        embed.add_field(name=Pokemon[int(mon)].poke_specie, value=Pokemon[int(mon)].desc)
+        embed.set_image(url=Pokemon[int(mon)].sprite['url'])
+
+    except:
         from Pokemon_dictionaries import Number_dictionary as Dic
-        call = Dic[mon.lower()]
 
-    embed = discord.Embed(
-        title=Pokemon[int(call)].name,
-    )
+        embed = discord.Embed(
+        title=Pokemon[int(Dic[mon])].name,
+        )
 
-    embed.add_field(name=Pokemon[int(call)].poke_specie, value=Pokemon[int(call)].desc)
-    embed.set_image(url=Pokemon[int(call)].sprite['url'])
+        embed.add_field(name=Pokemon[int(Dic[mon])].poke_specie, value=Pokemon[int(Dic[mon])].desc)
+        embed.set_image(url=Pokemon[int(Dic[mon])].sprite['url'])
 
     await ctx.send(embed=embed)
 
