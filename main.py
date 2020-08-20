@@ -94,7 +94,7 @@ async def voteban(ctx, member=''):
     else:
         await ctx.send('Who you gonna ban thoe? Try again')
 
-@client.command(aliases=['info all'])
+@client.command()
 async def infoall(ctx):
     embed = discord.Embed(
         title='All 151 Pokemon (1st gen)',
@@ -113,13 +113,17 @@ async def say(ctx, *, message):
     await ctx.send(message)
 
 @client.command()
-async def info(ctx, num):
+async def info(ctx, mon):
+    if type(mon) == '<class \'str\'>':
+        from Pokemon_dictionaries import Number_dictionary as Dic
+        call = Dic[mon.lower()]
+
     embed = discord.Embed(
-        title=Pokemon[int(num)].name,
+        title=Pokemon[int(call)].name,
     )
 
-    embed.add_field(name=Pokemon[int(num)].poke_specie, value=Pokemon[int(num)].desc)
-    embed.set_image(url=Pokemon[int(num)].sprite['url'])
+    embed.add_field(name=Pokemon[int(call)].poke_specie, value=Pokemon[int(call)].desc)
+    embed.set_image(url=Pokemon[int(call)].sprite['url'])
 
     await ctx.send(embed=embed)
 

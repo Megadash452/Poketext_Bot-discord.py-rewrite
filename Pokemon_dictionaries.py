@@ -390,3 +390,7 @@ Pokemon_dictionary = {
 
     151: 'Mew',
 }
+
+Number_dictionary = {
+    'bulbasaur': 1
+}
