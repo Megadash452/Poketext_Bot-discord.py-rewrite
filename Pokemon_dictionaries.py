@@ -16,7 +16,7 @@ class item:
 class pokemon:
     total_num_of_pokemon = 0
 
-    def __init__(self, num, name, poke_specie, desc, type1, type2, ability):
+    def __init__(self, num, name, poke_specie, desc, type1, type2, ability, sprite):
         self.num = num
         self.name = name
         self.poke_specie = poke_specie
@@ -24,6 +24,7 @@ class pokemon:
         self.type1 = type1
         self.type2 = type2
         self.ability = ability
+        self.sprite = sprite
         pokemon.total_num_of_pokemon += 1
 
     def attack(self):
@@ -35,8 +36,11 @@ class pokemon:
 
 Bulbasaur = pokemon(1, 'Bulbasaur', 'The seed Pokémon',
                     'Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun\'s rays, the seed grows progressively larger.',
-                    'Grass', 'Poison', 'Overgrowth'
-                    )
+                    'Grass', 'Poison', 'Overgrowth',
+                    sprite = {
+                        'url': '',
+                        'image': 'Bulbasaur-small.png'
+                    })
 
 Ivysaur = pokemon(2, 'Ivysaur', 'The seed Pokémon',
                   'There is a bud on this Pokémon\'s back. To support its weight, Ivysaur\'s legs and trunk grow thick and strong. If it starts spending more time lying in the sunlight, it\'s a sign that the bud will bloom into a large flower soon.',
