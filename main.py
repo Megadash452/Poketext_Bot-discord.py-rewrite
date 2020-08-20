@@ -2,6 +2,8 @@ import json
 import discord
 from discord.ext import commands
 
+from Pokemon_dictionaries import Pokemon_dictionary as Pokemon
+
 def read_token(file):
     with open(file, 'r') as f:
         lines = f.readlines()
@@ -92,8 +94,8 @@ async def voteban(ctx, member=''):
     else:
         await ctx.send('Who you gonna ban thoe? Try again')
 
-@client.command(aliases=['show all pokemon'])
-async def showall(ctx):
+@client.command(aliases=['info all'])
+async def infoall(ctx):
     embed = discord.Embed(
         title='All 151 Pokemon (1st gen)',
         description='what',
@@ -109,6 +111,18 @@ async def showall(ctx):
 async def say(ctx, *, message):
     await ctx.channel.purge(limit=1)
     await ctx.send(message)
+
+@client.command()
+async def info(ctx, num):
+    embed = discord.Embed(
+        title=Pokemon[int(num)].name,
+    )
+
+    embed.add_field(name=Pokemon[int(num)].poke_specie, value=Pokemon[int(num)].desc)
+    embed.set_image(url=Pokemon[int(num)].sprite['url'])
+
+    await ctx.send(embed=embed)
+
 # --- ---
 
 
