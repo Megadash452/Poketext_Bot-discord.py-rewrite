@@ -37,47 +37,86 @@ class pokemon:
 Bulbasaur = pokemon(1, 'Bulbasaur', 'The seed Pokémon',
                     'Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun\'s rays, the seed grows progressively larger.',
                     'Grass', 'Poison', 'Overgrowth',
+
                     sprite = {
-                        'url': '',
+                        'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon%20sprites/gen1%20small/Bulbasaur-small.png',
                         'image': 'Bulbasaur-small.png'
                     })
 
 Ivysaur = pokemon(2, 'Ivysaur', 'The seed Pokémon',
                   'There is a bud on this Pokémon\'s back. To support its weight, Ivysaur\'s legs and trunk grow thick and strong. If it starts spending more time lying in the sunlight, it\'s a sign that the bud will bloom into a large flower soon.',
-                  'Grass', 'Poison', 'Overgrowth'
-                  )
+                  'Grass', 'Poison', 'Overgrowth',
+
+                  sprite = {
+                        'url': '',
+                        'image': 'Ivysaur-small.png'
+                    })
 
 Venusaur = pokemon(3, 'Venusaur', 'The seed Pokémon',
                    'There is a large flower on Venusaur\'s back. The flower is said to take on vivid colors if it gets plenty of nutrition and sunlight. The flower\'s aroma soothes the emotions of people.',
-                   'Grass', 'Poison', 'Overgrowth'
-                   )
+                   'Grass', 'Poison', 'Overgrowth',
+
+                   sprite = {
+                        'url': '',
+                        'image': 'Venusaur-small.png'
+                    })
+
+# ------ Dictionary ------ ------ ------ ------ ------ ------ ------ ------ ------
 
 Pokemon_dictionary = {
     1: pokemon(1, 'Bulbasaur', 'The seed Pokémon',
                'Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun\'s rays, the seed grows progressively larger.',
-               'Grass', 'Poison', 'Overgrowth'
-               ),
+               'Grass', 'Poison', 'Overgrowth',
+
+               sprite = {
+                        'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon%20sprites/gen1%20small/Bulbasaur-small.png',
+                        'image': 'Bulbasaur-small.png'
+                }),
+
     2: pokemon(2, 'Ivysaur', 'The seed Pokémon',
                'There is a bud on this Pokémon\'s back. To support its weight, Ivysaur\'s legs and trunk grow thick and strong. If it starts spending more time lying in the sunlight, it\'s a sign that the bud will bloom into a large flower soon.',
-               'Grass', 'Poison', 'Overgrowth'
-               ),
+               'Grass', 'Poison', 'Overgrowth',
+
+               sprite = {
+                        'url': '',
+                        'image': 'Ivysaur-small.png'
+                }),
+
     3: pokemon(3, 'Venusaur', 'The seed Pokémon',
                'There is a large flower on Venusaur\'s back. The flower is said to take on vivid colors if it gets plenty of nutrition and sunlight. The flower\'s aroma soothes the emotions of people.',
-               'Grass', 'Poison', 'Overgrowth'
-               ),
+               'Grass', 'Poison', 'Overgrowth',
+
+               sprite = {
+                        'url': '',
+                        'image': 'Venusaur-small.png'
+                }),
+
     4: 'Charmander',
+
     5: 'Charmeleon',
+
     6: 'Charizard',
+
     7: 'Squirtle',
+
     8: 'Wartotle',
+
     9: 'Blastoise',
+
     10: 'Caterpie',
+
     11: 'Metapod',
+
     12: 'Butterfree',
+
     13: 'Weedle',
+
     14: 'Kakuna',
+
     15: 'Beedrill',
+
     16: 'Pidgey',
+
     17: 'Pidgeotto',
     18: 'Pidgeot',
     19: 'Rattata',
