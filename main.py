@@ -62,6 +62,7 @@ async def on_member_remove(member):
 async def ping(ctx):
     await ctx.send('Hello there, (my prefix is ' + prefix + '). Do ' + prefix + 'help to see what you can do')
 
+
 @client.command(aliases=['set prefix', 'set-prefix', 'setprefix'])
 async def set_prefix(ctx, prefix=None):
     if prefix:
@@ -79,14 +80,17 @@ async def set_prefix(ctx, prefix=None):
         await ctx.send('What would you like the prefix to be?')
         #add chain
 
+
 @client.command()
 async def purge(ctx, amount=6):
     await ctx.channel.purge(limit=amount + 1)
     print('deleted {} messages'.format(amount))
 
+
 @client.command(aliases=['pokeban', 'poke-ban', 'poke ban'])
 async def ban(ctx, member):
     print()
+
 
 @client.command(aliases=['vote-pokeban', 'vote-poke-ban', 'vote pokeban', 'vote poke-ban'])
 async def voteban(ctx, member=''):
@@ -95,51 +99,38 @@ async def voteban(ctx, member=''):
     else:
         await ctx.send('Who you gonna ban thoe? Try again')
 
-@client.command()
-async def infoall(ctx):
-    embed = discord.Embed(
-        title='All 151 Pokemon (1st gen)',
-        description='what',
-        colour=discord.Colour.from_rgb(255, 216, 35)#ffd823
-    )
-
-    embed.set_footer(text='yes')
-    embed.set_image(url='https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/gen1pokemon_sprites.png')
-
-    await ctx.send(embed=embed)
 
 @client.command()
 async def say(ctx, *, message):
     await ctx.channel.purge(limit=1)
     await ctx.send(message)
 
+
 @client.command()
 async def info(ctx, mon):
     try:
-        embed = discord.Embed(
-            title=Pokemon[int(mon)].name,
-            colour=discord.Colour.from_rgb(
-                get_type_color(Pokemon[int(mon)].types[0], 0),
-                get_type_color(Pokemon[int(mon)].types[0], 1),
-                get_type_color(Pokemon[int(mon)].types[0], 2))
-        )
-
-        embed.add_field(name=Pokemon[int(mon)].poke_specie, value=Pokemon[int(mon)].desc)
-        embed.set_image(url=Pokemon[int(mon)].sprite['big']['url'])
-
+        int(mon) + 1
+        call = int(mon)
     except:
         from Pokemon_dictionaries import Number_dictionary as Dic
+        call = int(Dic[mon.lower()])
 
-        embed = discord.Embed(
-            title=Pokemon[int(Dic[mon.lower()])].name,
-            colour=discord.Colour.from_rgb(
-                get_type_color(Pokemon[int(Dic[mon.lower()])].types[0], 0),
-                get_type_color(Pokemon[int(Dic[mon.lower()])].types[0], 1),
-                get_type_color(Pokemon[int(Dic[mon.lower()])].types[0], 2))
-        )
+    embed = discord.Embed(
+        title=Pokemon[call].name,
+        colour=discord.Colour.from_rgb(
+            get_type_color(Pokemon[call].types[0], 0),
+            get_type_color(Pokemon[call].types[0], 1),
+            get_type_color(Pokemon[call].types[0], 2))
+    )
 
-        embed.add_field(name=Pokemon[int(Dic[mon.lower()])].poke_specie, value=Pokemon[int(Dic[mon.lower()])].desc)
-        embed.set_image(url=Pokemon[int(Dic[mon.lower()])].sprite['big']['url'])
+    embed.add_field(name=Pokemon[call].poke_specie, value=Pokemon[call].desc)
+
+    if not Pokemon[call].types[1]:
+        embed.add_field(name='Type', value=Pokemon[call].types[0], inline=False)
+    else:
+        embed.add_field(name='Types', value=f'{Pokemon[call].types[0]} \n {Pokemon[call].types[1]}', inline=False)
+
+    embed.set_image(url=Pokemon[call].sprite['big']['url'])
 
     await ctx.send(embed=embed)
 

@@ -6,12 +6,13 @@ class item:
 
 def get_type_color(Type, index=-1):
     type_colors = {
+        'PokeText': (255, 216, 35),
         #color format: RGB
         #get color from: 
         'Normal': (),
         'Fire': (253, 125, 36),
         'Fighting': (),
-        'Water': (),
+        'Water': (69, 146, 196),
         'Flying': (),
         'Grass': (155, 204, 80),
         'Poison': (),
@@ -47,7 +48,8 @@ class pokemon:
         self.ability = ability
         self.stats = stats
 
-        self.sprite = {
+        if not self.num == 0:
+            self.sprite = {
                     'small': {
                         'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1-small/{}-small.png'.format(self.name),
                         'path': 'pokemon-sprites/gen1-small/{}-small.png'.format(self.name)
@@ -58,6 +60,8 @@ class pokemon:
                        'path': 'pokemon-sprites/gen1-big/{}-big.png'.format(self.name)
                    }
         }
+        else:
+            self.sprite = {'big':{'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/gen1pokemon_sprites.png'}}
 
         pokemon.total_num_of_pokemon += 1
 
@@ -72,6 +76,12 @@ class pokemon:
 # ------ Dictionary ------ ------ ------ ------ ------ ------ ------ ------ ------
 
 Pokemon_dictionary = {
+    0: pokemon(0, 'Generation 1', 'All Pokémon',
+                'Description',
+                ('PokeText', None),# 'Fighting', 'Water', 'Flying', 'Grass', 'Poison', 'Electric', 'Ground', 'Psychic', 'Rock', 'Ice', 'Bug', 'Dragon', 'Ghost', 'Dark', 'Steel', 'Fairy'),
+                'All Abilities', stats=None
+            ),
+
     1: pokemon(1, 'Bulbasaur', 'Seed Pokémon',
                'There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.',
                ('Grass', 'Poison'), 'Overgrowth',
@@ -113,7 +123,7 @@ Pokemon_dictionary = {
 
     4: pokemon(4, 'Charmander', 'Lizard Pokémon',
                'It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.',
-               ('Fire'), 'Blaze',
+               ('Fire', None), 'Blaze',
 
                stats = {
                     'hp': '',
@@ -128,7 +138,18 @@ Pokemon_dictionary = {
 
     6: 'Charizard',
 
-    7: 'Squirtle',
+    7: pokemon(7, 'Squirtle', 'Tiny turtle Pokémon',
+               'When it retracts its long neck into its shell, it squirts out water with vigorous force.',
+               ('Water', None), 'Torrent',
+
+               stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
     8: 'Wartotle',
 
@@ -420,8 +441,8 @@ Pokemon_dictionary = {
 }
 
 Number_dictionary = {
-    'bulbasaur': 1,
-    'ivysaur': 2,
-    'venusaur': 3,
-    'charmander': 4,
+    'all': 0,
+    'bulbasaur': 1, 'ivysaur': 2, 'venusaur': 3,
+    'charmander': 4, 'charmeleon': 5, 'charizard': 6,
+    'squirtle': 7, 'wartortle': 8, 'blastoise': 9,
 }
