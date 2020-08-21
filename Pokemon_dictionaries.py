@@ -37,51 +37,6 @@ class pokemon:
         print(self.name + ' has attacked')
 
 
-Bulbasaur = pokemon(1, 'Bulbasaur', 'Seed Pokémon',
-                    'Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun\'s rays, the seed grows progressively larger.',
-                    'Grass', 'Poison', 'Overgrowth',
-
-                    sprite = {
-                        'small': {
-                        'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon%20sprites/gen1%20small/Bulbasaur-small.png',
-                        'path': 'Bulbasaur-small.png'
-                        },
-                        'big': {
-                            'url': '',
-                            'path': ''
-                        }
-                    })
-
-Ivysaur = pokemon(2, 'Ivysaur', 'Seed Pokémon',
-                  'There is a bud on this Pokémon\'s back. To support its weight, Ivysaur\'s legs and trunk grow thick and strong. If it starts spending more time lying in the sunlight, it\'s a sign that the bud will bloom into a large flower soon.',
-                  'Grass', 'Poison', 'Overgrowth',
-
-                  sprite = {
-                      'small': {
-                        'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon%20sprites/gen1%20small/Ivysaur-small.png',
-                        'path': 'Ivysaur-small.png'
-                        },
-                        'big': {
-                            'url': '',
-                            'path': ''
-                        }
-                    })
-
-Venusaur = pokemon(3, 'Venusaur', 'Seed Pokémon',
-                   'There is a large flower on Venusaur\'s back. The flower is said to take on vivid colors if it gets plenty of nutrition and sunlight. The flower\'s aroma soothes the emotions of people.',
-                   'Grass', 'Poison', 'Overgrowth',
-
-                   sprite = {
-                       'small': {
-                        'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon%20sprites/gen1%20small/Venusaur-small.png',
-                        'path': 'Venusaur-small.png'
-                        },
-                        'big': {
-                            'url': '',
-                            'path': ''
-                        }
-                    })
-
 # ------ Dictionary ------ ------ ------ ------ ------ ------ ------ ------ ------
 
 Pokemon_dictionary = {
@@ -90,13 +45,14 @@ Pokemon_dictionary = {
                'Grass', 'Poison', 'Overgrowth',
 
                sprite = {
-                   'small': {
-                    'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon%20sprites/gen1%20small/Bulbasaur-small.png',
-                    'path': 'Bulbasaur-small.png'
+                    'small': {
+                        'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1-small/Bulbasaur-small.png',
+                        'path': 'pokemon-sprites/gen1-small/Bulbasaur-small.png'
                    },
+
                    'big': {
-                       'url': '',
-                       'path': ''
+                       'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1-big/Bulbasaur-big.png',
+                       'path': 'pokemon-sprites/gen1-big/Bulbasaur-big.png'
                    }
                 }),
 
@@ -106,12 +62,12 @@ Pokemon_dictionary = {
 
                sprite = {
                    'small': {
-                    'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon%20sprites/gen1%20small/Ivysaur-small.png',
-                    'path': 'Ivysaur-small.png'
+                    'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-prites/gen1-small/Ivysaur-small.png',
+                    'path': 'pokemon-sprites/gen1-small/Ivysaur-small.png'
                    },
                    'big': {
-                       'url': '',
-                       'path': ''
+                       'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1-big/Ivysaur-big.png',
+                       'path': 'pokemon-sprites/gen1-big/Ivysaur-big.png'
                    }
                 }),
 
@@ -121,12 +77,13 @@ Pokemon_dictionary = {
 
                sprite = {
                    'small': {
-                    'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon%20sprites/gen1%20small/Venusaur-small.png',
-                    'path': 'Venusaur-small.png'
+                    'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1-small/Venusaur-small.png',
+                    'path': 'pokemon-sprites/gen1-small/Venusaur-small.png'
                    },
+
                    'big': {
-                       'url': '',
-                       'path': ''
+                       'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1-big/Venusaur-big.png',
+                       'path': 'pokemon-sprites/gen1-big/Venusaur-big.png'
                    }
                 }),
 
