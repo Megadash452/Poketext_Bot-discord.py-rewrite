@@ -63,8 +63,8 @@ async def ping(ctx):
     await ctx.send('Hello there, (my prefix is ' + prefix + '). Do ' + prefix + 'help to see what you can do')
 
 
-@client.command(aliases=['set prefix', 'set-prefix', 'setprefix'])
-async def set_prefix(ctx, prefix=None):
+@client.command(aliases=['set-prefix', 'set_prefix'])
+async def setprefix(ctx, prefix=None):
     if prefix:
         with open('prefixes.json', 'r') as f:
             prefixes = json.load(f)
@@ -92,7 +92,7 @@ async def ban(ctx, member):
     print()
 
 
-@client.command(aliases=['vote-pokeban', 'vote-poke-ban', 'vote pokeban', 'vote poke-ban'])
+@client.command(aliases=['vote-pokeban', 'vote-poke-ban'])
 async def voteban(ctx, member=''):
     if member:
         await ctx.send(f'going to ban {member} :angry:')
@@ -104,6 +104,11 @@ async def voteban(ctx, member=''):
 async def say(ctx, *, message):
     await ctx.channel.purge(limit=1)
     await ctx.send(message)
+
+
+@client.command()
+async def invite(ctx):
+    await ctx.send('https://discord.com/api/oauth2/authorize?client_id=725225223346978816&permissions=104161089&scope=bot')
 
 
 @client.command()
@@ -131,6 +136,8 @@ async def info(ctx, mon):
         embed.add_field(name='Types', value=f'{Pokemon[call].types[0]} \n {Pokemon[call].types[1]}', inline=False)
 
     embed.set_image(url=Pokemon[call].sprite['big']['url'])
+    #embed.set_thumbnail(url=Pokemon[call].sprite['small']['url'])
+    
 
     await ctx.send(embed=embed)
 

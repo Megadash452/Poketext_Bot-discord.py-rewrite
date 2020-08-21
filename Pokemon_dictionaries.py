@@ -8,25 +8,25 @@ def get_type_color(Type, index=-1):
     type_colors = {
         'PokeText': (255, 216, 35),
         #color format: RGB
-        #get color from: 
-        'Normal': (),
-        'Fire': (253, 125, 36),
-        'Fighting': (),
-        'Water': (69, 146, 196),
-        'Flying': (),
-        'Grass': (155, 204, 80),
-        'Poison': (),
-        'Electric': (),
-        'Ground': (),
-        'Psychic': (),
-        'Rock': (),
-        'Ice': (),
-        'Bug': (),
-        'Dragon': (),
-        'Ghost': (),
-        'Dark': (),
-        'Steel': (),
-        'Fairy': (),
+        #get color from: https://loucyoreviews.files.wordpress.com/2013/02/wpid-screenshot_2013-02-18-00-21-57-1.png
+        'Normal': (168, 168, 120),
+        'Fire': (240, 128, 48),
+        'Fighting': (192, 48, 40),
+        'Water': (104, 144, 240),
+        'Flying': (168, 144, 240),
+        'Grass': (120, 200, 80),
+        'Poison': (160, 64, 160),
+        'Electric': (248, 208, 48),
+        'Ground': (224, 192, 104),
+        'Psychic': (248, 88, 136),
+        'Rock': (184, 160, 56),
+        'Ice': (152, 216, 216),
+        'Bug': (168, 184, 32),
+        'Dragon': (112, 56, 248),
+        'Ghost': (112, 88, 152),
+        'Dark': (112, 88, 72),
+        'Steel': (184, 184, 208),
+        'Fairy': (238, 153, 172),
         '???': (),
     }
 
@@ -42,7 +42,7 @@ class pokemon:
     def __init__(self, num, name, poke_specie, desc, types, ability, stats):
         self.num = num
         self.name = name
-        self.poke_specie = poke_specie
+        self.poke_specie = poke_specie + ' Pokémon'
         self.desc = desc
         self.types = types
         self.ability = ability
@@ -76,17 +76,17 @@ class pokemon:
 # ------ Dictionary ------ ------ ------ ------ ------ ------ ------ ------ ------
 
 Pokemon_dictionary = {
-    0: pokemon(0, 'Generation 1', 'All Pokémon',
+    0: pokemon(0, 'Generation 1', 'All',
                 'Description',
                 ('PokeText', None),# 'Fighting', 'Water', 'Flying', 'Grass', 'Poison', 'Electric', 'Ground', 'Psychic', 'Rock', 'Ice', 'Bug', 'Dragon', 'Ghost', 'Dark', 'Steel', 'Fairy'),
                 'All Abilities', stats=None
             ),
 
-    1: pokemon(1, 'Bulbasaur', 'Seed Pokémon',
-               'There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.',
+    1: pokemon(1, 'Bulbasaur', 'Seed',
+               'There is a plant seed on its back right from the day this is born. The seed slowly grows larger.',
                ('Grass', 'Poison'), 'Overgrowth',
                
-               stats = {
+                stats = {
                     'hp': '',
                     'attack': '',
                     'defense': '',
@@ -95,11 +95,11 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    2: pokemon(2, 'Ivysaur', 'Seed Pokémon',
+    2: pokemon(2, 'Ivysaur', 'Seed',
                'When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.',
                ('Grass', 'Poison'), 'Overgrowth',
 
-               stats = {
+                stats = {
                     'hp': '',
                     'attack': '',
                     'defense': '',
@@ -108,11 +108,11 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    3: pokemon(3, 'Venusaur', 'Seed Pokémon',
+    3: pokemon(3, 'Venusaur', 'Seed',
                'Its plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.',
                ('Grass', 'Poison'), 'Overgrowth',
 
-               stats = {
+                stats = {
                     'hp': '',
                     'attack': '',
                     'defense': '',
@@ -121,11 +121,11 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    4: pokemon(4, 'Charmander', 'Lizard Pokémon',
+    4: pokemon(4, 'Charmander', 'Lizard',
                'It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.',
                ('Fire', None), 'Blaze',
 
-               stats = {
+                stats = {
                     'hp': '',
                     'attack': '',
                     'defense': '',
@@ -134,15 +134,37 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    5: 'Charmeleon',
+    5: pokemon(5, 'Charmeleon', 'Flame',
+                'It has a barbaric nature. In battle, it whips its fiery tail around and slashes away with sharp claws.',
+                ('Fire', None), 'Blaze',
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    6: 'Charizard',
+    6: pokemon(6, 'Charizard', 'Flame',
+                'It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.',
+                ('Fire', 'Flying'), 'Blaze',
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    7: pokemon(7, 'Squirtle', 'Tiny turtle Pokémon',
+    7: pokemon(7, 'Squirtle', 'Tiny turtle',
                'When it retracts its long neck into its shell, it squirts out water with vigorous force.',
                ('Water', None), 'Torrent',
 
-               stats = {
+                stats = {
                     'hp': '',
                     'attack': '',
                     'defense': '',
@@ -151,47 +173,278 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    8: 'Wartotle',
+    8: pokemon(8, 'Wartortle', 'Turtle',
+                'It is recognized as a symbol of longevity. If its shell has algae on it, that Wartortle is very old.',
+                ('Water', None), 'Torrent',
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    9: 'Blastoise',
+    9: pokemon(9, 'Blastoise', 'Shellfish',
+                'It crushes its foe under its heavy body to cause fainting. In a pinch, it will withdraw inside its shell.', 
+                ('Water', None), 'Torrent', 
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    10: 'Caterpie',
+    10: pokemon(10, 'Caterpie', 'Worm',
+                'For protection, it releases a horrible stench from the antenna on its head to drive away enemies.',
+                ('Bug', None), 'Shield Dust', 
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    11: 'Metapod',
+    11: pokemon(11, 'Metapod', 'Cocoon',
+                'It is waiting for the moment to evolve. At this stage, it can only harden, so it remains motionless to avoid attack.',
+                ('Bug', None), 'Shed Skin', 
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    12: 'Butterfree',
+    12: pokemon(12, 'Butterfree', 'Butterfly',
+                'In battle, it flaps its wings at great speed to release highly toxic dust into the air.',
+                ('Bug', 'Flying'), 'Compound Eyes', 
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    13: 'Weedle',
+    13: pokemon(13, 'Weedle', 'Hairy bug',
+                'Beware of the sharp stinger on its head. It hides in grass and bushes where it eats leaves.',
+                ('Bug', 'Poison'), 'Shield Dust', 
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    14: 'Kakuna',
+    14: pokemon(14, 'Kakuna', 'Cocoon',
+                'Able to move only slightly. When endangered, it may stick out its stinger and poison its enemy.',
+                ('Bug', 'Poison'), 'Shed Skin', 
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    15: 'Beedrill',
+    15: pokemon(15, 'Beedrill', 'Poison bee',
+                'It has three poisonous stingers on its forelegs and its tail. They are used to jab its enemy repeatedly.',
+                ('Bug', 'Poison'), 'Swarm', 
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    16: 'Pidgey',
+    16: pokemon(16, 'Pidgey', 'Tiny bird',
+                'Very docile. If attacked, it will often kick up sand to protect itself rather than fight back.',
+                ('Normal', 'Flying'), 'Keen Eye', 
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    17: 'Pidgeotto',
+    17: pokemon(17, 'Pidgeotto', 'Bird',
+                'This Pokémon is full of vitality. It constantly flies around its large territory in search of prey.',
+                ('Normal', 'Flying'), 'Keen Eye', 
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    18: 'Pidgeot',
+    18: pokemon(18, 'Pidgeot', 'Bird',
+                'This Pokémon flies at Mach 2 speed, seeking prey. Its large talons are feared as wicked weapons.',
+                ('Normal', 'Flying'), 'Keen Eye', 
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    19: 'Rattata',
+    19: pokemon(19, 'Rattata', 'Mouse',
+                'Will chew on anything with its fangs. If you see one, you can be certain that 40 more live in the area.',
+                ('Normal', None), 'Run Away', 
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    20: 'Raticate',
+    20: pokemon(20, 'Raticate', 'Mouse',
+                'Its hind feet are webbed. They act as flippers, so it can swim in rivers and hunt for prey.',
+                ('Normal', None), 'Run Away', 
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    21: 'Spearow',
+    21: pokemon(21, 'Spearow', 'Tiny bird',
+                'Inept at flying high. However, it can fly around very fast to protect its territory.',
+                ('Normal', 'Flying'), 'Keen Eye', 
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    22: 'Fearow',
+    22: pokemon(22, 'Fearow', 'Beak',
+                'A Pokémon that dates back many years. If it senses danger, it flies high and away, instantly.',
+                ('Normal', 'Flying'), 'Keen Eye', 
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    23: 'Ekans',
+    23: pokemon(23, 'Ekans', 'Snake',
+                'The older it gets, the longer it grows. At night, it wraps its long body around tree branches to rest.',
+                ('Poison', None), 'Shed Skin', 
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    24: 'Arbok',
+    24: pokemon(24, 'Arbok', 'Cobra',
+                'The frightening patterns on its belly have been studied. Six variations have been confirmed.',
+                ('Poison', None), 'Shed Skin', 
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    25: 'Pikachu',
+    25: pokemon(25, 'Pikachu', 'Mouse',
+                'Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.',
+                ('Electric', None), 'Static', 
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    26: 'Raichu',
+    26: pokemon(26, 'Raichu', 'Mouse',
+                'Its long tail serves as a ground to protect itself from its own high-voltage power.',
+                ('Electric', None), 'Static', 
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    27: 'Sandshrew',
+    27: pokemon(27, 'Sandshrew', 'Mouse',
+                'It loves to bathe in the grit of dry, sandy areas. By sand bathing, the Pokémon rids itself of dirt and moisture clinging to its body.',
+                ('Ground', None), 'Sande Veil', 
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    28: 'Sandslash',
+    28: pokemon(28, 'Sandslash', 'Mouse',
+                'The drier the area Sandslash lives in, the harder and smoother the Pokémon’s spikes will feel when touched.',
+                ('Ground', None), 'Sande Veil', 
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
     29: 'Nidoran♀',
 
@@ -445,4 +698,12 @@ Number_dictionary = {
     'bulbasaur': 1, 'ivysaur': 2, 'venusaur': 3,
     'charmander': 4, 'charmeleon': 5, 'charizard': 6,
     'squirtle': 7, 'wartortle': 8, 'blastoise': 9,
+    'caterpie': 10, 'metapod': 11, 'butterfree': 12,
+    'weedle': 13, 'kakuna': 14, 'beedrill': 15,
+    'pidgey': 16, 'pidgeotto': 17, 'pidgeot': 18,
+    'rattata': 19, 'raticate': 20,
+    'spearow': 21, 'fearow':22,
+    'ekans': 23, 'arbok': 24,
+    'pikachu': 25, 'raichu': 26,
+    'sandshrew': 27, 'sandslash': 28,
 }
