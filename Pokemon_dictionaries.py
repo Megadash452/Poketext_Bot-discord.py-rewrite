@@ -563,7 +563,7 @@ Pokemon_dictionary = {
                }),
 
     76: pokemon(76, 'Golem', 'Megaton',
-                'Once it sheds its skin, its body turns tender and whitish. Its hide hardens when it’s exposed to air.',
+                'Once it sheds its skin, its body turns tender and whitish. Its hide hardens when it\'s exposed to air.',
                 ('Rock', 'Ground'), ('Rock Head', 'Sturdy'),
                 
                 stats = {
@@ -576,7 +576,7 @@ Pokemon_dictionary = {
                }),
 
     77: pokemon(77, 'Ponyta', 'Fire Horse',
-                'It can’t run properly when it’s newly born. As it races around with others of its kind, its legs grow stronger.',
+                'It can\'t run properly when it’s newly born. As it races around with others of its kind, its legs grow stronger.',
                 ('Fire', None), ('Run Away', 'Flash Fire'),
                 
                 stats = {
@@ -602,7 +602,7 @@ Pokemon_dictionary = {
                }),
 
     79: pokemon(79, 'Slowpoke', 'Dopey',
-                'Slow-witted and oblivious, this Pokémon won’t feel any pain if its tail gets eaten. It won’t notice when its tail grows back, either.',
+                'Slow-witted and oblivious, this Pokémon won\'t feel any pain if its tail gets eaten. It won\'t notice when its tail grows back, either.',
                 ('Water', 'Psychic'), ('Oblivious', 'Own Tempo'),
                 
                 stats = {
@@ -628,7 +628,7 @@ Pokemon_dictionary = {
                }),
 
     81: pokemon(81, 'Magnemite', 'Magnet',
-                'At times, Magnemite runs out of electricity and ends up on the ground. If you give batteries to a grounded Magnemite, it’ll start moving again.',
+                'At times, Magnemite runs out of electricity and ends up on the ground. If you give batteries to a grounded Magnemite, it\'ll start moving again.',
                 ('Electric', 'Steel'), ('Sturdy', 'Magnet Pull'),
                 
                 stats = {
@@ -680,7 +680,7 @@ Pokemon_dictionary = {
                }),
 
     85: pokemon(85, 'Dodrio', 'Triple Bird',
-                'One of Doduo’s two heads splits to form a unique species. It runs close to 40 mph in prairies.',
+                'One of Doduo\'s two heads splits to form a unique species. It runs close to 40 mph in prairies.',
                 ('Normal', 'Flying'), ('Run Away', 'Early Bird'),
                 
                 stats = {
@@ -719,7 +719,7 @@ Pokemon_dictionary = {
                }),
 
     88: pokemon(88, 'Grimer', 'Sludge',
-                'Made of congealed sludge. It smells too putrid to touch. Even weeds won’t grow in its path.',
+                'Made of congealed sludge. It smells too putrid to touch. Even weeds won\'t grow in its path.',
                 ('Poison', None), ('Stench', 'Sticky Hold'),
                 
                 stats = {
