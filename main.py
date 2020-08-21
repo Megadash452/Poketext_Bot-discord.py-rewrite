@@ -112,7 +112,7 @@ async def invite(ctx):
 
 
 @client.command()
-async def info(ctx, mon):
+async def info(ctx, *, mon):
     try:
         int(mon) + 1
         call = int(mon)

@@ -59,9 +59,13 @@ class pokemon:
                        'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1-big/{}-big.png'.format(self.name),
                        'path': 'pokemon-sprites/gen1-big/{}-big.png'.format(self.name)
                    }
-        }
+            }
         else:
             self.sprite = {'big':{'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/gen1pokemon_sprites.png'}}
+
+        if self.name == 'Mr. Mime':
+            self.sprite['small']['url'] = 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1-small/Mr.%20Mime-small.png'
+            self.sprite['big']['url'] = 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1-big/Mr.%20Mime-big.png'
 
         pokemon.total_num_of_pokemon += 1
 
@@ -1006,7 +1010,18 @@ Pokemon_dictionary = {
 
     121: 'Starmie',
 
-    122: 'Mr. Mime',
+    122: pokemon(122, 'Mr. Mime', 'Barrier',
+                'The broadness of its hands may be no coincidence—many scientists believe its palms became enlarged specifically for pantomiming.',
+                ('Psychic', 'Fairy'), ('Soundproof', 'Filter'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': '' 
+                }),
 
     123: 'Scyther',
 
