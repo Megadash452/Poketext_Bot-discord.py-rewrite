@@ -536,73 +536,447 @@ Pokemon_dictionary = {
 
     73: 'Tentacruel',
 
-    74: 'Geodude',
+    74: pokemon(74, 'Geodude', 'Rock',
+                'Commonly found near mountain trails and the like. If you step on one by accident, it gets angry.',
+                ('Rock', 'Ground'), ('Rock Head', 'Sturdy'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
+                
+    75: pokemon(75, 'Graveler', 'Rock',
+                'Often seen rolling down mountain trails. Obstacles are just things to roll straight over, not avoid.',
+                ('Rock', 'Ground'), ('Rock Head', 'Sturdy'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    75: 'Graveler',
+    76: pokemon(76, 'Golem', 'Megaton',
+                'Once it sheds its skin, its body turns tender and whitish. Its hide hardens when it’s exposed to air.',
+                ('Rock', 'Ground'), ('Rock Head', 'Sturdy'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    76: 'Golem',
+    77: pokemon(77, 'Ponyta', 'Fire Horse',
+                'It can’t run properly when it’s newly born. As it races around with others of its kind, its legs grow stronger.',
+                ('Fire', None), ('Run Away', 'Flash Fire'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    77: 'Ponyta',
+    78: pokemon(78, 'Rapidash', 'Fire Horse',
+                'This Pokémon can be seen galloping through fields at speeds of up to 150 mph, its fiery mane fluttering in the wind.',
+                ('Fire', None), ('Run Away', 'Flash Fire'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    78: 'Rapidash',
+    79: pokemon(79, 'Slowpoke', 'Dopey',
+                'Slow-witted and oblivious, this Pokémon won’t feel any pain if its tail gets eaten. It won’t notice when its tail grows back, either.',
+                ('Water', 'Psychic'), ('Oblivious', 'Own Tempo'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    79: 'Slowpoke',
+    80: pokemon(80, 'Slowbro', 'Hermit Crab',
+                'Slowpoke became Slowbro when a Shellder bit on to its tail. Sweet flavors seeping from the tail make the Shellder feel as if its life is a dream.',
+                ('Water', 'Psychic'), ('Oblivious', 'Own Tempo'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    80: 'Slowbro',
+    81: pokemon(81, 'Magnemite', 'Magnet',
+                'At times, Magnemite runs out of electricity and ends up on the ground. If you give batteries to a grounded Magnemite, it’ll start moving again.',
+                ('Electric', 'Steel'), ('Sturdy', 'Magnet Pull'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    81: 'Magnemite',
+    82: pokemon(82, 'Magneton', 'Magnet',
+                'This Pokémon is three Magnemite that have linked together. Magneton sends out powerful radio waves to study its surroundings.',
+                ('Electric', 'Steel'), ('Sturdy', 'Magnet Pull'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    82: 'Magneton',
+    83: pokemon(83, 'Farfetch\'d', 'Wild Duck',
+                'The stalk this Pokémon carries in its wings serves as a sword to cut down opponents. In a dire situation, the stalk can also serve as food.',
+                ('Normal', 'Flying'), ('Keen Eye', 'Inner Focus'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    83: 'Farfetch\'d',
+    84: pokemon(84, 'Doduo', 'Twin Bird',
+                'Its short wings make flying difficult. Instead, this Pokémon runs at high speed on developed legs.',
+                ('Normal', 'Flying'), ('Run Away', 'Early Bird'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    84: 'Doduo',
+    85: pokemon(85, 'Dodrio', 'Triple Bird',
+                'One of Doduo’s two heads splits to form a unique species. It runs close to 40 mph in prairies.',
+                ('Normal', 'Flying'), ('Run Away', 'Early Bird'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    85: 'Dodrio',
+    86: pokemon(86, 'Seel', 'Sea Lion',
+                'Loves freezing-cold conditions. Relishes swimming in a frigid climate of around 14 degrees Fahrenheit.',
+                ('Water', None), ('Thick Fat', 'Hydration'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    86: 'Seel',
+    87: pokemon(87, 'Dewgong', 'Sea Lion',
+                'Its entire body is a snowy white. Unharmed by even intense cold, it swims powerfully in icy waters.',
+                ('Water', 'Ice'), ('Thick Fat', 'Hydration'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    87: 'Dewgong',
+    88: pokemon(88, 'Grimer', 'Sludge',
+                'Made of congealed sludge. It smells too putrid to touch. Even weeds won’t grow in its path.',
+                ('Poison', None), ('Stench', 'Sticky Hold'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    88: 'Grimer',
+    89: pokemon(89, 'Muk', 'Sludge',
+                'Smells so awful, it can cause fainting. Through degeneration of its nose, it lost its sense of smell.',
+                ('Poison', None), ('Stench', 'Sticky Hold'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    89: 'Muk',
+    90: pokemon(90, 'Shellder', 'Bivalve',
+                'It swims facing backward by opening and closing its two-piece shell. It is surprisingly fast.',
+                ('Water', None), ('Shell Armor', 'Skill Link'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    90: 'Shellder',
+    91: pokemon(91, 'Cloyster', 'Bivalve',
+                'Its shell is extremely hard. It cannot be shattered, even with a bomb. The shell opens only when it is attacking.',
+                ('Water', 'Ice'), ('Shell Armor', 'Skill Link'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    91: 'Cloyster',
+    92: pokemon(92, 'Gastly', 'Gas',
+                'Born from gases, anyone would faint if engulfed by its gaseous body, which contains poison.',
+                ('Ghost', 'Poison'), ('Gen 3-5: Levitate', 'Gen 6+: Cursed Body'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    92: 'Gastly',
+    93: pokemon(93, 'Haunter', 'Gas',
+                'Its tongue is made of gas. If licked, its victim starts shaking constantly until death eventually comes.',
+                ('Ghost', 'Poison'), ('Gen 3-5: Levitate', 'Gen 6+: Cursed Body'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    93: 'Haunter',
+    94: pokemon(94, 'Gengar', 'Shadow',
+                'On the night of a full moon, if shadows move on their own and laugh, it must be Gengar\'s doing.',
+                ('Ghost', 'Poison'), ('Gen 3-5: Levitate', 'Gen 6+: Cursed Body'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    94: 'Gengar',
+    95: pokemon(95, 'Onix', 'Rock Snake',
+                'As it digs through the ground, it absorbs many hard objects. This is what makes its body so solid.',
+                ('Rock', 'Ground'), ('Rock Head', 'Sturdy'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    95: 'Onix',
+    96: pokemon(96, 'Drowzee', 'Hypnosis',
+                'If you sleep by it all the time, it will sometimes show you dreams it had eaten in the past.',
+                ('Psychic', None), ('Insomnia', 'Forewarn'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    96: 'Drowzee',
+    97: pokemon(97, 'Hypno', 'Hypnosis',
+                'Avoid eye contact if you come across one. It will try to put you to sleep by using its pendulum.',
+                ('Psychic', None), ('Insomnia', 'Forewarn'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    97: 'Hypno',
+    98: pokemon(98, 'Krabby', 'River Crab',
+                'It can be found near the sea. The large pincers grow back if they are torn out of their sockets.',
+                ('Water', None), ('Shell Armor', 'Hyper Cutter'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    98: 'Krabby',
+    99: pokemon(99, 'Kingler', 'Pincer',
+                'Its large and hard pincer has 10,000-horsepower strength. However, being so big, it is unwieldy to move.',
+                ('Water', None), ('Shell Armor', 'Hyper Cutter'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    99: 'Kingler',
+    100: pokemon(100, 'Voltorb', 'Ball',
+                 'It is said to camouflage itself as a Poké Ball. It will self-destruct with very little stimulus.',
+                 ('Electric', None), ('Static', 'Soundproof'),
+                 
+                 stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    100: 'Voltorb',
+    101: pokemon(101, 'Electrode', 'Ball',
+                 'Stores electrical energy inside its body. Even the slightest shock could trigger a huge explosion.',
+                 ('Electric', None), ('Static', 'Soundproof'),
+                 
+                 stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    101: 'Electrode',
+    102: pokemon(102, 'Exeggcute', 'Egg',
+                 'Though it may look like it\'s just a bunch of eggs, it’s a proper Pokémon. Exeggcute communicates with others of its kind via telepathy, apparently.',
+                 ('Grass', 'Psychic'), ('Chlorophyll', None),
+                 
+                 stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    102: 'Exeggcute',
+    103: pokemon(103, 'Exeggutor', 'Coconut',
+                 'Each of Exeggutor\'s three heads is thinking different thoughts. The three don\'t seem to be very interested in one another.',
+                 ('Grass', 'Psychic'), ('Chlorophyll', None),
+                 
+                 stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    103: 'Exeggutor',
+    104: pokemon(104, 'Cubone', 'Lonely',
+                 'When the memory of its departed mother brings it to tears, its cries echo mournfully within the skull it wears on its head.',
+                 ('Ground', None), ('Rock Head', 'Lightning Rod'),
+                 
+                 stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    104: 'Cubone',
+    105: pokemon(105, 'Marowak', 'Bone Keeper',
+                 'This Pokémon overcame its sorrow to evolve a sturdy new body. Marowak faces its opponents bravely, using a bone as a weapon.',
+                 ('Ground', None), ('Rock Head', 'Lightning Rod'),
+                 
+                 stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    105: 'Marowak',
+    106: pokemon(106, 'Hitmonlee', 'Kicking',
+                 'This amazing Pokémon has an awesome sense of balance. It can kick in succession from any position.',
+                 ('Fighting', None), ('Limber', 'Reckless'),
+                 
+                 stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    106: 'Hitmonlee',
-
-    107: 'Hitmonchan',
+    107: pokemon(107, 'Hitmonchan', 'Punching',
+                 'Its punches slice the air. They are launched at such high speed, even a slight graze could cause a burn.',
+                 ('Fighting', None), ('Keen Eye', 'Iron Fist'),
+                 
+                 stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
     108: 'Lickitung',
 
@@ -709,65 +1083,65 @@ Number_dictionary = {
     'nidoran♀': 29, 'nidorina': 30, 'nidoqueen': 31,
     'nidoran♂': 32, 'nidorino': 33, 'nidoking': 34,
     'clefairy': 35, 'clefable': 36,
-    '': 37, '': 38,
-    '': 39, '': 40,
-    '': 41, '': 42,
-    '': 43, '': 44, '': 45,
-    '': 46, '': 47,
-    '': 48, '': 49,
-    '': 50, '': 51,
-    '': 52, '': 53,
-    '': 54, '': 55,
-    '': 56, '': 57,
-    '': 58, '': 59,
-    '': 60, '': 61, '': 62,
-    '': 63, '': 64, '': 65,
-    '': 66, '': 67, '': 68,
-    '': 69, '': 70, '': 71,
-    '': 72, '': 73,
-    '': 74, '': 75, 76,
-    '': 77, '': 78,
-    '': 79, '': 80,
-    '': 81, '': 82,
-    '': 83,
-    '': 84, '': 85,
-    '': 86, '': 87,
-    '': 88, '': 89,
-    '': 90, '': 91,
-    '': 92, '': 93, 94,
-    '': 95,
-    '': 96, '': 97,
-    '': 98, '': 99,
-    '': 100, '': 101,
-    '': 102, '': 103,
-    '': 104, '': 105,
-    '': 106, '': 107,
-    '': 108,
-    '': 109, '': 110,
-    '': 111, '': 112,
-    '': 113,
-    '': 114,
-    '': 115,
-    '': 116, 117,
-    '': 118, 119,
-    '': 120, 121,
-    '': 122,
-    '': 123,
-    '': 124,
-    '': 125,
-    '': 126,
-    '': 127,
-    '': 128,
-    '': 129, 130,
-    '': 131,
-    '': 132,
-    '': 133, 134, 135, 136,
-    '': 137,
-    '': 138, 139,
-    '': 140, 141,
-    '': 142,
-    '': 143,
-    '': 144, 145, 146,
-    '': 147, 148, 149,
-    '': 150, 151,
+    'vulpix': 37, 'ninetales': 38,
+    'jigglypuff': 39, 'wigglytuff': 40,
+    'zubat': 41, 'golbat': 42,
+    'oddish': 43, 'gloom': 44, 'vileplume': 45,
+    'paras': 46, 'parasect': 47,
+    'venomat': 48, 'venomoth': 49,
+    'diglett': 50, 'dugtrio': 51,
+    'meowth': 52, 'persian': 53,
+    'psyduck': 54, 'golduck': 55,
+    'mankey': 56, 'primeape': 57,
+    'growlithe': 58, 'arcanine': 59,
+    'poliwag': 60, 'poliwhirl': 61, 'poliwrath': 62,
+    'abra': 63, 'kadabra': 64, 'alakazam': 65,
+    'machop': 66, 'machoke': 67, 'machamp': 68,
+    'bellsprout': 69, 'weepinbell': 70, 'victreebel': 71,
+    'tentacool': 72, 'tentacruel': 73,
+    'geodude': 74, 'graveler': 75, 'golem': 76,
+    'ponyta': 77, 'rapidash': 78,
+    'slowpoke': 79, 'slowbro': 80,
+    'magnemite': 81, 'magneton': 82,
+    'farfetch\'d': 83,
+    'doduo': 84, 'dodrio': 85,
+    'seel': 86, 'dewdong': 87,
+    'grimer': 88, 'muk': 89,
+    'shellder': 90, 'cloyster': 91,
+    'gastly': 92, 'haunter': 93, 'gengar': 94,
+    'onix': 95,
+    'drowzee': 96, 'hypno': 97,
+    'krabby': 98, 'kingler': 99,
+    'voltorb': 100, 'electrode': 101,
+    'exeggcute': 102, 'exeggutor': 103,
+    'cubone': 104, 'marowak': 105,
+    'hitmonlee': 106, 'hitmonchan': 107,
+    'lickitung': 108,
+    'koffing': 109, 'weezing': 110,
+    'rhyhorn': 111, 'rhydon': 112,
+    'chansey': 113,
+    'tangela': 114,
+    'kangaskhan': 115,
+    'horsea': 116, 'seadra': 117,
+    'goldeen': 118, 'seaking': 119,
+    'staryu': 120, 'starmie': 121,
+    'mr. mime': 122,
+    'scyther': 123,
+    'jynx': 124,
+    'electrabuzz': 125,
+    'magmar': 126,
+    'pinsir': 127,
+    'tauros': 128,
+    'magikarp': 129, 'gyarados': 130,
+    'lapras': 131,
+    'ditto': 132,
+    'eevee': 133, 'vaporeon': 134, 'jolteon': 135, 'flareon': 136,
+    'porygon': 137,
+    'omanyte': 138, 'omastar': 139,
+    'kabuto': 140, 'kabutops': 141,
+    'aerodactyl': 142,
+    'snorlax': 143,
+    'articuno': 144, 'zapdos': 145, 'moltres': 146,
+    'dratini': 147, 'dragonair': 148, 'dragonite': 149,
+    'mewtwo': 150, 'mew': 151
 }
