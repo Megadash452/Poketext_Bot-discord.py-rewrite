@@ -1,12 +1,3 @@
-total_num_of_pokemon = 151
-
-
-class berry:
-    def __init__(self, name, type):
-        self.name = name
-        self.type = type
-
-
 class item:
     def __init__(self, name, type):
         self.name = name
@@ -47,13 +38,14 @@ def get_type_color(Type, index=-1):
 class pokemon:
     total_num_of_pokemon = 0
 
-    def __init__(self, num, name, poke_specie, desc, types, ability, sprite):
+    def __init__(self, num, name, poke_specie, desc, types, ability, stats, sprite):
         self.num = num
         self.name = name
         self.poke_specie = poke_specie
         self.desc = desc
         self.types = types
         self.ability = ability
+        self.stats = stats
         self.sprite = sprite
         pokemon.total_num_of_pokemon += 1
 
@@ -71,6 +63,15 @@ Pokemon_dictionary = {
     1: pokemon(1, 'Bulbasaur', 'Seed Pokémon',
                'There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.',
                ('Grass', 'Poison'), 'Overgrowth',
+               
+               stats = {
+                   'hp': '',
+                   'attack': '',
+                   'defense': '',
+                   'special attack': '',
+                   'special defense': '',
+                   'speed': ''
+               },
 
                sprite = {
                     'small': {
@@ -88,6 +89,15 @@ Pokemon_dictionary = {
                'When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.',
                ('Grass', 'Poison'), 'Overgrowth',
 
+               stats = {
+                   'hp': '',
+                   'attack': '',
+                   'defense': '',
+                   'special attack': '',
+                   'special defense': '',
+                   'speed': ''
+               },
+
                sprite = {
                    'small': {
                     'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-prites/gen1-small/Ivysaur-small.png',
@@ -102,6 +112,15 @@ Pokemon_dictionary = {
     3: pokemon(3, 'Venusaur', 'Seed Pokémon',
                'Its plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.',
                ('Grass', 'Poison'), 'Overgrowth',
+
+               stats = {
+                   'hp': '',
+                   'attack': '',
+                   'defense': '',
+                   'special attack': '',
+                   'special defense': '',
+                   'speed': ''
+               },
 
                sprite = {
                    'small': {
