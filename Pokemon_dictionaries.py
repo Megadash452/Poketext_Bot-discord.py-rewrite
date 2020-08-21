@@ -13,22 +13,50 @@ class item:
         self.type = type
 
 
+def get_type_color(Type, index=-1):
+    type_colors = {
+        #color format: RGB
+        #get color from: 
+        'Normal': (),
+        'Fire': (),
+        'Fighting': (),
+        'Water': (),
+        'Flying': (),
+        'Grass': (155, 204, 80),
+        'Poison': (),
+        'Electric': (),
+        'Ground': (),
+        'Psychic': (),
+        'Rock': (),
+        'Ice': (),
+        'Bug': (),
+        'Dragon': (),
+        'Ghost': (),
+        'Dark': (),
+        'Steel': (),
+        'Fairy': (),
+        '???': (),
+    }
+
+    if index == -1:
+        return type_colors[Type]
+    else:
+        return type_colors[Type][index]
+
+
 class pokemon:
     total_num_of_pokemon = 0
 
-    def __init__(self, num, name, poke_specie, desc, type1, type2, ability, sprite):
+    def __init__(self, num, name, poke_specie, desc, types, ability, sprite):
         self.num = num
         self.name = name
         self.poke_specie = poke_specie
         self.desc = desc
-        self.type1 = type1
-        self.type2 = type2
+        self.types = types
         self.ability = ability
         self.sprite = sprite
         pokemon.total_num_of_pokemon += 1
 
-    def get_type_color(self):
-        type = self.type1
 
     def attack(self):
         print(self.name + ' has attacked')
@@ -41,8 +69,8 @@ class pokemon:
 
 Pokemon_dictionary = {
     1: pokemon(1, 'Bulbasaur', 'Seed Pokémon',
-               'Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun\'s rays, the seed grows progressively larger.',
-               'Grass', 'Poison', 'Overgrowth',
+               'There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.',
+               ('Grass', 'Poison'), 'Overgrowth',
 
                sprite = {
                     'small': {
@@ -57,8 +85,8 @@ Pokemon_dictionary = {
                 }),
 
     2: pokemon(2, 'Ivysaur', 'Seed Pokémon',
-               'There is a bud on this Pokémon\'s back. To support its weight, Ivysaur\'s legs and trunk grow thick and strong. If it starts spending more time lying in the sunlight, it\'s a sign that the bud will bloom into a large flower soon.',
-               'Grass', 'Poison', 'Overgrowth',
+               'When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.',
+               ('Grass', 'Poison'), 'Overgrowth',
 
                sprite = {
                    'small': {
@@ -72,8 +100,8 @@ Pokemon_dictionary = {
                 }),
 
     3: pokemon(3, 'Venusaur', 'Seed Pokémon',
-               'There is a large flower on Venusaur\'s back. The flower is said to take on vivid colors if it gets plenty of nutrition and sunlight. The flower\'s aroma soothes the emotions of people.',
-               'Grass', 'Poison', 'Overgrowth',
+               'Its plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.',
+               ('Grass', 'Poison'), 'Overgrowth',
 
                sprite = {
                    'small': {

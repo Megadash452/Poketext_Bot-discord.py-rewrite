@@ -3,6 +3,7 @@ import discord
 from discord.ext import commands
 
 from Pokemon_dictionaries import Pokemon_dictionary as Pokemon
+from Pokemon_dictionaries import get_type_color
 
 def read_token(file):
     with open(file, 'r') as f:
@@ -116,21 +117,29 @@ async def say(ctx, *, message):
 async def info(ctx, mon):
     try:
         embed = discord.Embed(
-        title=Pokemon[int(mon)].name,
+            title=Pokemon[int(mon)].name,
+            colour=discord.Colour.from_rgb(
+                get_type_color(Pokemon[int(mon)].types[0], 0),
+                get_type_color(Pokemon[int(mon)].types[0], 1),
+                get_type_color(Pokemon[int(mon)].types[0], 2))
         )
 
         embed.add_field(name=Pokemon[int(mon)].poke_specie, value=Pokemon[int(mon)].desc)
-        embed.set_image(url=Pokemon[int(mon)].sprite['url'])
+        embed.set_image(url=Pokemon[int(mon)].sprite['big']['url'])
 
     except:
         from Pokemon_dictionaries import Number_dictionary as Dic
 
         embed = discord.Embed(
-        title=Pokemon[int(Dic[mon])].name,
+            title=Pokemon[int(Dic[mon.lower()])].name,
+            colour=discord.Colour.from_rgb(
+                get_type_color(Pokemon[int(Dic[mon.lower()])].types[0], 0),
+                get_type_color(Pokemon[int(Dic[mon.lower()])].types[0], 1),
+                get_type_color(Pokemon[int(Dic[mon.lower()])].types[0], 2))
         )
 
-        embed.add_field(name=Pokemon[int(Dic[mon])].poke_specie, value=Pokemon[int(Dic[mon])].desc)
-        embed.set_image(url=Pokemon[int(Dic[mon])].sprite['url'])
+        embed.add_field(name=Pokemon[int(Dic[mon.lower()])].poke_specie, value=Pokemon[int(Dic[mon.lower()])].desc)
+        embed.set_image(url=Pokemon[int(Dic[mon.lower()])].sprite['big']['url'])
 
     await ctx.send(embed=embed)
 
