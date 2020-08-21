@@ -9,7 +9,7 @@ def get_type_color(Type, index=-1):
         #color format: RGB
         #get color from: 
         'Normal': (),
-        'Fire': (),
+        'Fire': (253, 125, 36),
         'Fighting': (),
         'Water': (),
         'Flying': (),
@@ -38,7 +38,7 @@ def get_type_color(Type, index=-1):
 class pokemon:
     total_num_of_pokemon = 0
 
-    def __init__(self, num, name, poke_specie, desc, types, ability, stats, sprite):
+    def __init__(self, num, name, poke_specie, desc, types, ability, stats):
         self.num = num
         self.name = name
         self.poke_specie = poke_specie
@@ -46,7 +46,19 @@ class pokemon:
         self.types = types
         self.ability = ability
         self.stats = stats
-        self.sprite = sprite
+
+        self.sprite = {
+                    'small': {
+                        'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1-small/{}-small.png'.format(self.name),
+                        'path': 'pokemon-sprites/gen1-small/{}-small.png'.format(self.name)
+                   },
+
+                   'big': {
+                       'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1-big/{}-big.png'.format(self.name),
+                       'path': 'pokemon-sprites/gen1-big/{}-big.png'.format(self.name)
+                   }
+        }
+
         pokemon.total_num_of_pokemon += 1
 
 
@@ -65,76 +77,52 @@ Pokemon_dictionary = {
                ('Grass', 'Poison'), 'Overgrowth',
                
                stats = {
-                   'hp': '',
-                   'attack': '',
-                   'defense': '',
-                   'special attack': '',
-                   'special defense': '',
-                   'speed': ''
-               },
-
-               sprite = {
-                    'small': {
-                        'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1-small/Bulbasaur-small.png',
-                        'path': 'pokemon-sprites/gen1-small/Bulbasaur-small.png'
-                   },
-
-                   'big': {
-                       'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1-big/Bulbasaur-big.png',
-                       'path': 'pokemon-sprites/gen1-big/Bulbasaur-big.png'
-                   }
-                }),
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
     2: pokemon(2, 'Ivysaur', 'Seed Pokémon',
                'When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.',
                ('Grass', 'Poison'), 'Overgrowth',
 
                stats = {
-                   'hp': '',
-                   'attack': '',
-                   'defense': '',
-                   'special attack': '',
-                   'special defense': '',
-                   'speed': ''
-               },
-
-               sprite = {
-                   'small': {
-                    'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-prites/gen1-small/Ivysaur-small.png',
-                    'path': 'pokemon-sprites/gen1-small/Ivysaur-small.png'
-                   },
-                   'big': {
-                       'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1-big/Ivysaur-big.png',
-                       'path': 'pokemon-sprites/gen1-big/Ivysaur-big.png'
-                   }
-                }),
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
     3: pokemon(3, 'Venusaur', 'Seed Pokémon',
                'Its plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.',
                ('Grass', 'Poison'), 'Overgrowth',
 
                stats = {
-                   'hp': '',
-                   'attack': '',
-                   'defense': '',
-                   'special attack': '',
-                   'special defense': '',
-                   'speed': ''
-               },
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-               sprite = {
-                   'small': {
-                    'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1-small/Venusaur-small.png',
-                    'path': 'pokemon-sprites/gen1-small/Venusaur-small.png'
-                   },
+    4: pokemon(4, 'Charmander', 'Lizard Pokémon',
+               'It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.',
+               ('Fire'), 'Blaze',
 
-                   'big': {
-                       'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1-big/Venusaur-big.png',
-                       'path': 'pokemon-sprites/gen1-big/Venusaur-big.png'
-                   }
-                }),
-
-    4: 'Charmander',
+               stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
     5: 'Charmeleon',
 
@@ -435,4 +423,5 @@ Number_dictionary = {
     'bulbasaur': 1,
     'ivysaur': 2,
     'venusaur': 3,
+    'charmander': 4,
 }
