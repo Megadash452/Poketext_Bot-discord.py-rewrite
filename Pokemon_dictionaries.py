@@ -1128,7 +1128,7 @@ Number_dictionary = {
     'mr. mime': 122,
     'scyther': 123,
     'jynx': 124,
-    'electrabuzz': 125,
+    'electabuzz': 125,
     'magmar': 126,
     'pinsir': 127,
     'tauros': 128,
