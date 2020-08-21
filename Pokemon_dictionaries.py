@@ -422,7 +422,7 @@ Pokemon_dictionary = {
 
     27: pokemon(27, 'Sandshrew', 'Mouse',
                 'It loves to bathe in the grit of dry, sandy areas. By sand bathing, the Pokémon rids itself of dirt and moisture clinging to its body.',
-                ('Ground', None), ('Sande Veil', None), 
+                ('Ground', None), ('Sand Veil', None), 
                 
                 stats = {
                     'hp': '',
@@ -435,7 +435,7 @@ Pokemon_dictionary = {
 
     28: pokemon(28, 'Sandslash', 'Mouse',
                 'The drier the area Sandslash lives in, the harder and smoother the Pokémon’s spikes will feel when touched.',
-                ('Ground', None), ('Sande Veil', None), 
+                ('Ground', None), ('Sand Veil', None), 
                 
                 stats = {
                     'hp': '',
