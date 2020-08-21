@@ -563,7 +563,7 @@ Pokemon_dictionary = {
                }),
 
     76: pokemon(76, 'Golem', 'Megaton',
-                'Once it sheds its skin, its body turns tender and whitish. Its hide hardens when it’s exposed to air.',
+                'Once it sheds its skin, its body turns tender and whitish. Its hide hardens when it\'s exposed to air.',
                 ('Rock', 'Ground'), ('Rock Head', 'Sturdy'),
                 
                 stats = {
@@ -576,7 +576,7 @@ Pokemon_dictionary = {
                }),
 
     77: pokemon(77, 'Ponyta', 'Fire Horse',
-                'It can’t run properly when it’s newly born. As it races around with others of its kind, its legs grow stronger.',
+                'It can\'t run properly when it’s newly born. As it races around with others of its kind, its legs grow stronger.',
                 ('Fire', None), ('Run Away', 'Flash Fire'),
                 
                 stats = {
@@ -602,7 +602,7 @@ Pokemon_dictionary = {
                }),
 
     79: pokemon(79, 'Slowpoke', 'Dopey',
-                'Slow-witted and oblivious, this Pokémon won’t feel any pain if its tail gets eaten. It won’t notice when its tail grows back, either.',
+                'Slow-witted and oblivious, this Pokémon won\'t feel any pain if its tail gets eaten. It won\'t notice when its tail grows back, either.',
                 ('Water', 'Psychic'), ('Oblivious', 'Own Tempo'),
                 
                 stats = {
@@ -628,7 +628,7 @@ Pokemon_dictionary = {
                }),
 
     81: pokemon(81, 'Magnemite', 'Magnet',
-                'At times, Magnemite runs out of electricity and ends up on the ground. If you give batteries to a grounded Magnemite, it’ll start moving again.',
+                'At times, Magnemite runs out of electricity and ends up on the ground. If you give batteries to a grounded Magnemite, it\'ll start moving again.',
                 ('Electric', 'Steel'), ('Sturdy', 'Magnet Pull'),
                 
                 stats = {
@@ -680,7 +680,7 @@ Pokemon_dictionary = {
                }),
 
     85: pokemon(85, 'Dodrio', 'Triple Bird',
-                'One of Doduo’s two heads splits to form a unique species. It runs close to 40 mph in prairies.',
+                'One of Doduo\'s two heads splits to form a unique species. It runs close to 40 mph in prairies.',
                 ('Normal', 'Flying'), ('Run Away', 'Early Bird'),
                 
                 stats = {
@@ -719,7 +719,7 @@ Pokemon_dictionary = {
                }),
 
     88: pokemon(88, 'Grimer', 'Sludge',
-                'Made of congealed sludge. It smells too putrid to touch. Even weeds won’t grow in its path.',
+                'Made of congealed sludge. It smells too putrid to touch. Even weeds won\'t grow in its path.',
                 ('Poison', None), ('Stench', 'Sticky Hold'),
                 
                 stats = {
@@ -1080,68 +1080,4 @@ Number_dictionary = {
     'ekans': 23, 'arbok': 24,
     'pikachu': 25, 'raichu': 26,
     'sandshrew': 27, 'sandslash': 28,
-    'nidoran♀': 29, 'nidorina': 30, 'nidoqueen': 31,
-    'nidoran♂': 32, 'nidorino': 33, 'nidoking': 34,
-    'clefairy': 35, 'clefable': 36,
-    'vulpix': 37, 'ninetales': 38,
-    'jigglypuff': 39, 'wigglytuff': 40,
-    'zubat': 41, 'golbat': 42,
-    'oddish': 43, 'gloom': 44, 'vileplume': 45,
-    'paras': 46, 'parasect': 47,
-    'venomat': 48, 'venomoth': 49,
-    'diglett': 50, 'dugtrio': 51,
-    'meowth': 52, 'persian': 53,
-    'psyduck': 54, 'golduck': 55,
-    'mankey': 56, 'primeape': 57,
-    'growlithe': 58, 'arcanine': 59,
-    'poliwag': 60, 'poliwhirl': 61, 'poliwrath': 62,
-    'abra': 63, 'kadabra': 64, 'alakazam': 65,
-    'machop': 66, 'machoke': 67, 'machamp': 68,
-    'bellsprout': 69, 'weepinbell': 70, 'victreebel': 71,
-    'tentacool': 72, 'tentacruel': 73,
-    'geodude': 74, 'graveler': 75, 'golem': 76,
-    'ponyta': 77, 'rapidash': 78,
-    'slowpoke': 79, 'slowbro': 80,
-    'magnemite': 81, 'magneton': 82,
-    'farfetch\'d': 83,
-    'doduo': 84, 'dodrio': 85,
-    'seel': 86, 'dewdong': 87,
-    'grimer': 88, 'muk': 89,
-    'shellder': 90, 'cloyster': 91,
-    'gastly': 92, 'haunter': 93, 'gengar': 94,
-    'onix': 95,
-    'drowzee': 96, 'hypno': 97,
-    'krabby': 98, 'kingler': 99,
-    'voltorb': 100, 'electrode': 101,
-    'exeggcute': 102, 'exeggutor': 103,
-    'cubone': 104, 'marowak': 105,
-    'hitmonlee': 106, 'hitmonchan': 107,
-    'lickitung': 108,
-    'koffing': 109, 'weezing': 110,
-    'rhyhorn': 111, 'rhydon': 112,
-    'chansey': 113,
-    'tangela': 114,
-    'kangaskhan': 115,
-    'horsea': 116, 'seadra': 117,
-    'goldeen': 118, 'seaking': 119,
-    'staryu': 120, 'starmie': 121,
-    'mr. mime': 122,
-    'scyther': 123,
-    'jynx': 124,
-    'electrabuzz': 125,
-    'magmar': 126,
-    'pinsir': 127,
-    'tauros': 128,
-    'magikarp': 129, 'gyarados': 130,
-    'lapras': 131,
-    'ditto': 132,
-    'eevee': 133, 'vaporeon': 134, 'jolteon': 135, 'flareon': 136,
-    'porygon': 137,
-    'omanyte': 138, 'omastar': 139,
-    'kabuto': 140, 'kabutops': 141,
-    'aerodactyl': 142,
-    'snorlax': 143,
-    'articuno': 144, 'zapdos': 145, 'moltres': 146,
-    'dratini': 147, 'dragonair': 148, 'dragonite': 149,
-    'mewtwo': 150, 'mew': 151
 }
