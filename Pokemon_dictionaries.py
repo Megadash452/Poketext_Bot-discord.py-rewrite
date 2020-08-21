@@ -42,8 +42,14 @@ Bulbasaur = pokemon(1, 'Bulbasaur', 'Seed Pokémon',
                     'Grass', 'Poison', 'Overgrowth',
 
                     sprite = {
+                        'small': {
                         'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon%20sprites/gen1%20small/Bulbasaur-small.png',
-                        'image': 'Bulbasaur-small.png'
+                        'path': 'Bulbasaur-small.png'
+                        },
+                        'big': {
+                            'url': '',
+                            'path': ''
+                        }
                     })
 
 Ivysaur = pokemon(2, 'Ivysaur', 'Seed Pokémon',
@@ -51,8 +57,14 @@ Ivysaur = pokemon(2, 'Ivysaur', 'Seed Pokémon',
                   'Grass', 'Poison', 'Overgrowth',
 
                   sprite = {
+                      'small': {
                         'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon%20sprites/gen1%20small/Ivysaur-small.png',
-                        'image': 'Ivysaur-small.png'
+                        'path': 'Ivysaur-small.png'
+                        },
+                        'big': {
+                            'url': '',
+                            'path': ''
+                        }
                     })
 
 Venusaur = pokemon(3, 'Venusaur', 'Seed Pokémon',
@@ -60,8 +72,14 @@ Venusaur = pokemon(3, 'Venusaur', 'Seed Pokémon',
                    'Grass', 'Poison', 'Overgrowth',
 
                    sprite = {
+                       'small': {
                         'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon%20sprites/gen1%20small/Venusaur-small.png',
-                        'image': 'Venusaur-small.png'
+                        'path': 'Venusaur-small.png'
+                        },
+                        'big': {
+                            'url': '',
+                            'path': ''
+                        }
                     })
 
 # ------ Dictionary ------ ------ ------ ------ ------ ------ ------ ------ ------
@@ -72,8 +90,14 @@ Pokemon_dictionary = {
                'Grass', 'Poison', 'Overgrowth',
 
                sprite = {
-                        'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon%20sprites/gen1%20small/Bulbasaur-small.png',
-                        'image': 'Bulbasaur-small.png'
+                   'small': {
+                    'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon%20sprites/gen1%20small/Bulbasaur-small.png',
+                    'path': 'Bulbasaur-small.png'
+                   },
+                   'big': {
+                       'url': '',
+                       'path': ''
+                   }
                 }),
 
     2: pokemon(2, 'Ivysaur', 'Seed Pokémon',
@@ -81,8 +105,14 @@ Pokemon_dictionary = {
                'Grass', 'Poison', 'Overgrowth',
 
                sprite = {
-                        'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon%20sprites/gen1%20small/Ivysaur-small.png',
-                        'image': 'Ivysaur-small.png'
+                   'small': {
+                    'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon%20sprites/gen1%20small/Ivysaur-small.png',
+                    'path': 'Ivysaur-small.png'
+                   },
+                   'big': {
+                       'url': '',
+                       'path': ''
+                   }
                 }),
 
     3: pokemon(3, 'Venusaur', 'Seed Pokémon',
@@ -90,8 +120,14 @@ Pokemon_dictionary = {
                'Grass', 'Poison', 'Overgrowth',
 
                sprite = {
-                        'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon%20sprites/gen1%20small/Venusaur-small.png',
-                        'image': 'Venusaur-small.png'
+                   'small': {
+                    'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon%20sprites/gen1%20small/Venusaur-small.png',
+                    'path': 'Venusaur-small.png'
+                   },
+                   'big': {
+                       'url': '',
+                       'path': ''
+                   }
                 }),
 
     4: 'Charmander',
@@ -394,5 +430,5 @@ Pokemon_dictionary = {
 Number_dictionary = {
     'bulbasaur': 1,
     'ivysaur': 2,
-    'venusaur':3,
+    'venusaur': 3,
 }
