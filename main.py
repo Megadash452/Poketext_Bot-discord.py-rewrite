@@ -3,14 +3,12 @@ import discord
 from discord.ext import commands
 
 from Pokemon_dictionaries import Pokemon_dictionary as Pokemon
-from Pokemon_dictionaries import get_type_color
+from type_colors import get_type_color
 
 def read_token(file):
     with open(file, 'r') as f:
         lines = f.readlines()
         return lines[0].strip()
-
-prefix = '!'
 
 def get_prefix(client, message):
     with open('prefixes.json', 'r') as f:
@@ -19,6 +17,7 @@ def get_prefix(client, message):
     return prefixes[str(message.guild.id)]
 
 client = commands.Bot(command_prefix = get_prefix)
+client.remove_command('help')
 
 bot_ping = '<@!725225223346978816>'
 
@@ -59,8 +58,33 @@ async def on_member_remove(member):
 
 # --- Commands ---
 @client.command(aliases=[bot_ping])
-async def ping(ctx):
-    await ctx.send('Hello there, (my prefix is ' + prefix + '). Do ' + prefix + 'help to see what you can do')
+async def help(ctx):
+    prefix = client.command_prefix(ctx.guild, ctx.message)
+
+    #embed = discord.Embed(title='Help' colour=discord.Colour.from_rgb(get_type_color['PokeText'][0], get_type_color['PokeText'][1], get_type_color['PokeText'][2]),
+                            #)
+
+    await ctx.send('Ping me or use my prefix ({}) to use a Command\n'.format(prefix)+
+                'My Commands are:'+
+                '\n\t-  **setprefix <prefix>**: Changes the default prefix (*you can make the prefix pinging the bot if you want*)'+
+                '\n\t-  **say <message>**: I will say whatever you tell me to (the message you sedn will be deleted)'+
+                '\n\t-  **purge <message count>**: I will delete a certain number of messages'+
+
+                'Game commands:'+
+                '\n\t-  **random battle <user>**: Starts a Pokemon match with a random team against '+
+                'the person you want to battle'+
+                '\n\t-  **random**: show a random pokemon'+
+                '\n\t-  **team battle <user>**: Starts a Pokemon match with your current team against '+
+                'the person you want to battle'+
+                '\n\t-  **team**: show your current team'+
+                '\n\t-  **info <pokemon>**: show the information of a certain pokemon'+
+
+                'Game management commands:'+
+                '\n\t-  ****:'+
+                '\n\t-  ****:'+
+                '\n\t-  ****:'+
+                '\n\t-  ****:'+
+                '\n\t-  ****:')
 
 
 @client.command(aliases=['set-prefix', 'set_prefix'])
@@ -87,19 +111,6 @@ async def purge(ctx, amount=6):
     print('deleted {} messages'.format(amount))
 
 
-@client.command(aliases=['pokeban', 'poke-ban', 'poke ban'])
-async def ban(ctx, member):
-    print()
-
-
-@client.command(aliases=['vote-pokeban', 'vote-poke-ban'])
-async def voteban(ctx, member=''):
-    if member:
-        await ctx.send(f'going to ban {member} :angry:')
-    else:
-        await ctx.send('Who you gonna ban thoe? Try again')
-
-
 @client.command()
 async def say(ctx, *, message):
     await ctx.channel.purge(limit=1)
@@ -120,26 +131,33 @@ async def info(ctx, *, mon):
         from Pokemon_dictionaries import Number_dictionary as Dic
         call = int(Dic[mon.lower()])
 
-    embed = discord.Embed(
-        title=Pokemon[call].name,
-        colour=discord.Colour.from_rgb(
-            get_type_color(Pokemon[call].types[0], 0),
-            get_type_color(Pokemon[call].types[0], 1),
-            get_type_color(Pokemon[call].types[0], 2))
-    )
+    embed = discord.Embed(title=Pokemon[call].name, colour=int(get_type_color(Pokemon[call].types[0], 'hex'), 16))
 
     embed.add_field(name=Pokemon[call].poke_specie, value=Pokemon[call].desc)
 
     if not Pokemon[call].types[1]:
         embed.add_field(name='Type', value=Pokemon[call].types[0], inline=False)
     else:
-        embed.add_field(name='Types', value=f'{Pokemon[call].types[0]} \n {Pokemon[call].types[1]}', inline=False)
+        embed.add_field(name='Types', value=f'{Pokemon[call].types[0]}\n{Pokemon[call].types[1]}', inline=False)
 
     embed.set_image(url=Pokemon[call].sprite['big']['url'])
     #embed.set_thumbnail(url=Pokemon[call].sprite['small']['url'])
     
 
     await ctx.send(embed=embed)
+
+
+@client.command(aliases=['pokeban', 'poke-ban', 'poke ban'])
+async def ban(ctx, member):
+    print()
+
+
+@client.command(aliases=['vote-pokeban', 'vote-poke-ban'])
+async def voteban(ctx, member=''):
+    if member:
+        await ctx.send(f'going to ban {member} :angry:')
+    else:
+        await ctx.send('Who you gonna ban thoe? Try again')
 
 # --- ---
 

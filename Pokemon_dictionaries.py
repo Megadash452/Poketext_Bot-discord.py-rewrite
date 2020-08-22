@@ -4,38 +4,6 @@ class item:
         self.type = type
 
 
-def get_type_color(Type, index=-1):
-    type_colors = {
-        'PokeText': (255, 216, 35),
-        #color format: RGB
-        #get color from: https://loucyoreviews.files.wordpress.com/2013/02/wpid-screenshot_2013-02-18-00-21-57-1.png
-        'Normal': (168, 168, 120),
-        'Fire': (240, 128, 48),
-        'Fighting': (192, 48, 40),
-        'Water': (104, 144, 240),
-        'Flying': (168, 144, 240),
-        'Grass': (120, 200, 80),
-        'Poison': (160, 64, 160),
-        'Electric': (248, 208, 48),
-        'Ground': (224, 192, 104),
-        'Psychic': (248, 88, 136),
-        'Rock': (184, 160, 56),
-        'Ice': (152, 216, 216),
-        'Bug': (168, 184, 32),
-        'Dragon': (112, 56, 248),
-        'Ghost': (112, 88, 152),
-        'Dark': (112, 88, 72),
-        'Steel': (184, 184, 208),
-        'Fairy': (238, 153, 172),
-        '???': (),
-    }
-
-    if index == -1:
-        return type_colors[Type]
-    else:
-        return type_colors[Type][index]
-
-
 class pokemon:
     total_num_of_pokemon = 0
 
