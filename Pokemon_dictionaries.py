@@ -496,7 +496,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    35: Mon(35, 'Clefairy'
+    35: Mon(35, 'Clefairy', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -507,7 +509,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    36: Mon(num, 'Clefable'
+    36: Mon(36, 'Clefable', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -518,7 +522,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    37: Mon(num, 'Vulpix'
+    37: Mon(37, 'Vulpix', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -529,7 +535,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    38: Mon(num, 'Ninteales'
+    38: Mon(38, 'Ninteales', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -553,7 +561,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    40: Mon(num, 'Wigglytuff'
+    40: Mon(40, 'Wigglytuff', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -564,7 +574,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    41: Mon(num, 'Zubat'
+    41: Mon(41, 'Zubat', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -575,7 +587,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    42: Mon(num, 'Golbat'
+    42: Mon(42, 'Golbat', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -586,7 +600,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    43: Mon(num, 'Oddish'
+    43: Mon(43, 'Oddish', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -597,7 +613,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    44: Mon(num, 'Gloom'
+    44: Mon(44, 'Gloom', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -608,7 +626,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    45: Mon(num, 'Vileplume'
+    45: Mon(45, 'Vileplume', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -619,7 +639,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    46: Mon(num, 'Paras'
+    46: Mon(46, 'Paras', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -630,7 +652,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    47: Mon(num, 'Parasect'
+    47: Mon(47, 'Parasect', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -641,7 +665,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    48: Mon(num, 'Venonat'
+    48: Mon(48, 'Venonat', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -652,7 +678,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    49: Mon(num, 'Venomoth'
+    49: Mon(49, 'Venomoth', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -663,7 +691,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    50: Mon(num, 'Diglett'
+    50: Mon(50, 'Diglett', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -674,7 +704,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    51: Mon(num, 'Dugtrio'
+    51: Mon(51, 'Dugtrio', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -685,7 +717,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    52: Mon(num, 'Meowth'
+    52: Mon(52, 'Meowth', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -696,7 +730,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    53: Mon(num, 'Persian'
+    53: Mon(53, 'Persian', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -707,7 +743,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    54: Mon(num, 'Psyduck'
+    54: Mon(54, 'Psyduck', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -718,7 +756,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    55: Mon(num, 'Golduck'
+    55: Mon(55, 'Golduck', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -729,7 +769,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    56: Mon(num, 'Mankey'
+    56: Mon(56, 'Mankey', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -740,7 +782,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    57: Mon(num, 'Primeape'
+    57: Mon(57, 'Primeape', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -751,7 +795,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    58: Mon(num, 'Growlithe'
+    58: Mon(58, 'Growlithe', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -762,7 +808,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    59: Mon(num, 'Arcanine'
+    59: Mon(59, 'Arcanine', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -773,7 +821,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    60: Mon(num, 'Poliwag'
+    60: Mon(60, 'Poliwag', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -784,7 +834,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    61: Mon(num, 'Poliwhirl'
+    61: Mon(61, 'Poliwhirl', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -795,7 +847,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    62: Mon(num, 'Poliwrath'
+    62: Mon(62, 'Poliwrath', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -806,7 +860,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    63: Mon(num, 'Abra'
+    63: Mon(63, 'Abra', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -817,7 +873,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    64: Mon(num, 'Kadabra'
+    64: Mon(64, 'Kadabra', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -828,7 +886,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    65: Mon(num, 'Alakazam'
+    65: Mon(65, 'Alakazam', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -839,7 +899,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    66: Mon(num, 'Machop'
+    66: Mon(66, 'Machop', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -850,7 +912,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    67: Mon(num, 'Machoke'
+    67: Mon(67, 'Machoke', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -861,7 +925,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    68: Mon(num, 'Machamp'
+    68: Mon(68, 'Machamp', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -872,7 +938,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    69: Mon(num, 'Bellsprout'
+    69: Mon(69, 'Bellsprout', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -883,7 +951,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    70: Mon(num, 'Weepinbell'
+    70: Mon(70, 'Weepinbell', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -894,7 +964,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    71: Mon(num, 'Victreebel'
+    71: Mon(71, 'Victreebel', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -905,7 +977,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    72: Mon(num, 'Tentacool'
+    72: Mon(72, 'Tentacool', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -916,7 +990,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    73: Mon(num, 'Tentacruel'
+    73: Mon(73, 'Tentacruel', '',
+                '',
+                ('', None), ('', ''),
                 
                 stats = {
                     'hp': '',
@@ -1369,33 +1445,187 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    108: 'Lickitung',
+    108: Mon(108, 'Lickitung', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    109: 'Koffing',
+    109: Mon(109, 'Koffing', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    110: 'Weezing',
+    110: Mon(110, 'Weezing', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    111: 'Rhyhorn',
+    111: Mon(111, 'Rhyhorn', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    112: 'Rhydon',
+    112: Mon(112, 'Rhydon', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    113: 'Chansey',
+    113: Mon(113, 'Chansey', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    114: 'Tangela',
+    114: Mon(114, 'Tangela', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    115: 'Kangaskhan',
+    115: Mon(115, 'Kangaskhan', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    116: 'Horsea',
+    116: Mon(116, 'Horsea', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    117: 'Seadra',
+    117: Mon(117, 'Seadra', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    118: 'Goldeen',
+    118: Mon(118, 'Goldeen', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    119: 'Seaking',
+    119: Mon(119, 'Seaking', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    120: 'Staryu',
+    120: Mon(120, 'Staryu', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    121: 'Starmie',
+    121: Mon(121, 'Starmie', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
     122: Mon(122, 'Mr. Mime', 'Barrier',
                 'The broadness of its hands may be no coincidence—many scientists believe its palms became enlarged specifically for pantomiming.',
@@ -1410,63 +1640,382 @@ Pokemon_dictionary = {
                     'speed': '' 
                 }),
 
-    123: 'Scyther',
+    123: Mon(123, 'Scyther', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    124: 'Jynx',
+    124: Mon(124, 'Jynx', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    125: 'Electabuzz',
+    125: Mon(125, 'Electabuzz', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    126: 'Magmar',
+    126: Mon(126, 'Magmar', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    127: 'Pinsir',
+    127: Mon(127, 'Pinsir', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    128: 'Tauros',
+    128: Mon(128, 'Tauros', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    129: 'Magikarp',
+    129: Mon(129, 'Magikarp', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    130: 'Gyarados',
+    130: Mon(130, 'Gyarados', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    131: 'Lapras',
+    131: Mon(131, 'Lapras', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    132: 'Ditto',
+    132: Mon(132, 'Ditto', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    133: 'Eevee',
+    133: Mon(133, 'Eevee', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    134: 'Vaporeon',
+    134: Mon(134, 'Vaporeon', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    135: 'Jolteon',
+    135: Mon(135, 'Jolteon', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    136: 'Flareon',
+    136: Mon(136, 'Flareon', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    137: 'Porygon',
+    137: Mon(137, 'Porygon', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    138: 'Omanyte',
+    138: Mon(138, 'Omanyte', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    139: 'Omastar',
+    139: Mon(139, 'Omastar', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    140: 'Kabuto',
+    140: Mon(140, 'Kabuto', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    141: 'Kabutops',
+    141: Mon(141, 'Kabutops', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    142: 'Aerodactyl',
+    142: Mon(142, 'Aerodactyl', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    143: 'Snorlax',
+    143: Mon(143, 'Snorlax', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    144: 'Articuno',
+    144: Mon(144, 'Articuno', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    145: 'Zapdos',
+    145: Mon(145, 'Zapdos', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    146: 'Moltres',
+    146: Mon(146, 'Moltres', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    147: 'Dratini',
+    147: Mon(147, 'Dratini', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    148: 'Dragonair',
+    148: Mon(148, 'Dragonair', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    149: 'Dragonite',
+    149: Mon(149, 'Dragonite', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    150: 'Mewtwo',
+    150: Mon(150, 'Mewtwo', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    151: 'Mew',
+    151: Mon(151, 'Mew', '',
+                '',
+                ('', None), ('', ''),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 }
 
 Number_dictionary = {
