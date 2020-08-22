@@ -438,7 +438,18 @@ Pokemon_dictionary = {
 
     38: 'Ninteales',
 
-    39: 'Jigglypuff',
+    39: pokemon(39, 'Jigglypuff', 'Balloon',
+                'Jigglypuff has top-notch lung capacity, even by comparison to other Pokémon. It won\'t stop singing its lullabies until its foes fall asleep.',
+                ('Fairy', None), ('Cute Charm', 'Competitive'), 
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
     40: 'Wigglytuff',
 
