@@ -1,10 +1,10 @@
-class item:
+class Item:
     def __init__(self, name, type):
         self.name = name
         self.type = type
 
 
-class pokemon:
+class Mon:
     total_num_of_pokemon = 0
 
     def __init__(self, num, name, poke_specie, desc, types, abilities, stats):
@@ -35,7 +35,7 @@ class pokemon:
             self.sprite['small']['url'] = 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1-small/Mr.%20Mime-small.png'
             self.sprite['big']['url'] = 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1-big/Mr.%20Mime-big.png'
 
-        pokemon.total_num_of_pokemon += 1
+        Mon.total_num_of_pokemon += 1
 
 
     def attack(self):
@@ -48,13 +48,13 @@ class pokemon:
 # ------ Dictionary ------ ------ ------ ------ ------ ------ ------ ------ ------
 
 Pokemon_dictionary = {
-    0: pokemon(0, 'Generation 1', 'All',
+    0: Mon(0, 'Generation 1', 'All',
                 'Description',
                 ('PokeText', None),# 'Fighting', 'Water', 'Flying', 'Grass', 'Poison', 'Electric', 'Ground', 'Psychic', 'Rock', 'Ice', 'Bug', 'Dragon', 'Ghost', 'Dark', 'Steel', 'Fairy'),
                 'All Abilities', stats=None
             ),
 
-    1: pokemon(1, 'Bulbasaur', 'Seed',
+    1: Mon(1, 'Bulbasaur', 'Seed',
                'There is a plant seed on its back right from the day this is born. The seed slowly grows larger.',
                ('Grass', 'Poison'), ('Overgrow', None),
                
@@ -67,7 +67,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    2: pokemon(2, 'Ivysaur', 'Seed',
+    2: Mon(2, 'Ivysaur', 'Seed',
                'When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.',
                ('Grass', 'Poison'), ('Overgrow', None),
 
@@ -80,7 +80,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    3: pokemon(3, 'Venusaur', 'Seed',
+    3: Mon(3, 'Venusaur', 'Seed',
                'Its plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.',
                ('Grass', 'Poison'), ('Overgrow', None),
 
@@ -93,7 +93,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    4: pokemon(4, 'Charmander', 'Lizard',
+    4: Mon(4, 'Charmander', 'Lizard',
                'It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.',
                ('Fire', None), ('Blaze', None),
 
@@ -106,7 +106,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    5: pokemon(5, 'Charmeleon', 'Flame',
+    5: Mon(5, 'Charmeleon', 'Flame',
                 'It has a barbaric nature. In battle, it whips its fiery tail around and slashes away with sharp claws.',
                 ('Fire', None), ('Blaze', None),
                 
@@ -119,7 +119,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    6: pokemon(6, 'Charizard', 'Flame',
+    6: Mon(6, 'Charizard', 'Flame',
                 'It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.',
                 ('Fire', 'Flying'), ('Blaze', None),
                 
@@ -132,7 +132,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    7: pokemon(7, 'Squirtle', 'Tiny turtle',
+    7: Mon(7, 'Squirtle', 'Tiny turtle',
                'When it retracts its long neck into its shell, it squirts out water with vigorous force.',
                ('Water', None), ('Torrent', None),
 
@@ -145,7 +145,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    8: pokemon(8, 'Wartortle', 'Turtle',
+    8: Mon(8, 'Wartortle', 'Turtle',
                 'It is recognized as a symbol of longevity. If its shell has algae on it, that Wartortle is very old.',
                 ('Water', None), ('Torrent', None),
                 
@@ -158,7 +158,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    9: pokemon(9, 'Blastoise', 'Shellfish',
+    9: Mon(9, 'Blastoise', 'Shellfish',
                 'It crushes its foe under its heavy body to cause fainting. In a pinch, it will withdraw inside its shell.', 
                 ('Water', None), ('Torrent', None), 
                 
@@ -171,7 +171,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    10: pokemon(10, 'Caterpie', 'Worm',
+    10: Mon(10, 'Caterpie', 'Worm',
                 'For protection, it releases a horrible stench from the antenna on its head to drive away enemies.',
                 ('Bug', None), ('Shield Dust', None), 
                 
@@ -184,7 +184,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    11: pokemon(11, 'Metapod', 'Cocoon',
+    11: Mon(11, 'Metapod', 'Cocoon',
                 'It is waiting for the moment to evolve. At this stage, it can only harden, so it remains motionless to avoid attack.',
                 ('Bug', None), ('Shed Skin', None), 
                 
@@ -197,7 +197,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    12: pokemon(12, 'Butterfree', 'Butterfly',
+    12: Mon(12, 'Butterfree', 'Butterfly',
                 'In battle, it flaps its wings at great speed to release highly toxic dust into the air.',
                 ('Bug', 'Flying'), ('Compound Eyes', None), 
                 
@@ -210,7 +210,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    13: pokemon(13, 'Weedle', 'Hairy bug',
+    13: Mon(13, 'Weedle', 'Hairy bug',
                 'Beware of the sharp stinger on its head. It hides in grass and bushes where it eats leaves.',
                 ('Bug', 'Poison'), ('Shield Dust', None), 
                 
@@ -223,7 +223,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    14: pokemon(14, 'Kakuna', 'Cocoon',
+    14: Mon(14, 'Kakuna', 'Cocoon',
                 'Able to move only slightly. When endangered, it may stick out its stinger and poison its enemy.',
                 ('Bug', 'Poison'), ('Shed Skin', None), 
                 
@@ -236,7 +236,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    15: pokemon(15, 'Beedrill', 'Poison bee',
+    15: Mon(15, 'Beedrill', 'Poison bee',
                 'It has three poisonous stingers on its forelegs and its tail. They are used to jab its enemy repeatedly.',
                 ('Bug', 'Poison'), ('Swarm', None), 
                 
@@ -249,7 +249,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    16: pokemon(16, 'Pidgey', 'Tiny bird',
+    16: Mon(16, 'Pidgey', 'Tiny bird',
                 'Very docile. If attacked, it will often kick up sand to protect itself rather than fight back.',
                 ('Normal', 'Flying'), ('Keen Eye', 'Tangled Feet'), 
                 
@@ -262,7 +262,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    17: pokemon(17, 'Pidgeotto', 'Bird',
+    17: Mon(17, 'Pidgeotto', 'Bird',
                 'This Pokémon is full of vitality. It constantly flies around its large territory in search of prey.',
                 ('Normal', 'Flying'), ('Keen Eye', 'Tangled Feet'), 
                 
@@ -275,7 +275,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    18: pokemon(18, 'Pidgeot', 'Bird',
+    18: Mon(18, 'Pidgeot', 'Bird',
                 'This Pokémon flies at Mach 2 speed, seeking prey. Its large talons are feared as wicked weapons.',
                 ('Normal', 'Flying'), ('Keen Eye', 'Tangled Feet'), 
                 
@@ -288,7 +288,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    19: pokemon(19, 'Rattata', 'Mouse',
+    19: Mon(19, 'Rattata', 'Mouse',
                 'Will chew on anything with its fangs. If you see one, you can be certain that 40 more live in the area.',
                 ('Normal', None), ('Run Away', 'Guts'), 
                 
@@ -301,7 +301,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    20: pokemon(20, 'Raticate', 'Mouse',
+    20: Mon(20, 'Raticate', 'Mouse',
                 'Its hind feet are webbed. They act as flippers, so it can swim in rivers and hunt for prey.',
                 ('Normal', None), ('Run Away', 'Guts'), 
                 
@@ -314,7 +314,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    21: pokemon(21, 'Spearow', 'Tiny bird',
+    21: Mon(21, 'Spearow', 'Tiny bird',
                 'Inept at flying high. However, it can fly around very fast to protect its territory.',
                 ('Normal', 'Flying'), ('Keen Eye', None), 
                 
@@ -327,7 +327,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    22: pokemon(22, 'Fearow', 'Beak',
+    22: Mon(22, 'Fearow', 'Beak',
                 'A Pokémon that dates back many years. If it senses danger, it flies high and away, instantly.',
                 ('Normal', 'Flying'), ('Keen Eye', None), 
                 
@@ -340,7 +340,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    23: pokemon(23, 'Ekans', 'Snake',
+    23: Mon(23, 'Ekans', 'Snake',
                 'The older it gets, the longer it grows. At night, it wraps its long body around tree branches to rest.',
                 ('Poison', None), ('Shed Skin', 'Intimidate'), 
                 
@@ -353,7 +353,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    24: pokemon(24, 'Arbok', 'Cobra',
+    24: Mon(24, 'Arbok', 'Cobra',
                 'The frightening patterns on its belly have been studied. Six variations have been confirmed.',
                 ('Poison', None), ('Shed Skin', 'Intimidate'), 
                 
@@ -366,7 +366,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    25: pokemon(25, 'Pikachu', 'Mouse',
+    25: Mon(25, 'Pikachu', 'Mouse',
                 'Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.',
                 ('Electric', None), ('Static', None), 
                 
@@ -379,7 +379,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    26: pokemon(26, 'Raichu', 'Mouse',
+    26: Mon(26, 'Raichu', 'Mouse',
                 'Its long tail serves as a ground to protect itself from its own high-voltage power.',
                 ('Electric', None), ('Static', None), 
                 
@@ -392,7 +392,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    27: pokemon(27, 'Sandshrew', 'Mouse',
+    27: Mon(27, 'Sandshrew', 'Mouse',
                 'It loves to bathe in the grit of dry, sandy areas. By sand bathing, the Pokémon rids itself of dirt and moisture clinging to its body.',
                 ('Ground', None), ('Sand Veil', None), 
                 
@@ -405,7 +405,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    28: pokemon(28, 'Sandslash', 'Mouse',
+    28: Mon(28, 'Sandslash', 'Mouse',
                 'The drier the area Sandslash lives in, the harder and smoother the Pokémon’s spikes will feel when touched.',
                 ('Ground', None), ('Sand Veil', None), 
                 
@@ -418,7 +418,18 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    29: 'Nidoran♀',
+    29: Mon(29, 'Nidoran♀', 'Poison pin',
+                'A mild-mannered Pokémon that does not like to fight. Beware—its small horn secretes venom.',
+                ('Poison', None), ('Poison Point', 'Rivalry'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
     30: 'Nidorina',
 
@@ -438,7 +449,7 @@ Pokemon_dictionary = {
 
     38: 'Ninteales',
 
-    39: pokemon(39, 'Jigglypuff', 'Balloon',
+    39: Mon(39, 'Jigglypuff', 'Balloon',
                 'Jigglypuff has top-notch lung capacity, even by comparison to other Pokémon. It won\'t stop singing its lullabies until its foes fall asleep.',
                 ('Fairy', None), ('Cute Charm', 'Competitive'), 
                 
@@ -519,7 +530,7 @@ Pokemon_dictionary = {
 
     73: 'Tentacruel',
 
-    74: pokemon(74, 'Geodude', 'Rock',
+    74: Mon(74, 'Geodude', 'Rock',
                 'Commonly found near mountain trails and the like. If you step on one by accident, it gets angry.',
                 ('Rock', 'Ground'), ('Rock Head', 'Sturdy'),
                 
@@ -532,7 +543,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
                 
-    75: pokemon(75, 'Graveler', 'Rock',
+    75: Mon(75, 'Graveler', 'Rock',
                 'Often seen rolling down mountain trails. Obstacles are just things to roll straight over, not avoid.',
                 ('Rock', 'Ground'), ('Rock Head', 'Sturdy'),
                 
@@ -545,7 +556,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    76: pokemon(76, 'Golem', 'Megaton',
+    76: Mon(76, 'Golem', 'Megaton',
                 'Once it sheds its skin, its body turns tender and whitish. Its hide hardens when it\'s exposed to air.',
                 ('Rock', 'Ground'), ('Rock Head', 'Sturdy'),
                 
@@ -558,7 +569,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    77: pokemon(77, 'Ponyta', 'Fire Horse',
+    77: Mon(77, 'Ponyta', 'Fire Horse',
                 'It can\'t run properly when it’s newly born. As it races around with others of its kind, its legs grow stronger.',
                 ('Fire', None), ('Run Away', 'Flash Fire'),
                 
@@ -571,7 +582,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    78: pokemon(78, 'Rapidash', 'Fire Horse',
+    78: Mon(78, 'Rapidash', 'Fire Horse',
                 'This Pokémon can be seen galloping through fields at speeds of up to 150 mph, its fiery mane fluttering in the wind.',
                 ('Fire', None), ('Run Away', 'Flash Fire'),
                 
@@ -584,7 +595,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    79: pokemon(79, 'Slowpoke', 'Dopey',
+    79: Mon(79, 'Slowpoke', 'Dopey',
                 'Slow-witted and oblivious, this Pokémon won\'t feel any pain if its tail gets eaten. It won\'t notice when its tail grows back, either.',
                 ('Water', 'Psychic'), ('Oblivious', 'Own Tempo'),
                 
@@ -597,7 +608,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    80: pokemon(80, 'Slowbro', 'Hermit Crab',
+    80: Mon(80, 'Slowbro', 'Hermit Crab',
                 'Slowpoke became Slowbro when a Shellder bit on to its tail. Sweet flavors seeping from the tail make the Shellder feel as if its life is a dream.',
                 ('Water', 'Psychic'), ('Oblivious', 'Own Tempo'),
                 
@@ -610,7 +621,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    81: pokemon(81, 'Magnemite', 'Magnet',
+    81: Mon(81, 'Magnemite', 'Magnet',
                 'At times, Magnemite runs out of electricity and ends up on the ground. If you give batteries to a grounded Magnemite, it\'ll start moving again.',
                 ('Electric', 'Steel'), ('Sturdy', 'Magnet Pull'),
                 
@@ -623,7 +634,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    82: pokemon(82, 'Magneton', 'Magnet',
+    82: Mon(82, 'Magneton', 'Magnet',
                 'This Pokémon is three Magnemite that have linked together. Magneton sends out powerful radio waves to study its surroundings.',
                 ('Electric', 'Steel'), ('Sturdy', 'Magnet Pull'),
                 
@@ -636,7 +647,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    83: pokemon(83, 'Farfetch\'d', 'Wild Duck',
+    83: Mon(83, 'Farfetch\'d', 'Wild Duck',
                 'The stalk this Pokémon carries in its wings serves as a sword to cut down opponents. In a dire situation, the stalk can also serve as food.',
                 ('Normal', 'Flying'), ('Keen Eye', 'Inner Focus'),
                 
@@ -649,7 +660,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    84: pokemon(84, 'Doduo', 'Twin Bird',
+    84: Mon(84, 'Doduo', 'Twin Bird',
                 'Its short wings make flying difficult. Instead, this Pokémon runs at high speed on developed legs.',
                 ('Normal', 'Flying'), ('Run Away', 'Early Bird'),
                 
@@ -662,7 +673,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    85: pokemon(85, 'Dodrio', 'Triple Bird',
+    85: Mon(85, 'Dodrio', 'Triple Bird',
                 'One of Doduo\'s two heads splits to form a unique species. It runs close to 40 mph in prairies.',
                 ('Normal', 'Flying'), ('Run Away', 'Early Bird'),
                 
@@ -675,7 +686,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    86: pokemon(86, 'Seel', 'Sea Lion',
+    86: Mon(86, 'Seel', 'Sea Lion',
                 'Loves freezing-cold conditions. Relishes swimming in a frigid climate of around 14 degrees Fahrenheit.',
                 ('Water', None), ('Thick Fat', 'Hydration'),
                 
@@ -688,7 +699,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    87: pokemon(87, 'Dewgong', 'Sea Lion',
+    87: Mon(87, 'Dewgong', 'Sea Lion',
                 'Its entire body is a snowy white. Unharmed by even intense cold, it swims powerfully in icy waters.',
                 ('Water', 'Ice'), ('Thick Fat', 'Hydration'),
                 
@@ -701,7 +712,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    88: pokemon(88, 'Grimer', 'Sludge',
+    88: Mon(88, 'Grimer', 'Sludge',
                 'Made of congealed sludge. It smells too putrid to touch. Even weeds won\'t grow in its path.',
                 ('Poison', None), ('Stench', 'Sticky Hold'),
                 
@@ -714,7 +725,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    89: pokemon(89, 'Muk', 'Sludge',
+    89: Mon(89, 'Muk', 'Sludge',
                 'Smells so awful, it can cause fainting. Through degeneration of its nose, it lost its sense of smell.',
                 ('Poison', None), ('Stench', 'Sticky Hold'),
                 
@@ -727,7 +738,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    90: pokemon(90, 'Shellder', 'Bivalve',
+    90: Mon(90, 'Shellder', 'Bivalve',
                 'It swims facing backward by opening and closing its two-piece shell. It is surprisingly fast.',
                 ('Water', None), ('Shell Armor', 'Skill Link'),
                 
@@ -740,7 +751,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    91: pokemon(91, 'Cloyster', 'Bivalve',
+    91: Mon(91, 'Cloyster', 'Bivalve',
                 'Its shell is extremely hard. It cannot be shattered, even with a bomb. The shell opens only when it is attacking.',
                 ('Water', 'Ice'), ('Shell Armor', 'Skill Link'),
                 
@@ -753,7 +764,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    92: pokemon(92, 'Gastly', 'Gas',
+    92: Mon(92, 'Gastly', 'Gas',
                 'Born from gases, anyone would faint if engulfed by its gaseous body, which contains poison.',
                 ('Ghost', 'Poison'), ('Gen 3-5: Levitate', 'Gen 6+: Cursed Body'),
                 
@@ -766,7 +777,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    93: pokemon(93, 'Haunter', 'Gas',
+    93: Mon(93, 'Haunter', 'Gas',
                 'Its tongue is made of gas. If licked, its victim starts shaking constantly until death eventually comes.',
                 ('Ghost', 'Poison'), ('Gen 3-5: Levitate', 'Gen 6+: Cursed Body'),
                 
@@ -779,7 +790,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    94: pokemon(94, 'Gengar', 'Shadow',
+    94: Mon(94, 'Gengar', 'Shadow',
                 'On the night of a full moon, if shadows move on their own and laugh, it must be Gengar\'s doing.',
                 ('Ghost', 'Poison'), ('Gen 3-5: Levitate', 'Gen 6+: Cursed Body'),
                 
@@ -792,7 +803,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    95: pokemon(95, 'Onix', 'Rock Snake',
+    95: Mon(95, 'Onix', 'Rock Snake',
                 'As it digs through the ground, it absorbs many hard objects. This is what makes its body so solid.',
                 ('Rock', 'Ground'), ('Rock Head', 'Sturdy'),
                 
@@ -805,7 +816,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    96: pokemon(96, 'Drowzee', 'Hypnosis',
+    96: Mon(96, 'Drowzee', 'Hypnosis',
                 'If you sleep by it all the time, it will sometimes show you dreams it had eaten in the past.',
                 ('Psychic', None), ('Insomnia', 'Forewarn'),
                 
@@ -818,7 +829,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    97: pokemon(97, 'Hypno', 'Hypnosis',
+    97: Mon(97, 'Hypno', 'Hypnosis',
                 'Avoid eye contact if you come across one. It will try to put you to sleep by using its pendulum.',
                 ('Psychic', None), ('Insomnia', 'Forewarn'),
                 
@@ -831,7 +842,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    98: pokemon(98, 'Krabby', 'River Crab',
+    98: Mon(98, 'Krabby', 'River Crab',
                 'It can be found near the sea. The large pincers grow back if they are torn out of their sockets.',
                 ('Water', None), ('Shell Armor', 'Hyper Cutter'),
                 
@@ -844,7 +855,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    99: pokemon(99, 'Kingler', 'Pincer',
+    99: Mon(99, 'Kingler', 'Pincer',
                 'Its large and hard pincer has 10,000-horsepower strength. However, being so big, it is unwieldy to move.',
                 ('Water', None), ('Shell Armor', 'Hyper Cutter'),
                 
@@ -857,7 +868,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    100: pokemon(100, 'Voltorb', 'Ball',
+    100: Mon(100, 'Voltorb', 'Ball',
                  'It is said to camouflage itself as a Poké Ball. It will self-destruct with very little stimulus.',
                  ('Electric', None), ('Static', 'Soundproof'),
                  
@@ -870,7 +881,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    101: pokemon(101, 'Electrode', 'Ball',
+    101: Mon(101, 'Electrode', 'Ball',
                  'Stores electrical energy inside its body. Even the slightest shock could trigger a huge explosion.',
                  ('Electric', None), ('Static', 'Soundproof'),
                  
@@ -883,7 +894,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    102: pokemon(102, 'Exeggcute', 'Egg',
+    102: Mon(102, 'Exeggcute', 'Egg',
                  'Though it may look like it\'s just a bunch of eggs, it’s a proper Pokémon. Exeggcute communicates with others of its kind via telepathy, apparently.',
                  ('Grass', 'Psychic'), ('Chlorophyll', None),
                  
@@ -896,7 +907,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    103: pokemon(103, 'Exeggutor', 'Coconut',
+    103: Mon(103, 'Exeggutor', 'Coconut',
                  'Each of Exeggutor\'s three heads is thinking different thoughts. The three don\'t seem to be very interested in one another.',
                  ('Grass', 'Psychic'), ('Chlorophyll', None),
                  
@@ -909,7 +920,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    104: pokemon(104, 'Cubone', 'Lonely',
+    104: Mon(104, 'Cubone', 'Lonely',
                  'When the memory of its departed mother brings it to tears, its cries echo mournfully within the skull it wears on its head.',
                  ('Ground', None), ('Rock Head', 'Lightning Rod'),
                  
@@ -922,7 +933,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    105: pokemon(105, 'Marowak', 'Bone Keeper',
+    105: Mon(105, 'Marowak', 'Bone Keeper',
                  'This Pokémon overcame its sorrow to evolve a sturdy new body. Marowak faces its opponents bravely, using a bone as a weapon.',
                  ('Ground', None), ('Rock Head', 'Lightning Rod'),
                  
@@ -935,7 +946,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    106: pokemon(106, 'Hitmonlee', 'Kicking',
+    106: Mon(106, 'Hitmonlee', 'Kicking',
                  'This amazing Pokémon has an awesome sense of balance. It can kick in succession from any position.',
                  ('Fighting', None), ('Limber', 'Reckless'),
                  
@@ -948,7 +959,7 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    107: pokemon(107, 'Hitmonchan', 'Punching',
+    107: Mon(107, 'Hitmonchan', 'Punching',
                  'Its punches slice the air. They are launched at such high speed, even a slight graze could cause a burn.',
                  ('Fighting', None), ('Keen Eye', 'Iron Fist'),
                  
@@ -989,7 +1000,7 @@ Pokemon_dictionary = {
 
     121: 'Starmie',
 
-    122: pokemon(122, 'Mr. Mime', 'Barrier',
+    122: Mon(122, 'Mr. Mime', 'Barrier',
                 'The broadness of its hands may be no coincidence—many scientists believe its palms became enlarged specifically for pantomiming.',
                 ('Psychic', 'Fairy'), ('Soundproof', 'Filter'),
                 
