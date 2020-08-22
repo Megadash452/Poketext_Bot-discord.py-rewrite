@@ -72,11 +72,12 @@ async def help(ctx):
     )
     embed.add_field(
         name='Game Commands:',
-        value='\n\n\t-  **random battle <user>**: Starts a Pokemon match with a random team against the person you want to battle' +
+        value='\n\n\t-  **randombattle <user>**: Starts a Pokemon match with a random team against the person you want to battle' +
+            '\n\n\t-  **teambattle <user>**: Starts a Pokemon match with your current team against the person you want to battle' +
+            '\n\n\t-  **teaminit**- if this is your first time using the bot, do this command to make a team'
+            '\n\n\t-  **team <user>**: show a person\'s team (leave empty to see your own team)' +
             '\n\n\t-  **random**: show a random pokemon' +
-            '\n\n\t-  **team battle <user>**: Starts a Pokemon match with your current team against the person you want to battle' +
-            '\n\n\t-  **team**: show your current team' +
-            '\n\n\t-  **info <pokemon>**: show the information of a certain pokemon'
+            '\n\n\t-  **info <pokemon>**: show the information of a certain pokemon (you can also do {}info random to show a random Pokémon'.format(prefix)
     )
     embed.add_field(
         name='Game Management Commands:',
@@ -125,6 +126,20 @@ async def invite(ctx):
 # --- Game Commands ---
 
 
+@client.command(aliases=['random-battle', 'randbattle', 'rand-battle'])
+async def randombattle(ctx, member : discord.Member):
+    await ctx.send('starting Random Battle with {}'.format(member.mention))
+    print('starting Random Battle with {}'.format(member.mention))
+
+
+@client.command(aliases=['team-battle'])
+async def teambattle(ctx, member):
+    pass
+
+@client.command()
+async def team(ctx, member):
+    pass
+
 @client.command(aliases=['random'])
 async def rand(ctx):
     random_num = random.randrange(1, 27+1, 1)
@@ -171,6 +186,7 @@ async def info(ctx, *, mon):
     
 
     await ctx.send(embed=embed)
+    #await ctx.send(' <a:1717_Crab_Rave:626579304049803294> ')
 
 
 # --- Game Management Commands ---
