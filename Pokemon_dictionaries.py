@@ -431,23 +431,114 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    30: 'Nidorina',
+    30: Mon(30, 'Nidorina', 'Poison pin',
+                'When resting deep in its burrow, its barbs always retract. This is proof that it is relaxed.',
+                ('Poison', None), ('Poison Point', 'Rivalry'),
+    
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    31: 'Nidoqueen',
+    31: Mon(31, 'Nidoqueen', 'Drill',
+                'Tough scales cover the sturdy body of this Pokémon. It appears that the scales grow in cycles.',
+                ('Poison', 'Ground'), ('Poison Point', 'Rivalry'),
+            
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    32: 'Nidoran♂',
+    32: Mon(32, 'Nidoran♂', 'Poison pin',
+                'Its large ears are always kept upright. If it senses danger, it will attack with a poisonous sting.',
+                ('Poison', None), ('Poison Point', 'Rivalry'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    33: 'Nidorino',
+    33: Mon(33, 'Nidorino', 'Poison pin',
+                'Its horn contains venom. If it stabs an enemy with the horn, the impact makes the poison leak out.',
+                ('Poison', None), ('Poison Point', 'Rivalry'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    34: 'Nidoking',
+    34: Mon(34, 'Nidoking', 'Drill',
+                'Its steel-like hide adds to its powerful tackle. Its horns are so hard, they can pierce a diamond.',
+                ('Poison', 'Ground'), ('Poison Point', 'Rivalry'),
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    35: 'Clefairy',
+    35: Mon(35, 'Clefairy'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    36: 'Clefable',
+    36: Mon(num, 'Clefable'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    37: 'Vulpix',
+    37: Mon(num, 'Vulpix'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    38: 'Ninteales',
+    38: Mon(num, 'Ninteales'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
     39: Mon(39, 'Jigglypuff', 'Balloon',
                 'Jigglypuff has top-notch lung capacity, even by comparison to other Pokémon. It won\'t stop singing its lullabies until its foes fall asleep.',
@@ -462,73 +553,379 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    40: 'Wigglytuff',
+    40: Mon(num, 'Wigglytuff'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    41: 'Zubat',
+    41: Mon(num, 'Zubat'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    42: 'Golbat',
+    42: Mon(num, 'Golbat'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    43: 'Oddish',
+    43: Mon(num, 'Oddish'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    44: 'Gloom',
+    44: Mon(num, 'Gloom'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    45: 'Vileplume',
+    45: Mon(num, 'Vileplume'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    46: 'Paras',
+    46: Mon(num, 'Paras'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    47: 'Parasect',
+    47: Mon(num, 'Parasect'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    48: 'Venonat',
+    48: Mon(num, 'Venonat'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    49: 'Venomoth',
+    49: Mon(num, 'Venomoth'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    50: 'Diglett',
+    50: Mon(num, 'Diglett'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    51: 'Dugtrio',
+    51: Mon(num, 'Dugtrio'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    52: 'Meowth',
+    52: Mon(num, 'Meowth'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    53: 'Persian',
+    53: Mon(num, 'Persian'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    54: 'Psyduck',
+    54: Mon(num, 'Psyduck'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    55: 'Golduck',
+    55: Mon(num, 'Golduck'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    56: 'Mankey',
+    56: Mon(num, 'Mankey'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    57: 'Primeape',
+    57: Mon(num, 'Primeape'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    58: 'Growlithe',
+    58: Mon(num, 'Growlithe'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    59: 'Arcanine',
+    59: Mon(num, 'Arcanine'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    60: 'Poliwag',
+    60: Mon(num, 'Poliwag'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    61: 'Poliwhirl',
+    61: Mon(num, 'Poliwhirl'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    62: 'Poliwrath',
+    62: Mon(num, 'Poliwrath'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    63: 'Abra',
+    63: Mon(num, 'Abra'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    64: 'Kadabra',
+    64: Mon(num, 'Kadabra'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    65: 'Alakazam',
+    65: Mon(num, 'Alakazam'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    66: 'Machop',
+    66: Mon(num, 'Machop'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    67: 'Machoke',
+    67: Mon(num, 'Machoke'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    68: 'Machamp',
+    68: Mon(num, 'Machamp'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    69: 'Bellsprout',
+    69: Mon(num, 'Bellsprout'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    70: 'Weepinbell',
+    70: Mon(num, 'Weepinbell'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    71: 'Victreebel',
+    71: Mon(num, 'Victreebel'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    72: 'Tentacool',
+    72: Mon(num, 'Tentacool'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
-    73: 'Tentacruel',
+    73: Mon(num, 'Tentacruel'
+                
+                stats = {
+                    'hp': '',
+                    'attack': '',
+                    'defense': '',
+                    'special attack': '',
+                    'special defense': '',
+                    'speed': ''
+               }),
 
     74: Mon(74, 'Geodude', 'Rock',
                 'Commonly found near mountain trails and the like. If you step on one by accident, it gets angry.',
