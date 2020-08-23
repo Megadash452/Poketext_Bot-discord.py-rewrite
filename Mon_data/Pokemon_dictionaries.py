@@ -31,7 +31,9 @@ class Mon:
                    }
             }
         else:
-            self.sprite = {'big':{'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/gen1pokemon_sprites.png'}}
+            self.sprite = {'big':{'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1pokemon_sprites(colored).png'},
+                            'small':{'url': None}
+            }
 
         if self.name == 'Mr. Mime':
             self.sprite['small']['url'] = 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1-small/Mr.%20Mime-small.png'

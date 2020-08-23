@@ -3,7 +3,7 @@ from discord.ext import commands
 from discord.utils import get
 
 from Mon_data.Pokemon_dictionaries import Pokemon_dictionary as Pokemon
-from Mon_data.type_colors import type_colors
+from Mon_data.type_data import type_data
 
 def read_token(file):
     with open(file, 'r') as f:
@@ -61,7 +61,7 @@ async def on_member_remove(member):
 async def help(ctx):
     prefix = client.command_prefix(ctx.guild, ctx.message)[0]
 
-    embed = discord.Embed(title='Help', description='Ping me or use my prefix (` {} `) to use a Command\n\n\n'.format(prefix), colour=int(type_colors['PokeText']['hex'], 16))
+    embed = discord.Embed(title='Help', description='Ping me or use my prefix (` {} `) to use a Command\n\n\n'.format(prefix), colour=int(type_data['PokeText']['color']['hex'], 16))
 
     embed.add_field(
         name='My Commands are:', 
@@ -144,7 +144,7 @@ async def team(ctx, member):
 async def rand(ctx):
     random_num = random.randrange(1, 50+1, 1)
 
-    embed = discord.Embed(title=Pokemon[random_num].name, colour=int(type_colors[Pokemon[random_num].types[0]]['hex'], 16))
+    embed = discord.Embed(title=Pokemon[random_num].name, colour=int(type_data[Pokemon[random_num].types[0]]['color']['hex'], 16))
 
     embed.add_field(name=Pokemon[random_num].poke_specie, value=Pokemon[random_num].desc)
 
@@ -172,7 +172,7 @@ async def info(ctx, *, mon):
     else:
         call = random.randrange(1, 50+1, 1)
 
-    embed = discord.Embed(title=Pokemon[call].name, colour=int(type_colors[Pokemon[call].types[0]]['hex'], 16))
+    embed = discord.Embed(title=Pokemon[call].name, colour=int(type_data[Pokemon[call].types[0]]['color']['hex'], 16))
 
     embed.add_field(name=Pokemon[call].poke_specie, value=Pokemon[call].desc)
 
