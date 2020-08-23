@@ -142,7 +142,7 @@ async def team(ctx, member):
 
 @client.command(aliases=['random'])
 async def rand(ctx):
-    random_num = random.randrange(1, 27+1, 1)
+    random_num = random.randrange(1, 50+1, 1)
 
     embed = discord.Embed(title=Pokemon[random_num].name, colour=int(type_colors[Pokemon[random_num].types[0]]['hex'], 16))
 
@@ -170,7 +170,7 @@ async def info(ctx, *, mon):
             from Mon_data.Pokemon_dictionaries import Number_dictionary as Dic
             call = int(Dic[mon.lower()])
     else:
-        call = random.randrange(1, 27+1, 1)
+        call = random.randrange(1, 50+1, 1)
 
     embed = discord.Embed(title=Pokemon[call].name, colour=int(type_colors[Pokemon[call].types[0]]['hex'], 16))
 
@@ -182,7 +182,7 @@ async def info(ctx, *, mon):
         embed.add_field(name='Types', value=f'{Pokemon[call].types[0]}\n{Pokemon[call].types[1]}', inline=False)
 
     embed.set_image(url=Pokemon[call].sprite['big']['url'])
-    #embed.set_thumbnail(url=Pokemon[call].sprite['small']['url'])
+    embed.set_thumbnail(url=Pokemon[call].sprite['small']['url'])
     
 
     await ctx.send(embed=embed)
