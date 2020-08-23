@@ -7,7 +7,7 @@ class Item:
 class Mon:
     total_num_of_pokemon = 0
 
-    def __init__(self, num, name, poke_specie, desc, types, abilities, stats):
+    def __init__(self, num, name, poke_specie, desc, types, abilities, classification, stats):
         self.num = num
         self.name = name
         self.poke_specie = poke_specie + ' Pokémon'
@@ -51,12 +51,12 @@ Pokemon_dictionary = {
     0: Mon(0, 'Generation 1', 'All',
                 'Description',
                 ('PokeText', None),# 'Fighting', 'Water', 'Flying', 'Grass', 'Poison', 'Electric', 'Ground', 'Psychic', 'Rock', 'Ice', 'Bug', 'Dragon', 'Ghost', 'Dark', 'Steel', 'Fairy'),
-                'All Abilities', stats=None
+                'All Abilities', '', stats=None
             ),
 
     1: Mon(1, 'Bulbasaur', 'Seed',
                'There is a plant seed on its back right from the day this is born. The seed slowly grows larger.',
-               ('Grass', 'Poison'), ('Overgrow', None),
+               ('Grass', 'Poison'), ('Overgrow', None), '',
                
                 stats = {
                     'hp': '',
@@ -69,7 +69,7 @@ Pokemon_dictionary = {
 
     2: Mon(2, 'Ivysaur', 'Seed',
                'When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.',
-               ('Grass', 'Poison'), ('Overgrow', None),
+               ('Grass', 'Poison'), ('Overgrow', None), '',
 
                 stats = {
                     'hp': '',
@@ -82,7 +82,7 @@ Pokemon_dictionary = {
 
     3: Mon(3, 'Venusaur', 'Seed',
                'Its plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.',
-               ('Grass', 'Poison'), ('Overgrow', None),
+               ('Grass', 'Poison'), ('Overgrow', None), '',
 
                 stats = {
                     'hp': '',
@@ -95,7 +95,7 @@ Pokemon_dictionary = {
 
     4: Mon(4, 'Charmander', 'Lizard',
                'It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.',
-               ('Fire', None), ('Blaze', None),
+               ('Fire', None), ('Blaze', None), '',
 
                 stats = {
                     'hp': '',
@@ -108,7 +108,7 @@ Pokemon_dictionary = {
 
     5: Mon(5, 'Charmeleon', 'Flame',
                 'It has a barbaric nature. In battle, it whips its fiery tail around and slashes away with sharp claws.',
-                ('Fire', None), ('Blaze', None),
+                ('Fire', None), ('Blaze', None), '',
                 
                 stats = {
                     'hp': '',
@@ -121,7 +121,7 @@ Pokemon_dictionary = {
 
     6: Mon(6, 'Charizard', 'Flame',
                 'It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.',
-                ('Fire', 'Flying'), ('Blaze', None),
+                ('Fire', 'Flying'), ('Blaze', None), '',
                 
                 stats = {
                     'hp': '',
@@ -134,7 +134,7 @@ Pokemon_dictionary = {
 
     7: Mon(7, 'Squirtle', 'Tiny turtle',
                'When it retracts its long neck into its shell, it squirts out water with vigorous force.',
-               ('Water', None), ('Torrent', None),
+               ('Water', None), ('Torrent', None), '',
 
                 stats = {
                     'hp': '',
@@ -147,7 +147,7 @@ Pokemon_dictionary = {
 
     8: Mon(8, 'Wartortle', 'Turtle',
                 'It is recognized as a symbol of longevity. If its shell has algae on it, that Wartortle is very old.',
-                ('Water', None), ('Torrent', None),
+                ('Water', None), ('Torrent', None), '',
                 
                 stats = {
                     'hp': '',
@@ -160,7 +160,7 @@ Pokemon_dictionary = {
 
     9: Mon(9, 'Blastoise', 'Shellfish',
                 'It crushes its foe under its heavy body to cause fainting. In a pinch, it will withdraw inside its shell.', 
-                ('Water', None), ('Torrent', None), 
+                ('Water', None), ('Torrent', None),  '',
                 
                 stats = {
                     'hp': '',
@@ -173,7 +173,7 @@ Pokemon_dictionary = {
 
     10: Mon(10, 'Caterpie', 'Worm',
                 'For protection, it releases a horrible stench from the antenna on its head to drive away enemies.',
-                ('Bug', None), ('Shield Dust', None), 
+                ('Bug', None), ('Shield Dust', None),  '',
                 
                 stats = {
                     'hp': '',
@@ -186,7 +186,7 @@ Pokemon_dictionary = {
 
     11: Mon(11, 'Metapod', 'Cocoon',
                 'It is waiting for the moment to evolve. At this stage, it can only harden, so it remains motionless to avoid attack.',
-                ('Bug', None), ('Shed Skin', None), 
+                ('Bug', None), ('Shed Skin', None),  '',
                 
                 stats = {
                     'hp': '',
@@ -199,7 +199,7 @@ Pokemon_dictionary = {
 
     12: Mon(12, 'Butterfree', 'Butterfly',
                 'In battle, it flaps its wings at great speed to release highly toxic dust into the air.',
-                ('Bug', 'Flying'), ('Compound Eyes', None), 
+                ('Bug', 'Flying'), ('Compound Eyes', None),  '',
                 
                 stats = {
                     'hp': '',
@@ -212,7 +212,7 @@ Pokemon_dictionary = {
 
     13: Mon(13, 'Weedle', 'Hairy bug',
                 'Beware of the sharp stinger on its head. It hides in grass and bushes where it eats leaves.',
-                ('Bug', 'Poison'), ('Shield Dust', None), 
+                ('Bug', 'Poison'), ('Shield Dust', None),  '',
                 
                 stats = {
                     'hp': '',
@@ -225,7 +225,7 @@ Pokemon_dictionary = {
 
     14: Mon(14, 'Kakuna', 'Cocoon',
                 'Able to move only slightly. When endangered, it may stick out its stinger and poison its enemy.',
-                ('Bug', 'Poison'), ('Shed Skin', None), 
+                ('Bug', 'Poison'), ('Shed Skin', None),  '',
                 
                 stats = {
                     'hp': '',
@@ -238,7 +238,7 @@ Pokemon_dictionary = {
 
     15: Mon(15, 'Beedrill', 'Poison bee',
                 'It has three poisonous stingers on its forelegs and its tail. They are used to jab its enemy repeatedly.',
-                ('Bug', 'Poison'), ('Swarm', None), 
+                ('Bug', 'Poison'), ('Swarm', None),  '',
                 
                 stats = {
                     'hp': '',
@@ -251,7 +251,7 @@ Pokemon_dictionary = {
 
     16: Mon(16, 'Pidgey', 'Tiny bird',
                 'Very docile. If attacked, it will often kick up sand to protect itself rather than fight back.',
-                ('Normal', 'Flying'), ('Keen Eye', 'Tangled Feet'), 
+                ('Normal', 'Flying'), ('Keen Eye', 'Tangled Feet'),  '',
                 
                 stats = {
                     'hp': '',
@@ -264,7 +264,7 @@ Pokemon_dictionary = {
 
     17: Mon(17, 'Pidgeotto', 'Bird',
                 'This Pokémon is full of vitality. It constantly flies around its large territory in search of prey.',
-                ('Normal', 'Flying'), ('Keen Eye', 'Tangled Feet'), 
+                ('Normal', 'Flying'), ('Keen Eye', 'Tangled Feet'),  '',
                 
                 stats = {
                     'hp': '',
@@ -277,7 +277,7 @@ Pokemon_dictionary = {
 
     18: Mon(18, 'Pidgeot', 'Bird',
                 'This Pokémon flies at Mach 2 speed, seeking prey. Its large talons are feared as wicked weapons.',
-                ('Normal', 'Flying'), ('Keen Eye', 'Tangled Feet'), 
+                ('Normal', 'Flying'), ('Keen Eye', 'Tangled Feet'),  '',
                 
                 stats = {
                     'hp': '',
@@ -290,7 +290,7 @@ Pokemon_dictionary = {
 
     19: Mon(19, 'Rattata', 'Mouse',
                 'Will chew on anything with its fangs. If you see one, you can be certain that 40 more live in the area.',
-                ('Normal', None), ('Run Away', 'Guts'), 
+                ('Normal', None), ('Run Away', 'Guts'),  '',
                 
                 stats = {
                     'hp': '',
@@ -303,7 +303,7 @@ Pokemon_dictionary = {
 
     20: Mon(20, 'Raticate', 'Mouse',
                 'Its hind feet are webbed. They act as flippers, so it can swim in rivers and hunt for prey.',
-                ('Normal', None), ('Run Away', 'Guts'), 
+                ('Normal', None), ('Run Away', 'Guts'),  '',
                 
                 stats = {
                     'hp': '',
@@ -316,7 +316,7 @@ Pokemon_dictionary = {
 
     21: Mon(21, 'Spearow', 'Tiny bird',
                 'Inept at flying high. However, it can fly around very fast to protect its territory.',
-                ('Normal', 'Flying'), ('Keen Eye', None), 
+                ('Normal', 'Flying'), ('Keen Eye', None),  '',
                 
                 stats = {
                     'hp': '',
@@ -329,7 +329,7 @@ Pokemon_dictionary = {
 
     22: Mon(22, 'Fearow', 'Beak',
                 'A Pokémon that dates back many years. If it senses danger, it flies high and away, instantly.',
-                ('Normal', 'Flying'), ('Keen Eye', None), 
+                ('Normal', 'Flying'), ('Keen Eye', None),  '',
                 
                 stats = {
                     'hp': '',
@@ -342,7 +342,7 @@ Pokemon_dictionary = {
 
     23: Mon(23, 'Ekans', 'Snake',
                 'The older it gets, the longer it grows. At night, it wraps its long body around tree branches to rest.',
-                ('Poison', None), ('Shed Skin', 'Intimidate'), 
+                ('Poison', None), ('Shed Skin', 'Intimidate'),  '',
                 
                 stats = {
                     'hp': '',
@@ -355,7 +355,7 @@ Pokemon_dictionary = {
 
     24: Mon(24, 'Arbok', 'Cobra',
                 'The frightening patterns on its belly have been studied. Six variations have been confirmed.',
-                ('Poison', None), ('Shed Skin', 'Intimidate'), 
+                ('Poison', None), ('Shed Skin', 'Intimidate'),  '',
                 
                 stats = {
                     'hp': '',
@@ -368,7 +368,7 @@ Pokemon_dictionary = {
 
     25: Mon(25, 'Pikachu', 'Mouse',
                 'Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.',
-                ('Electric', None), ('Static', None), 
+                ('Electric', None), ('Static', None),  '',
                 
                 stats = {
                     'hp': '',
@@ -381,7 +381,7 @@ Pokemon_dictionary = {
 
     26: Mon(26, 'Raichu', 'Mouse',
                 'Its long tail serves as a ground to protect itself from its own high-voltage power.',
-                ('Electric', None), ('Static', None), 
+                ('Electric', None), ('Static', None),  '',
                 
                 stats = {
                     'hp': '',
@@ -394,7 +394,7 @@ Pokemon_dictionary = {
 
     27: Mon(27, 'Sandshrew', 'Mouse',
                 'It loves to bathe in the grit of dry, sandy areas. By sand bathing, the Pokémon rids itself of dirt and moisture clinging to its body.',
-                ('Ground', None), ('Sand Veil', None), 
+                ('Ground', None), ('Sand Veil', None),  '',
                 
                 stats = {
                     'hp': '',
@@ -407,7 +407,7 @@ Pokemon_dictionary = {
 
     28: Mon(28, 'Sandslash', 'Mouse',
                 'The drier the area Sandslash lives in, the harder and smoother the Pokémon’s spikes will feel when touched.',
-                ('Ground', None), ('Sand Veil', None), 
+                ('Ground', None), ('Sand Veil', None),  '',
                 
                 stats = {
                     'hp': '',
@@ -420,7 +420,7 @@ Pokemon_dictionary = {
 
     29: Mon(29, 'Nidoran♀', 'Poison pin',
                 'A mild-mannered Pokémon that does not like to fight. Beware—its small horn secretes venom.',
-                ('Poison', None), ('Poison Point', 'Rivalry'),
+                ('Poison', None), ('Poison Point', 'Rivalry'), '',
                 
                 stats = {
                     'hp': '',
@@ -433,7 +433,7 @@ Pokemon_dictionary = {
 
     30: Mon(30, 'Nidorina', 'Poison pin',
                 'When resting deep in its burrow, its barbs always retract. This is proof that it is relaxed.',
-                ('Poison', None), ('Poison Point', 'Rivalry'),
+                ('Poison', None), ('Poison Point', 'Rivalry'), '',
     
                 stats = {
                     'hp': '',
@@ -446,7 +446,7 @@ Pokemon_dictionary = {
 
     31: Mon(31, 'Nidoqueen', 'Drill',
                 'Tough scales cover the sturdy body of this Pokémon. It appears that the scales grow in cycles.',
-                ('Poison', 'Ground'), ('Poison Point', 'Rivalry'),
+                ('Poison', 'Ground'), ('Poison Point', 'Rivalry'), '',
             
                 stats = {
                     'hp': '',
@@ -459,7 +459,7 @@ Pokemon_dictionary = {
 
     32: Mon(32, 'Nidoran♂', 'Poison pin',
                 'Its large ears are always kept upright. If it senses danger, it will attack with a poisonous sting.',
-                ('Poison', None), ('Poison Point', 'Rivalry'),
+                ('Poison', None), ('Poison Point', 'Rivalry'), '',
                 
                 stats = {
                     'hp': '',
@@ -472,7 +472,7 @@ Pokemon_dictionary = {
 
     33: Mon(33, 'Nidorino', 'Poison pin',
                 'Its horn contains venom. If it stabs an enemy with the horn, the impact makes the poison leak out.',
-                ('Poison', None), ('Poison Point', 'Rivalry'),
+                ('Poison', None), ('Poison Point', 'Rivalry'), '',
                 
                 stats = {
                     'hp': '',
@@ -485,7 +485,7 @@ Pokemon_dictionary = {
 
     34: Mon(34, 'Nidoking', 'Drill',
                 'Its steel-like hide adds to its powerful tackle. Its horns are so hard, they can pierce a diamond.',
-                ('Poison', 'Ground'), ('Poison Point', 'Rivalry'),
+                ('Poison', 'Ground'), ('Poison Point', 'Rivalry'), '',
                 
                 stats = {
                     'hp': '',
@@ -498,7 +498,7 @@ Pokemon_dictionary = {
 
     35: Mon(35, 'Clefairy', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -511,7 +511,7 @@ Pokemon_dictionary = {
 
     36: Mon(36, 'Clefable', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -524,7 +524,7 @@ Pokemon_dictionary = {
 
     37: Mon(37, 'Vulpix', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -537,7 +537,7 @@ Pokemon_dictionary = {
 
     38: Mon(38, 'Ninteales', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -550,7 +550,7 @@ Pokemon_dictionary = {
 
     39: Mon(39, 'Jigglypuff', 'Balloon',
                 'Jigglypuff has top-notch lung capacity, even by comparison to other Pokémon. It won\'t stop singing its lullabies until its foes fall asleep.',
-                ('Fairy', None), ('Cute Charm', 'Competitive'), 
+                ('Fairy', None), ('Cute Charm', 'Competitive'),  '',
                 
                 stats = {
                     'hp': '',
@@ -563,7 +563,7 @@ Pokemon_dictionary = {
 
     40: Mon(40, 'Wigglytuff', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -576,7 +576,7 @@ Pokemon_dictionary = {
 
     41: Mon(41, 'Zubat', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -589,7 +589,7 @@ Pokemon_dictionary = {
 
     42: Mon(42, 'Golbat', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -602,7 +602,7 @@ Pokemon_dictionary = {
 
     43: Mon(43, 'Oddish', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -615,7 +615,7 @@ Pokemon_dictionary = {
 
     44: Mon(44, 'Gloom', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -628,7 +628,7 @@ Pokemon_dictionary = {
 
     45: Mon(45, 'Vileplume', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -641,7 +641,7 @@ Pokemon_dictionary = {
 
     46: Mon(46, 'Paras', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -654,7 +654,7 @@ Pokemon_dictionary = {
 
     47: Mon(47, 'Parasect', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -667,7 +667,7 @@ Pokemon_dictionary = {
 
     48: Mon(48, 'Venonat', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -680,7 +680,7 @@ Pokemon_dictionary = {
 
     49: Mon(49, 'Venomoth', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -693,7 +693,7 @@ Pokemon_dictionary = {
 
     50: Mon(50, 'Diglett', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -706,7 +706,7 @@ Pokemon_dictionary = {
 
     51: Mon(51, 'Dugtrio', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -719,7 +719,7 @@ Pokemon_dictionary = {
 
     52: Mon(52, 'Meowth', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -732,7 +732,7 @@ Pokemon_dictionary = {
 
     53: Mon(53, 'Persian', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -745,7 +745,7 @@ Pokemon_dictionary = {
 
     54: Mon(54, 'Psyduck', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -758,7 +758,7 @@ Pokemon_dictionary = {
 
     55: Mon(55, 'Golduck', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -771,7 +771,7 @@ Pokemon_dictionary = {
 
     56: Mon(56, 'Mankey', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -784,7 +784,7 @@ Pokemon_dictionary = {
 
     57: Mon(57, 'Primeape', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -797,7 +797,7 @@ Pokemon_dictionary = {
 
     58: Mon(58, 'Growlithe', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -810,7 +810,7 @@ Pokemon_dictionary = {
 
     59: Mon(59, 'Arcanine', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -823,7 +823,7 @@ Pokemon_dictionary = {
 
     60: Mon(60, 'Poliwag', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -836,7 +836,7 @@ Pokemon_dictionary = {
 
     61: Mon(61, 'Poliwhirl', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -849,7 +849,7 @@ Pokemon_dictionary = {
 
     62: Mon(62, 'Poliwrath', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -862,7 +862,7 @@ Pokemon_dictionary = {
 
     63: Mon(63, 'Abra', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -875,7 +875,7 @@ Pokemon_dictionary = {
 
     64: Mon(64, 'Kadabra', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -888,7 +888,7 @@ Pokemon_dictionary = {
 
     65: Mon(65, 'Alakazam', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -901,7 +901,7 @@ Pokemon_dictionary = {
 
     66: Mon(66, 'Machop', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -914,7 +914,7 @@ Pokemon_dictionary = {
 
     67: Mon(67, 'Machoke', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -927,7 +927,7 @@ Pokemon_dictionary = {
 
     68: Mon(68, 'Machamp', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -940,7 +940,7 @@ Pokemon_dictionary = {
 
     69: Mon(69, 'Bellsprout', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -953,7 +953,7 @@ Pokemon_dictionary = {
 
     70: Mon(70, 'Weepinbell', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -966,7 +966,7 @@ Pokemon_dictionary = {
 
     71: Mon(71, 'Victreebel', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -979,7 +979,7 @@ Pokemon_dictionary = {
 
     72: Mon(72, 'Tentacool', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -992,7 +992,7 @@ Pokemon_dictionary = {
 
     73: Mon(73, 'Tentacruel', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1005,7 +1005,7 @@ Pokemon_dictionary = {
 
     74: Mon(74, 'Geodude', 'Rock',
                 'Commonly found near mountain trails and the like. If you step on one by accident, it gets angry.',
-                ('Rock', 'Ground'), ('Rock Head', 'Sturdy'),
+                ('Rock', 'Ground'), ('Rock Head', 'Sturdy'), '',
                 
                 stats = {
                     'hp': '',
@@ -1018,7 +1018,7 @@ Pokemon_dictionary = {
                 
     75: Mon(75, 'Graveler', 'Rock',
                 'Often seen rolling down mountain trails. Obstacles are just things to roll straight over, not avoid.',
-                ('Rock', 'Ground'), ('Rock Head', 'Sturdy'),
+                ('Rock', 'Ground'), ('Rock Head', 'Sturdy'), '',
                 
                 stats = {
                     'hp': '',
@@ -1031,7 +1031,7 @@ Pokemon_dictionary = {
 
     76: Mon(76, 'Golem', 'Megaton',
                 'Once it sheds its skin, its body turns tender and whitish. Its hide hardens when it\'s exposed to air.',
-                ('Rock', 'Ground'), ('Rock Head', 'Sturdy'),
+                ('Rock', 'Ground'), ('Rock Head', 'Sturdy'), '',
                 
                 stats = {
                     'hp': '',
@@ -1044,7 +1044,7 @@ Pokemon_dictionary = {
 
     77: Mon(77, 'Ponyta', 'Fire Horse',
                 'It can\'t run properly when it’s newly born. As it races around with others of its kind, its legs grow stronger.',
-                ('Fire', None), ('Run Away', 'Flash Fire'),
+                ('Fire', None), ('Run Away', 'Flash Fire'), '',
                 
                 stats = {
                     'hp': '',
@@ -1057,7 +1057,7 @@ Pokemon_dictionary = {
 
     78: Mon(78, 'Rapidash', 'Fire Horse',
                 'This Pokémon can be seen galloping through fields at speeds of up to 150 mph, its fiery mane fluttering in the wind.',
-                ('Fire', None), ('Run Away', 'Flash Fire'),
+                ('Fire', None), ('Run Away', 'Flash Fire'), '',
                 
                 stats = {
                     'hp': '',
@@ -1070,7 +1070,7 @@ Pokemon_dictionary = {
 
     79: Mon(79, 'Slowpoke', 'Dopey',
                 'Slow-witted and oblivious, this Pokémon won\'t feel any pain if its tail gets eaten. It won\'t notice when its tail grows back, either.',
-                ('Water', 'Psychic'), ('Oblivious', 'Own Tempo'),
+                ('Water', 'Psychic'), ('Oblivious', 'Own Tempo'), '',
                 
                 stats = {
                     'hp': '',
@@ -1083,7 +1083,7 @@ Pokemon_dictionary = {
 
     80: Mon(80, 'Slowbro', 'Hermit Crab',
                 'Slowpoke became Slowbro when a Shellder bit on to its tail. Sweet flavors seeping from the tail make the Shellder feel as if its life is a dream.',
-                ('Water', 'Psychic'), ('Oblivious', 'Own Tempo'),
+                ('Water', 'Psychic'), ('Oblivious', 'Own Tempo'), '',
                 
                 stats = {
                     'hp': '',
@@ -1096,7 +1096,7 @@ Pokemon_dictionary = {
 
     81: Mon(81, 'Magnemite', 'Magnet',
                 'At times, Magnemite runs out of electricity and ends up on the ground. If you give batteries to a grounded Magnemite, it\'ll start moving again.',
-                ('Electric', 'Steel'), ('Sturdy', 'Magnet Pull'),
+                ('Electric', 'Steel'), ('Sturdy', 'Magnet Pull'), '',
                 
                 stats = {
                     'hp': '',
@@ -1109,7 +1109,7 @@ Pokemon_dictionary = {
 
     82: Mon(82, 'Magneton', 'Magnet',
                 'This Pokémon is three Magnemite that have linked together. Magneton sends out powerful radio waves to study its surroundings.',
-                ('Electric', 'Steel'), ('Sturdy', 'Magnet Pull'),
+                ('Electric', 'Steel'), ('Sturdy', 'Magnet Pull'), '',
                 
                 stats = {
                     'hp': '',
@@ -1122,7 +1122,7 @@ Pokemon_dictionary = {
 
     83: Mon(83, 'Farfetch\'d', 'Wild Duck',
                 'The stalk this Pokémon carries in its wings serves as a sword to cut down opponents. In a dire situation, the stalk can also serve as food.',
-                ('Normal', 'Flying'), ('Keen Eye', 'Inner Focus'),
+                ('Normal', 'Flying'), ('Keen Eye', 'Inner Focus'), '',
                 
                 stats = {
                     'hp': '',
@@ -1135,7 +1135,7 @@ Pokemon_dictionary = {
 
     84: Mon(84, 'Doduo', 'Twin Bird',
                 'Its short wings make flying difficult. Instead, this Pokémon runs at high speed on developed legs.',
-                ('Normal', 'Flying'), ('Run Away', 'Early Bird'),
+                ('Normal', 'Flying'), ('Run Away', 'Early Bird'), '',
                 
                 stats = {
                     'hp': '',
@@ -1148,7 +1148,7 @@ Pokemon_dictionary = {
 
     85: Mon(85, 'Dodrio', 'Triple Bird',
                 'One of Doduo\'s two heads splits to form a unique species. It runs close to 40 mph in prairies.',
-                ('Normal', 'Flying'), ('Run Away', 'Early Bird'),
+                ('Normal', 'Flying'), ('Run Away', 'Early Bird'), '',
                 
                 stats = {
                     'hp': '',
@@ -1161,7 +1161,7 @@ Pokemon_dictionary = {
 
     86: Mon(86, 'Seel', 'Sea Lion',
                 'Loves freezing-cold conditions. Relishes swimming in a frigid climate of around 14 degrees Fahrenheit.',
-                ('Water', None), ('Thick Fat', 'Hydration'),
+                ('Water', None), ('Thick Fat', 'Hydration'), '',
                 
                 stats = {
                     'hp': '',
@@ -1174,7 +1174,7 @@ Pokemon_dictionary = {
 
     87: Mon(87, 'Dewgong', 'Sea Lion',
                 'Its entire body is a snowy white. Unharmed by even intense cold, it swims powerfully in icy waters.',
-                ('Water', 'Ice'), ('Thick Fat', 'Hydration'),
+                ('Water', 'Ice'), ('Thick Fat', 'Hydration'), '',
                 
                 stats = {
                     'hp': '',
@@ -1187,7 +1187,7 @@ Pokemon_dictionary = {
 
     88: Mon(88, 'Grimer', 'Sludge',
                 'Made of congealed sludge. It smells too putrid to touch. Even weeds won\'t grow in its path.',
-                ('Poison', None), ('Stench', 'Sticky Hold'),
+                ('Poison', None), ('Stench', 'Sticky Hold'), '',
                 
                 stats = {
                     'hp': '',
@@ -1200,7 +1200,7 @@ Pokemon_dictionary = {
 
     89: Mon(89, 'Muk', 'Sludge',
                 'Smells so awful, it can cause fainting. Through degeneration of its nose, it lost its sense of smell.',
-                ('Poison', None), ('Stench', 'Sticky Hold'),
+                ('Poison', None), ('Stench', 'Sticky Hold'), '',
                 
                 stats = {
                     'hp': '',
@@ -1213,7 +1213,7 @@ Pokemon_dictionary = {
 
     90: Mon(90, 'Shellder', 'Bivalve',
                 'It swims facing backward by opening and closing its two-piece shell. It is surprisingly fast.',
-                ('Water', None), ('Shell Armor', 'Skill Link'),
+                ('Water', None), ('Shell Armor', 'Skill Link'), '',
                 
                 stats = {
                     'hp': '',
@@ -1226,7 +1226,7 @@ Pokemon_dictionary = {
 
     91: Mon(91, 'Cloyster', 'Bivalve',
                 'Its shell is extremely hard. It cannot be shattered, even with a bomb. The shell opens only when it is attacking.',
-                ('Water', 'Ice'), ('Shell Armor', 'Skill Link'),
+                ('Water', 'Ice'), ('Shell Armor', 'Skill Link'), '',
                 
                 stats = {
                     'hp': '',
@@ -1239,7 +1239,7 @@ Pokemon_dictionary = {
 
     92: Mon(92, 'Gastly', 'Gas',
                 'Born from gases, anyone would faint if engulfed by its gaseous body, which contains poison.',
-                ('Ghost', 'Poison'), ('Gen 3-5: Levitate', 'Gen 6+: Cursed Body'),
+                ('Ghost', 'Poison'), ('Gen 3-5: Levitate', 'Gen 6+: Cursed Body'), '',
                 
                 stats = {
                     'hp': '',
@@ -1252,7 +1252,7 @@ Pokemon_dictionary = {
 
     93: Mon(93, 'Haunter', 'Gas',
                 'Its tongue is made of gas. If licked, its victim starts shaking constantly until death eventually comes.',
-                ('Ghost', 'Poison'), ('Gen 3-5: Levitate', 'Gen 6+: Cursed Body'),
+                ('Ghost', 'Poison'), ('Gen 3-5: Levitate', 'Gen 6+: Cursed Body'), '',
                 
                 stats = {
                     'hp': '',
@@ -1265,7 +1265,7 @@ Pokemon_dictionary = {
 
     94: Mon(94, 'Gengar', 'Shadow',
                 'On the night of a full moon, if shadows move on their own and laugh, it must be Gengar\'s doing.',
-                ('Ghost', 'Poison'), ('Gen 3-5: Levitate', 'Gen 6+: Cursed Body'),
+                ('Ghost', 'Poison'), ('Gen 3-5: Levitate', 'Gen 6+: Cursed Body'), '',
                 
                 stats = {
                     'hp': '',
@@ -1278,7 +1278,7 @@ Pokemon_dictionary = {
 
     95: Mon(95, 'Onix', 'Rock Snake',
                 'As it digs through the ground, it absorbs many hard objects. This is what makes its body so solid.',
-                ('Rock', 'Ground'), ('Rock Head', 'Sturdy'),
+                ('Rock', 'Ground'), ('Rock Head', 'Sturdy'), '',
                 
                 stats = {
                     'hp': '',
@@ -1291,7 +1291,7 @@ Pokemon_dictionary = {
 
     96: Mon(96, 'Drowzee', 'Hypnosis',
                 'If you sleep by it all the time, it will sometimes show you dreams it had eaten in the past.',
-                ('Psychic', None), ('Insomnia', 'Forewarn'),
+                ('Psychic', None), ('Insomnia', 'Forewarn'), '',
                 
                 stats = {
                     'hp': '',
@@ -1304,7 +1304,7 @@ Pokemon_dictionary = {
 
     97: Mon(97, 'Hypno', 'Hypnosis',
                 'Avoid eye contact if you come across one. It will try to put you to sleep by using its pendulum.',
-                ('Psychic', None), ('Insomnia', 'Forewarn'),
+                ('Psychic', None), ('Insomnia', 'Forewarn'), '',
                 
                 stats = {
                     'hp': '',
@@ -1317,7 +1317,7 @@ Pokemon_dictionary = {
 
     98: Mon(98, 'Krabby', 'River Crab',
                 'It can be found near the sea. The large pincers grow back if they are torn out of their sockets.',
-                ('Water', None), ('Shell Armor', 'Hyper Cutter'),
+                ('Water', None), ('Shell Armor', 'Hyper Cutter'), '',
                 
                 stats = {
                     'hp': '',
@@ -1330,7 +1330,7 @@ Pokemon_dictionary = {
 
     99: Mon(99, 'Kingler', 'Pincer',
                 'Its large and hard pincer has 10,000-horsepower strength. However, being so big, it is unwieldy to move.',
-                ('Water', None), ('Shell Armor', 'Hyper Cutter'),
+                ('Water', None), ('Shell Armor', 'Hyper Cutter'), '',
                 
                 stats = {
                     'hp': '',
@@ -1343,8 +1343,7 @@ Pokemon_dictionary = {
 
     100: Mon(100, 'Voltorb', 'Ball',
                  'It is said to camouflage itself as a Poké Ball. It will self-destruct with very little stimulus.',
-                 ('Electric', None), ('Static', 'Soundproof'),
-                 
+                 ('Electric', None), ('Static', 'Soundproof'), '',                 
                  stats = {
                     'hp': '',
                     'attack': '',
@@ -1356,8 +1355,7 @@ Pokemon_dictionary = {
 
     101: Mon(101, 'Electrode', 'Ball',
                  'Stores electrical energy inside its body. Even the slightest shock could trigger a huge explosion.',
-                 ('Electric', None), ('Static', 'Soundproof'),
-                 
+                 ('Electric', None), ('Static', 'Soundproof'), '',                 
                  stats = {
                     'hp': '',
                     'attack': '',
@@ -1369,8 +1367,7 @@ Pokemon_dictionary = {
 
     102: Mon(102, 'Exeggcute', 'Egg',
                  'Though it may look like it\'s just a bunch of eggs, it’s a proper Pokémon. Exeggcute communicates with others of its kind via telepathy, apparently.',
-                 ('Grass', 'Psychic'), ('Chlorophyll', None),
-                 
+                 ('Grass', 'Psychic'), ('Chlorophyll', None), '',                 
                  stats = {
                     'hp': '',
                     'attack': '',
@@ -1382,8 +1379,7 @@ Pokemon_dictionary = {
 
     103: Mon(103, 'Exeggutor', 'Coconut',
                  'Each of Exeggutor\'s three heads is thinking different thoughts. The three don\'t seem to be very interested in one another.',
-                 ('Grass', 'Psychic'), ('Chlorophyll', None),
-                 
+                 ('Grass', 'Psychic'), ('Chlorophyll', None), '',                 
                  stats = {
                     'hp': '',
                     'attack': '',
@@ -1395,8 +1391,7 @@ Pokemon_dictionary = {
 
     104: Mon(104, 'Cubone', 'Lonely',
                  'When the memory of its departed mother brings it to tears, its cries echo mournfully within the skull it wears on its head.',
-                 ('Ground', None), ('Rock Head', 'Lightning Rod'),
-                 
+                 ('Ground', None), ('Rock Head', 'Lightning Rod'), '',                 
                  stats = {
                     'hp': '',
                     'attack': '',
@@ -1408,8 +1403,7 @@ Pokemon_dictionary = {
 
     105: Mon(105, 'Marowak', 'Bone Keeper',
                  'This Pokémon overcame its sorrow to evolve a sturdy new body. Marowak faces its opponents bravely, using a bone as a weapon.',
-                 ('Ground', None), ('Rock Head', 'Lightning Rod'),
-                 
+                 ('Ground', None), ('Rock Head', 'Lightning Rod'), '',                 
                  stats = {
                     'hp': '',
                     'attack': '',
@@ -1421,8 +1415,7 @@ Pokemon_dictionary = {
 
     106: Mon(106, 'Hitmonlee', 'Kicking',
                  'This amazing Pokémon has an awesome sense of balance. It can kick in succession from any position.',
-                 ('Fighting', None), ('Limber', 'Reckless'),
-                 
+                 ('Fighting', None), ('Limber', 'Reckless'), '',                 
                  stats = {
                     'hp': '',
                     'attack': '',
@@ -1434,8 +1427,7 @@ Pokemon_dictionary = {
 
     107: Mon(107, 'Hitmonchan', 'Punching',
                  'Its punches slice the air. They are launched at such high speed, even a slight graze could cause a burn.',
-                 ('Fighting', None), ('Keen Eye', 'Iron Fist'),
-                 
+                 ('Fighting', None), ('Keen Eye', 'Iron Fist'), '',                 
                  stats = {
                     'hp': '',
                     'attack': '',
@@ -1447,7 +1439,7 @@ Pokemon_dictionary = {
 
     108: Mon(108, 'Lickitung', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1460,7 +1452,7 @@ Pokemon_dictionary = {
 
     109: Mon(109, 'Koffing', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1473,7 +1465,7 @@ Pokemon_dictionary = {
 
     110: Mon(110, 'Weezing', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1486,7 +1478,7 @@ Pokemon_dictionary = {
 
     111: Mon(111, 'Rhyhorn', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1499,7 +1491,7 @@ Pokemon_dictionary = {
 
     112: Mon(112, 'Rhydon', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1512,7 +1504,7 @@ Pokemon_dictionary = {
 
     113: Mon(113, 'Chansey', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1525,7 +1517,7 @@ Pokemon_dictionary = {
 
     114: Mon(114, 'Tangela', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1538,7 +1530,7 @@ Pokemon_dictionary = {
 
     115: Mon(115, 'Kangaskhan', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1551,7 +1543,7 @@ Pokemon_dictionary = {
 
     116: Mon(116, 'Horsea', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1564,7 +1556,7 @@ Pokemon_dictionary = {
 
     117: Mon(117, 'Seadra', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1577,7 +1569,7 @@ Pokemon_dictionary = {
 
     118: Mon(118, 'Goldeen', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1590,7 +1582,7 @@ Pokemon_dictionary = {
 
     119: Mon(119, 'Seaking', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1603,7 +1595,7 @@ Pokemon_dictionary = {
 
     120: Mon(120, 'Staryu', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1616,7 +1608,7 @@ Pokemon_dictionary = {
 
     121: Mon(121, 'Starmie', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1629,7 +1621,7 @@ Pokemon_dictionary = {
 
     122: Mon(122, 'Mr. Mime', 'Barrier',
                 'The broadness of its hands may be no coincidence—many scientists believe its palms became enlarged specifically for pantomiming.',
-                ('Psychic', 'Fairy'), ('Soundproof', 'Filter'),
+                ('Psychic', 'Fairy'), ('Soundproof', 'Filter'), '',
                 
                 stats = {
                     'hp': '',
@@ -1642,7 +1634,7 @@ Pokemon_dictionary = {
 
     123: Mon(123, 'Scyther', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1655,7 +1647,7 @@ Pokemon_dictionary = {
 
     124: Mon(124, 'Jynx', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1668,7 +1660,7 @@ Pokemon_dictionary = {
 
     125: Mon(125, 'Electabuzz', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1681,7 +1673,7 @@ Pokemon_dictionary = {
 
     126: Mon(126, 'Magmar', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1694,7 +1686,7 @@ Pokemon_dictionary = {
 
     127: Mon(127, 'Pinsir', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1707,7 +1699,7 @@ Pokemon_dictionary = {
 
     128: Mon(128, 'Tauros', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1720,7 +1712,7 @@ Pokemon_dictionary = {
 
     129: Mon(129, 'Magikarp', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1733,7 +1725,7 @@ Pokemon_dictionary = {
 
     130: Mon(130, 'Gyarados', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1746,7 +1738,7 @@ Pokemon_dictionary = {
 
     131: Mon(131, 'Lapras', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1759,7 +1751,7 @@ Pokemon_dictionary = {
 
     132: Mon(132, 'Ditto', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1772,7 +1764,7 @@ Pokemon_dictionary = {
 
     133: Mon(133, 'Eevee', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1785,7 +1777,7 @@ Pokemon_dictionary = {
 
     134: Mon(134, 'Vaporeon', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1798,7 +1790,7 @@ Pokemon_dictionary = {
 
     135: Mon(135, 'Jolteon', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1811,7 +1803,7 @@ Pokemon_dictionary = {
 
     136: Mon(136, 'Flareon', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1824,7 +1816,7 @@ Pokemon_dictionary = {
 
     137: Mon(137, 'Porygon', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1837,7 +1829,7 @@ Pokemon_dictionary = {
 
     138: Mon(138, 'Omanyte', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1850,7 +1842,7 @@ Pokemon_dictionary = {
 
     139: Mon(139, 'Omastar', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1863,7 +1855,7 @@ Pokemon_dictionary = {
 
     140: Mon(140, 'Kabuto', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1876,7 +1868,7 @@ Pokemon_dictionary = {
 
     141: Mon(141, 'Kabutops', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1889,7 +1881,7 @@ Pokemon_dictionary = {
 
     142: Mon(142, 'Aerodactyl', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1902,7 +1894,7 @@ Pokemon_dictionary = {
 
     143: Mon(143, 'Snorlax', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1915,7 +1907,7 @@ Pokemon_dictionary = {
 
     144: Mon(144, 'Articuno', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1928,7 +1920,7 @@ Pokemon_dictionary = {
 
     145: Mon(145, 'Zapdos', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1941,7 +1933,7 @@ Pokemon_dictionary = {
 
     146: Mon(146, 'Moltres', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1954,7 +1946,7 @@ Pokemon_dictionary = {
 
     147: Mon(147, 'Dratini', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1967,7 +1959,7 @@ Pokemon_dictionary = {
 
     148: Mon(148, 'Dragonair', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1980,7 +1972,7 @@ Pokemon_dictionary = {
 
     149: Mon(149, 'Dragonite', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -1993,7 +1985,7 @@ Pokemon_dictionary = {
 
     150: Mon(150, 'Mewtwo', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
@@ -2006,7 +1998,7 @@ Pokemon_dictionary = {
 
     151: Mon(151, 'Mew', '',
                 '',
-                ('', None), ('', ''),
+                ('', None), ('', ''), '',
                 
                 stats = {
                     'hp': '',
