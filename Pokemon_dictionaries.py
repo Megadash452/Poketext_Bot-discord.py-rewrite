@@ -13,6 +13,7 @@ class Mon:
         self.poke_specie = poke_specie + ' Pokémon'
         self.desc = desc
         self.types = types
+        self.weakness = ''
         self.abilities = abilities
         self.stats = stats
 
@@ -496,9 +497,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    35: Mon(35, 'Clefairy', '',
-                '',
-                ('', None), ('', ''), '',
+    35: Mon(35, 'Clefairy', 'Fairy',
+                'It is said that happiness will come to those who see a gathering of Clefairy dancing under a full moon.',
+                ('Fairy', None), ('Cute Charm', 'Magic Guard'), '',
                 
                 stats = {
                     'hp': '',
@@ -509,9 +510,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    36: Mon(36, 'Clefable', '',
-                '',
-                ('', None), ('', ''), '',
+    36: Mon(36, 'Clefable', 'Fairy',
+                'A timid fairy Pokémon that is rarely seen, it will run and hide the moment it senses people.',
+                ('Fairy', None), ('Cute Charm', 'Magic Guard'), '',
                 
                 stats = {
                     'hp': '',
@@ -522,9 +523,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    37: Mon(37, 'Vulpix', '',
-                '',
-                ('', None), ('', ''), '',
+    37: Mon(37, 'Vulpix', 'Fox',
+                'While young, it has six gorgeous tails. When it grows, several new tails are sprouted.',
+                ('Fire', None), ('Flash Fire', None), '',
                 
                 stats = {
                     'hp': '',
@@ -535,9 +536,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    38: Mon(38, 'Ninteales', '',
-                '',
-                ('', None), ('', ''), '',
+    38: Mon(38, 'Ninteales', 'Fox',
+                'It is said to live 1,000 years, and each of its tails is loaded with supernatural powers.',
+                ('Fire', None), ('Flash Fire', None), '',
                 
                 stats = {
                     'hp': '',
@@ -550,7 +551,7 @@ Pokemon_dictionary = {
 
     39: Mon(39, 'Jigglypuff', 'Balloon',
                 'Jigglypuff has top-notch lung capacity, even by comparison to other Pokémon. It won\'t stop singing its lullabies until its foes fall asleep.',
-                ('Fairy', None), ('Cute Charm', 'Competitive'),  '',
+                ('Normal', 'Fairy'), ('Cute Charm', 'Competitive'),  '',
                 
                 stats = {
                     'hp': '',
@@ -561,9 +562,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    40: Mon(40, 'Wigglytuff', '',
-                '',
-                ('', None), ('', ''), '',
+    40: Mon(40, 'Wigglytuff', 'Balloon',
+                'The more air it takes in, the more it inflates. If opponents catch it in a bad mood, it will inflate itself to an enormous size to intimidate them.',
+                ('Normal', 'Fairy'), ('Cute Charm', 'Competitive'), '',
                 
                 stats = {
                     'hp': '',
@@ -574,9 +575,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    41: Mon(41, 'Zubat', '',
-                '',
-                ('', None), ('', ''), '',
+    41: Mon(41, 'Zubat', 'Bat',
+                'Emits ultrasonic cries while it flies. They act as a sonar used to check for objects in its way.',
+                ('Poison', 'Flying'), ('Inner Focus', None), '',
                 
                 stats = {
                     'hp': '',
@@ -587,9 +588,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    42: Mon(42, 'Golbat', '',
-                '',
-                ('', None), ('', ''), '',
+    42: Mon(42, 'Golbat', 'Bat',
+                'It attacks in a stealthy manner, without warning. Its sharp fangs are used to bite and to suck blood.',
+                ('Poison', 'Flying'), ('Inner Focus', None), '',
                 
                 stats = {
                     'hp': '',
@@ -600,9 +601,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    43: Mon(43, 'Oddish', '',
-                '',
-                ('', None), ('', ''), '',
+    43: Mon(43, 'Oddish', 'Weed',
+                'If exposed to moonlight, it starts to move. It roams far and wide at night to scatter its seeds.',
+                ('Grass', 'Poison'), ('Chlorophyl', None), '',
                 
                 stats = {
                     'hp': '',
@@ -613,9 +614,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    44: Mon(44, 'Gloom', '',
-                '',
-                ('', None), ('', ''), '',
+    44: Mon(44, 'Gloom', 'Weed',
+                'Its pistils exude an incredibly foul odor. The horrid stench can cause fainting at a distance of 1.25',
+                ('Grass', 'Poison'), ('Chlorophyl', None), '',
                 
                 stats = {
                     'hp': '',
@@ -626,9 +627,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    45: Mon(45, 'Vileplume', '',
-                '',
-                ('', None), ('', ''), '',
+    45: Mon(45, 'Vileplume', 'Flower',
+                'It has the world\'s largest petals. With every step, the petals shake out heavy clouds of toxic pollen.',
+                ('Grass', 'Poison'), ('Chlorophyl', None), '',
                 
                 stats = {
                     'hp': '',
@@ -639,9 +640,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    46: Mon(46, 'Paras', '',
-                '',
-                ('', None), ('', ''), '',
+    46: Mon(46, 'Paras', 'Mushroom',
+                'Burrows under the ground to gnaw on tree roots. The mushrooms on its back absorb most of the nutrition.',
+                ('Bug', 'Grass'), ('Effect Spore', 'Dry Skin'), '',
                 
                 stats = {
                     'hp': '',
@@ -652,9 +653,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    47: Mon(47, 'Parasect', '',
-                '',
-                ('', None), ('', ''), '',
+    47: Mon(47, 'Parasect', 'Mushroom',
+                'The bug host is drained of energy by the mushroom on its back. The mushroom appears to do all the thinking.',
+                ('Bug', 'Grass'), ('Effect Spore', 'Dry Skin'), '',
                 
                 stats = {
                     'hp': '',
@@ -665,9 +666,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    48: Mon(48, 'Venonat', '',
-                '',
-                ('', None), ('', ''), '',
+    48: Mon(48, 'Venonat', 'Insect',
+                'Its large eyes act as radar. In a bright place, you can see that they are clusters of many tiny eyes.',
+                ('Bug', 'Poison'), ('Compound Eyes', 'Tinted Lens'), '',
                 
                 stats = {
                     'hp': '',
@@ -678,9 +679,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    49: Mon(49, 'Venomoth', '',
-                '',
-                ('', None), ('', ''), '',
+    49: Mon(49, 'Venomoth', 'Poison Moth',
+                'The powdery scales on its wings are hard to remove from skin. They also contain poison that leaks out on contact.',
+                ('Bug', 'Poison'), ('Shield Dust', 'Tinted Lens'), '',
                 
                 stats = {
                     'hp': '',
@@ -691,9 +692,9 @@ Pokemon_dictionary = {
                     'speed': ''
                }),
 
-    50: Mon(50, 'Diglett', '',
-                '',
-                ('', None), ('', ''), '',
+    50: Mon(50, 'Diglett', 'Mole',
+                'If a Diglett digs through a field, it leaves the soil perfectly tilled and ideal for planting crops.',
+                ('Ground', None), ('Sand Veil', 'Arena Trap'), '',
                 
                 stats = {
                     'hp': '',
