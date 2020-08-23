@@ -2,8 +2,8 @@ import discord, json, random
 from discord.ext import commands
 from discord.utils import get
 
-from Pokemon_dictionaries import Pokemon_dictionary as Pokemon
-from type_colors import type_colors
+from Mon_data.Pokemon_dictionaries import Pokemon_dictionary as Pokemon
+from Mon_data.type_colors import type_colors
 
 def read_token(file):
     with open(file, 'r') as f:
@@ -167,7 +167,7 @@ async def info(ctx, *, mon):
             int(mon) + 1
             call = int(mon)
         except:
-            from Pokemon_dictionaries import Number_dictionary as Dic
+            from Mon_data.Pokemon_dictionaries import Number_dictionary as Dic
             call = int(Dic[mon.lower()])
     else:
         call = random.randrange(1, 27+1, 1)
