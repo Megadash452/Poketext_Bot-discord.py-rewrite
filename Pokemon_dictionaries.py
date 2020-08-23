@@ -7,8 +7,8 @@ class Item:
 class Mon:
     total_num_of_pokemon = 0
 
-    def __init__(self, num, name, poke_specie, desc, types, abilities, classification, stats):
-        self.num = num
+    def __init__(self, number, name, poke_specie, desc, types, abilities, clategory, stats):
+        self.number = number
         self.name = name
         self.poke_specie = poke_specie + ' Pokémon'
         self.desc = desc
@@ -16,7 +16,7 @@ class Mon:
         self.abilities = abilities
         self.stats = stats
 
-        if not self.num == 0:
+        if not self.number == 0:
             self.sprite = {
                     'small': {
                         'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1-small/{}-small.png'.format(self.name),
