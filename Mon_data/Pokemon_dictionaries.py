@@ -14,6 +14,7 @@ class Mon:
         self.desc = desc
         self.types = types
         self.weakness = ''
+        self.strength =''
         self.abilities = abilities
         self.stats = stats
 
