@@ -183,6 +183,7 @@ async def info(ctx, *, mon):
 
     embed.set_image(url=Pokemon[call].sprite['big']['url'])
     embed.set_thumbnail(url=Pokemon[call].sprite['small']['url'])
+    embed.set_footer(text='weaknesses: \n \n\nstrengths: \n ')
     
 
     await ctx.send(embed=embed)

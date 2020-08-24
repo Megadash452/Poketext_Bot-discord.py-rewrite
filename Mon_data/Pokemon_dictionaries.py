@@ -1,3 +1,5 @@
+from type_data import type_data
+
 class Item:
     def __init__(self, name, type):
         self.name = name
@@ -12,9 +14,11 @@ class Mon:
         self.name = name
         self.poke_specie = poke_specie + ' Pokémon'
         self.desc = desc
+        
         self.types = types
-        self.weakness = ''
-        self.strength =''
+        self.weaknesses = type_data[self.types[1]]['weaknesses'] + type_data[self.types[2]]['weaknesses']
+        self.strengths = type_data[self.types[1]]['strengths'] + type_data[self.types[2]]['strengths']
+
         self.abilities = abilities
         self.stats = stats
 
@@ -32,7 +36,7 @@ class Mon:
             }
         else:
             self.sprite = {'big':{'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1pokemon_sprites(colored).png'},
-                            'small':{'url': None}
+                            'small':{'url': 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/Transparent.png'}
             }
 
         if self.name == 'Mr. Mime':
