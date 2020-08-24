@@ -58,6 +58,9 @@ class Mon:
         strongs_return = []
         weaks_return = []
 
+        s_repeat_appendix = []
+        w_repeat_appendix = []
+
         for strength in strongs:
             if not strength in weaks:
                 #print('{} is **not** in strengths\n'.format(weakness))
@@ -74,10 +77,18 @@ class Mon:
                 #print('{} --is-- in strengths\n'.format(weakness))
                 pass
 
+        for strength in strongs_return:
+            if not strength in s_repeat_appendix:
+                s_repeat_appendix.append(strength)
+
+        for weakness in weaks_return:
+            if not weakness in w_repeat_appendix:
+                w_repeat_appendix.append(weakness)
+
         if which == 'strengths':
-            return strongs_return
+            return s_repeat_appendix
         elif which == 'weaknesses':
-            return weaks_return
+            return w_repeat_appendix
 
 
 
