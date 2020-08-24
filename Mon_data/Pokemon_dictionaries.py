@@ -20,8 +20,9 @@ class Mon:
         self.desc = desc
 
         self.types = types
-        self.weaknesses = type_data[self.types[0]]['weaknesses'].append(type_data[self.types[1]]['weaknesses'])
-        self.strengths = type_data[self.types[0]]['strengths'].append(type_data[self.types[1]]['strengths'])
+
+        self.weaknesses = self.get_true_w_or_s('weaknesses')
+        self.strengths = self.get_true_w_or_s('strengths')
 
         self.abilities = abilities
         self.stats = stats
@@ -48,6 +49,37 @@ class Mon:
             self.sprite['big']['url'] = 'https://raw.githubusercontent.com/Megadash452/Poketext_Bot-discord.py-rewrite/master/pokemon-sprites/gen1-big/Mr.%20Mime-big.png'
 
         Mon.total_num_of_pokemon += 1
+
+
+    def get_true_w_or_s(self, which):
+        weaks = type_data[self.types[0]]['weaknesses'] + type_data[self.types[1]]['weaknesses']
+        strongs = type_data[self.types[0]]['strengths'] + type_data[self.types[1]]['strengths']
+
+        weaks_return = []
+        strongs_return = []
+
+        for weakness in weaks:
+            if not weakness in strongs:
+                #print('{} is **not** in strengths\n'.format(weakness))
+                weaks_return.append(weakness)
+            else:
+                #print('{} --is-- in strengths\n'.format(weakness))
+                pass
+
+        for strength in strongs:
+            if not strength in weaks:
+                #print('{} is **not** in strengths\n'.format(weakness))
+                strongs_return.append(strength)
+            else:
+                #print('{} --is-- in strengths\n'.format(weakness))
+                pass
+
+        if which == 'weaknesses':
+            return weaks_return
+        elif which == 'strengths':
+            return strongs_return
+
+
 
 
 # ------ Dictionary ------ ------ ------ ------ ------ ------ ------ ------ ------
