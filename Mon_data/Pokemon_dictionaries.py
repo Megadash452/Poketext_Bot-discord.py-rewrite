@@ -1,4 +1,5 @@
-from type_data import type_data
+if __name__ == '__main__':
+    from type_data import type_data
 
 class Item:
     def __init__(self, name, type):
