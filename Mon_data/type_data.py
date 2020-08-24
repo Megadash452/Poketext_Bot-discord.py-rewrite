@@ -6,8 +6,8 @@ type_data = {
             'rgb': (255, 216, 35),
             'hex': 'ffd823'
         },
-        'strengths': [''],
-        'weaknesses': ['']
+        'strengths': [None],
+        'weaknesses': [None]
     },
     'Normal': {
         'color': {
@@ -15,7 +15,7 @@ type_data = {
             'hex': 'a8a878'
         },
         'strengths': [
-            'None'
+            None
         ],
         'weaknesses': [
             'Fighting'
@@ -75,10 +75,10 @@ type_data = {
             'hex': '78c850'
         },
         'strengths': [
-
+            'Water', 'Electric', 'Grass', 'Ground'
         ],
         'weaknesses': [
-
+            'Fire', 'Ice', 'Poison', 'Flying', 'Bug'
         ]
     },
     'Poison': {
@@ -87,10 +87,10 @@ type_data = {
             'hex': 'a040a0'
         },
         'strengths': [
-
+            'Grass', 'Fighting', 'Poison', 'Bug', 'Fairy'
         ],
         'weaknesses': [
-
+            'Ground', 'Psychic'
         ]
     },
     'Electric': {
@@ -239,3 +239,67 @@ type_data = {
     },
     None: {'strengths': [''], 'weaknesses': ['']}
 }
+
+#for later
+"""def get_weaknesses(self):
+        type_1w = type_data[self.types[0]]['weaknesses']
+        type_2w = type_data[self.types[1]]['weaknesses']
+        strengths = type_data[self.types[0]]['strengths'].append(type_data[self.types[1]]['strengths'])
+        weaknesses_list = []
+
+        try:
+            for weakness in type_1w:
+                if not weakness in type_2w:
+                    if not weakness in strengths:
+                        weaknesses_list.append(weakness)
+        except:
+            pass
+
+        weaknesses_list.append(type_2w)
+
+        return weaknesses_list
+
+    def get_strengths(self):
+        type_1s = type_data[self.types[0]]['strengths']
+        type_2s = type_data[self.types[1]]['strengths']
+        weaknesses = type_data[self.types[0]]['weaknesses'].append(type_data[self.types[1]]['weaknesses'])
+        strengths_list = []
+
+        try:
+            for strength in type_1s:
+                if not strength in type_2s:
+                    if not strength in weaknesses:
+                        strengths_list.append(strength)
+        except:
+            pass
+
+        strengths_list.append(type_2s)
+
+        return strengths_list
+
+    def get_weaknesses_str(self):
+        return_str = ''
+        weaknesses_str = str(self.get_weaknesses())
+
+        for char in weaknesses_str:
+            if not char in '[]\'':
+                return_str += char
+            
+        return return_str
+
+    def get_strengths_str(self):
+        return_str = ''
+        strengths_str = str(self.get_strengths())
+
+        for char in strengths_str:
+            if not char in '[]\'':
+                return_str += char
+            
+        return return_str
+
+    def attack(self):
+        print(self.name + ' has attacked')
+
+    def faint(self):
+        print(self.name + ' has attacked')
+"""
