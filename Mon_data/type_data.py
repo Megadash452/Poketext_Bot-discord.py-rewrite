@@ -99,10 +99,10 @@ type_data = {
             'hex': 'f8d030'
         },
         'strengths': [
-
+            'Electric', 'Flying', 'Steel'
         ],
         'weaknesses': [
-
+            'Ground'
         ]
     },
     'Ground': {
@@ -111,10 +111,10 @@ type_data = {
             'hex': 'e0c068'
         },
         'strengths': [
-
+            'Poison', 'Rock'
         ],
         'weaknesses': [
-
+            'Water', 'Grass', 'Ice'
         ]
     },
     'Psychic': {
@@ -123,10 +123,10 @@ type_data = {
             'hex': 'f85888'
         },
         'strengths': [
-
+            'Fighting', 'Psychic'
         ],
         'weaknesses': [
-
+            'Bug', 'Ghost', 'Dark'
         ]
     },
     'Rock': {
