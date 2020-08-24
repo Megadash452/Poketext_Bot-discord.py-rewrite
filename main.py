@@ -3,7 +3,7 @@ from discord.ext import commands
 from discord.utils import get
 
 from Mon_data.Pokemon_dictionaries import Pokemon_dictionary as Pokemon
-from Mon_data.type_data import type_data
+from Mon_data.type_data import *
 
 def read_token(file):
     with open(file, 'r') as f:
@@ -154,7 +154,9 @@ async def rand(ctx):
         embed.add_field(name='Types', value=f'{Pokemon[random_num].types[0]}\n{Pokemon[random_num].types[1]}', inline=False)
 
     embed.set_image(url=Pokemon[random_num].sprite['big']['url'])
-    #embed.set_thumbnail(url=Pokemon[random_num].sprite['small']['url'])
+    embed.set_thumbnail(url=Pokemon[random_num].sprite['small']['url'])
+
+    embed.set_footer(text='weaknesses: \n \n\nstrengths: \n ')
     
 
     await ctx.send(embed=embed)
@@ -183,7 +185,8 @@ async def info(ctx, *, mon):
 
     embed.set_image(url=Pokemon[call].sprite['big']['url'])
     embed.set_thumbnail(url=Pokemon[call].sprite['small']['url'])
-    embed.set_footer(text='weaknesses: \n \n\nstrengths: \n ')
+
+    embed.set_footer(text=f'weaknesses: \n{Pokemon[call].get_weaknesses_str()}\n\nstrengths: \n{Pokemon[call].get_strengths_str()}')
     
 
     await ctx.send(embed=embed)

@@ -1,5 +1,6 @@
 type_data = {
     #get color from: https://loucyoreviews.files.wordpress.com/2013/02/wpid-screenshot_2013-02-18-00-21-57-1.png
+    #can't have NoneType as a weakness/strength, so use an empty string isntead
     'PokeText': {
         'color': {
             'rgb': (255, 216, 35),
@@ -14,7 +15,7 @@ type_data = {
             'hex': 'a8a878'
         },
         'strengths': [
-            None
+            'None'
         ],
         'weaknesses': [
             'Fighting'
@@ -218,10 +219,10 @@ type_data = {
             'hex': 'ee99ac'
         },
         'strengths': [
-
+            'Fighting', 'Bug', 'Dark'
         ],
         'weaknesses': [
-
+            'Poison', 'Steel'
         ]
     },
     '???': {
