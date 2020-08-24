@@ -5,12 +5,8 @@ type_data = {
             'rgb': (255, 216, 35),
             'hex': 'ffd823'
         },
-        'strengths': [
-            None
-        ],
-        'weaknesses': [
-            None
-        ]
+        'strengths': [''],
+        'weaknesses': ['']
     },
     'Normal': {
         'color': {

@@ -14,10 +14,13 @@ class Mon:
         self.name = name
         self.poke_specie = poke_specie + ' Pokémon'
         self.desc = desc
-        
+
         self.types = types
-        self.weaknesses = type_data[self.types[1]]['weaknesses'] + type_data[self.types[2]]['weaknesses']
-        self.strengths = type_data[self.types[1]]['strengths'] + type_data[self.types[2]]['strengths']
+        try:
+            self.weaknesses = type_data[self.types[0]]['weaknesses'] + type_data[self.types[1]]['weaknesses']
+            self.strengths = type_data[self.types[0]]['strengths'] + type_data[self.types[1]]['strengths']
+        except:
+            pass
 
         self.abilities = abilities
         self.stats = stats
