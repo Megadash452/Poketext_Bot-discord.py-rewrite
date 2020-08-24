@@ -21,8 +21,8 @@ class Mon:
 
         self.types = types
 
-        self.weaknesses = self.get_true_w_or_s('weaknesses')
         self.strengths = self.get_true_w_or_s('strengths')
+        self.weaknesses = self.get_true_w_or_s('weaknesses')
 
         self.abilities = abilities
         self.stats = stats
@@ -52,19 +52,11 @@ class Mon:
 
 
     def get_true_w_or_s(self, which):
-        weaks = type_data[self.types[0]]['weaknesses'] + type_data[self.types[1]]['weaknesses']
         strongs = type_data[self.types[0]]['strengths'] + type_data[self.types[1]]['strengths']
-
-        weaks_return = []
+        weaks = type_data[self.types[0]]['weaknesses'] + type_data[self.types[1]]['weaknesses']
+        
         strongs_return = []
-
-        for weakness in weaks:
-            if not weakness in strongs:
-                #print('{} is **not** in strengths\n'.format(weakness))
-                weaks_return.append(weakness)
-            else:
-                #print('{} --is-- in strengths\n'.format(weakness))
-                pass
+        weaks_return = []
 
         for strength in strongs:
             if not strength in weaks:
@@ -74,11 +66,18 @@ class Mon:
                 #print('{} --is-- in strengths\n'.format(weakness))
                 pass
 
-        if which == 'weaknesses':
-            return weaks_return
-        elif which == 'strengths':
-            return strongs_return
+        for weakness in weaks:
+            if not weakness in strongs:
+                #print('{} is **not** in strengths\n'.format(weakness))
+                weaks_return.append(weakness)
+            else:
+                #print('{} --is-- in strengths\n'.format(weakness))
+                pass
 
+        if which == 'strengths':
+            return strongs_return
+        elif which == 'weaknesses':
+            return weaks_return
 
 
 
