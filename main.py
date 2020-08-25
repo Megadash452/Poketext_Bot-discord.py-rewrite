@@ -186,7 +186,7 @@ async def info(ctx, *, mon):
     embed.set_image(url=Pokemon_dic[call].sprite['big']['url'])
     embed.set_thumbnail(url=Pokemon_dic[call].sprite['small']['url'])
 
-    embed.set_footer(text=f'weaknesses: \n{Pokemon_dic[call].weaknesses}\n\nstrengths: \n{Pokemon_dic[call].strengths}')
+    embed.set_footer(text=f'weaknesses: \n{Pokemon_dic[call].get_w_s_str("weaknesses")}\n\nstrengths: \n{Pokemon_dic[call].get_w_s_str("strengths")}')
     
 
     await ctx.send(embed=embed)

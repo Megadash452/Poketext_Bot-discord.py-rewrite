@@ -90,6 +90,19 @@ class Mon:
         elif which == 'weaknesses':
             return w_repeat_appendix
 
+    def get_w_s_str(self, w_s):
+        return_str = ''
+        if w_s == 'weaknesses':
+            list_str = str(self.weaknesses)
+        elif w_s == 'strengths':
+            list_str = str(self.strengths)
+
+        for char in list_str:
+            if not char in '[]\'':
+                return_str += char
+            
+        return return_str
+
 
 
 # ------ Dictionary ------ ------ ------ ------ ------ ------ ------ ------ ------
