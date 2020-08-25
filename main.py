@@ -13,7 +13,7 @@ def read_token(file):
 bot_ping = '<@!725225223346978816> '
 
 def get_prefix(client, message):
-    with open('prefixes.json', 'r') as f:
+    with open('server&user_data/prefixes.json', 'r') as f:
         prefixes = json.load(f)
 
     return (prefixes[str(message.guild.id)], bot_ping)
@@ -77,7 +77,7 @@ async def help(ctx):
             '\n\n\t-  **teaminit**- if this is your first time using the bot, do this command to make a team'
             '\n\n\t-  **team <user>**: show a person\'s team (leave empty to see your own team)' +
             '\n\n\t-  **random**: show a random pokemon' +
-            '\n\n\t-  **info <pokemon>**: show the information of a certain pokemon (you can also do {}info random to show a random Pokémon'.format(prefix)
+            '\n\n\t-  **info <pokemon>**: show the information of a certain pokemon (you can also do {}info random to show a random Pokémon)'.format(prefix)
     )
     embed.add_field(
         name='Game Management Commands:',
@@ -156,7 +156,7 @@ async def rand(ctx):
     embed.add_field(name=Pokemon_dic[random_num].poke_specie, value=Pokemon_dic[random_num].desc)
 
     if not Pokemon_dic[random_num].types[1]:
-        embed.add_field(name='Type', value=Pokemon_dic[random_num].types[0], inline=False)
+        embed.add_field(name='Type', value=f'{Pokemon_dic[random_num].types[0]}', inline=False)
     else:
         embed.add_field(name='Types', value=f'{Pokemon_dic[random_num].types[0]}\n{Pokemon_dic[random_num].types[1]}', inline=False)
 
@@ -186,7 +186,7 @@ async def info(ctx, *, mon):
     embed.add_field(name=Pokemon_dic[call].poke_specie, value=Pokemon_dic[call].desc)
 
     if not Pokemon_dic[call].types[1]:
-        embed.add_field(name='Type', value=Pokemon_dic[call].types[0], inline=False)
+        embed.add_field(name='Type', value=f'- {Pokemon_dic[call].types[0]}', inline=False)
     else:
         embed.add_field(name='Types', value=f'{Pokemon_dic[call].types[0]}\n{Pokemon_dic[call].types[1]}', inline=False)
 
