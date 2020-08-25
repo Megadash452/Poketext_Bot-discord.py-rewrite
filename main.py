@@ -132,13 +132,20 @@ async def randombattle(ctx, member : discord.Member):
     print('starting Random Battle with {}'.format(member.mention))
 
 
+@client.command(aliases=['team-init', 'team_init'])
+async def teaminit(ctx):
+    pass
+
+
 @client.command(aliases=['team-battle'])
 async def teambattle(ctx, member):
     pass
 
+
 @client.command()
 async def team(ctx, member):
     pass
+
 
 @client.command(aliases=['random'])
 async def rand(ctx):
@@ -156,7 +163,7 @@ async def rand(ctx):
     embed.set_image(url=Pokemon_dic[random_num].sprite['big']['url'])
     embed.set_thumbnail(url=Pokemon_dic[random_num].sprite['small']['url'])
 
-    embed.set_footer(text='weaknesses: \n \n\nstrengths: \n ')
+    embed.set_footer(text=f'weaknesses: \n{Pokemon_dic[random_num].get_w_s_str("weaknesses")}\n\nstrengths: \n{Pokemon_dic[random_num].get_w_s_str("strengths")}')
     
 
     await ctx.send(embed=embed)
@@ -186,7 +193,7 @@ async def info(ctx, *, mon):
     embed.set_image(url=Pokemon_dic[call].sprite['big']['url'])
     embed.set_thumbnail(url=Pokemon_dic[call].sprite['small']['url'])
 
-    embed.set_footer(text=f'weaknesses: \n{Pokemon_dic[call].get_w_s_str("weaknesses")}\n\nstrengths: \n{Pokemon_dic[call].get_w_s_str("strengths")}')
+    embed.set_footer(text=f'strengths: \n{Pokemon_dic[call].get_w_s_str("strengths")}\n\nweaknesses: \n{Pokemon_dic[call].get_w_s_str("weaknesses")}')
     
 
     await ctx.send(embed=embed)

@@ -1,7 +1,10 @@
 if __name__ == '__main__':
     from type_data import type_data
 else:
-    from Mon_data.type_data import type_data
+    try:
+        from Mon_data.type_data import type_data
+    except:
+        pass
 
 
 class Item:
