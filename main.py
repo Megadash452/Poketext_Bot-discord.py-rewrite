@@ -11,6 +11,7 @@ def read_token(file):
         return lines[0].strip()
 
 bot_ping = '<@!725225223346978816> '
+ban_count = {}
 
 def get_prefix(client, message):
     with open('server&user_data/prefixes.json', 'r') as f:
@@ -66,7 +67,7 @@ async def help(ctx):
     embed.add_field(
         name='My Commands are:', 
         value='\n\t-  **setprefix <prefix>**: Changes the default prefix (*you can make the prefix pinging the bot if you want*)' +
-            '\n\n\t-  **say <message>**: I will say whatever you tell me to (the message you sedn will be deleted)' +
+            '\n\n\t-  **say <message>**: I will say whatever you tell me to (the message you send will be deleted)' +
             '\n\n\t-  **purge <message count>**: I will delete a certain number of messages' +
             '\n\n\t-  **invite**: The dewfault link to use to invite me to one of your servers'
     )
@@ -74,15 +75,16 @@ async def help(ctx):
         name='Game Commands:',
         value='\n\n\t-  **randombattle <user>**: Starts a Pokemon match with a random team against the person you want to battle' +
             '\n\n\t-  **teambattle <user>**: Starts a Pokemon match with your current team against the person you want to battle' +
-            '\n\n\t-  **teaminit**- if this is your first time using the bot, do this command to make a team'
+            '\n\n\t-  **teaminit**: if this is your first time using the bot, do this command to make a team (no need to do this if you already have a team in another server, as it will be automatically carried here)'
             '\n\n\t-  **team <user>**: show a person\'s team (leave empty to see your own team)' +
             '\n\n\t-  **random**: show a random pokemon' +
             '\n\n\t-  **info <pokemon>**: show the information of a certain pokemon (you can also do {}info random to show a random Pokémon)'.format(prefix)
     )
     embed.add_field(
         name='Game Management Commands:',
-        value='\n\n\t-  **ban**:' +
-            '\n\n\t-  **voteban**:'
+        value='\n\n\t-  **ban <user> <reason(optional)>**: Will delete an user\'s team data and will prevent them from creating a team (undo with *`{}`unban*)'.format(prefix) +
+            '\n\n\t-  **voteban <user>**: If a total of `10` members use this command, the specified user will be banned from usign this bot' +
+            '\n\n\t-  **banlist**: See all the users that have been banned'
     )
 
     await ctx.send(embed=embed)
@@ -204,17 +206,116 @@ async def info(ctx, *, mon):
 
 
 @client.command(aliases=['pokeban', 'poke-ban', 'poke ban'])
-async def ban(ctx, member):
-    print()
+async def ban(ctx, banmember=None, *, reason=None):
+    with open('server&user_data/user_banlist.json', 'r') as f:
+        user_banlist = json.load(f)
+
+    member = ''
+
+    for char in banmember:
+        if not char in '!&':
+            member += char
+
+    if not member:
+        await ctx.send('Who are you going to ban? Try again')
+
+    elif not member in user_banlist:
+        user_banlist.append(member)
+
+        with open('server&user_data/user_banlist.json', 'w') as f:
+            json.dump(user_banlist, f, indent = 4)
+
+        #delete their team
+        
+        await ctx.send(f'{member}\'s team has been deleted and they will no longer be able to create another one')
+        print(f'banmember: {banmember}')
+        print(f'member: {member}')
+    
+    else:
+        await ctx.send('This user has already been banned from playing, silly')
+
+
+@client.command()
+async def unban(ctx, banmember=None):
+    with open('server&user_data/user_banlist.json', 'r') as f:
+        user_banlist = json.load(f)
+
+    member = ''
+
+    for char in banmember:
+        if not char in '!&':
+            member += char
+
+    if not member:
+        await ctx.send('Who are you going to unban? Try again')
+
+    elif not member in user_banlist:
+        await ctx.send('This user hasn\'t been banned, silly')
+
+    else:
+        user_banlist.remove(member)
+
+        with open('server&user_data/user_banlist.json', 'w') as f:
+            json.dump(user_banlist, f, indent = 4)
+
+        await ctx.send(f'unbanned {member}. You can now create a new team and start on a new slate')
+        print(f'banmember: {banmember}')
+        print(f'member: {member}')
 
 
 @client.command(aliases=['vote-pokeban', 'vote-poke-ban'])
-async def voteban(ctx, member=''):
-    if member:
-        await ctx.send(f'going to ban {member} from playing :angry:')
-    else:
-        await ctx.send('Who you gonna ban thoe? Try again')
+async def voteban(ctx, banmember=None):
+    with open('server&user_data/user_banlist.json', 'r') as f:
+            user_banlist = json.load(f)
 
+    member = ''
+
+    for char in banmember:
+        if not char in '!&':
+            member += char
+
+    if not member:
+        await ctx.send('Who are you voting to ban? Try again')
+
+    elif not member in user_banlist:
+        try:
+            ban_count[str(ctx.guild.id)][member]
+        except:
+            ban_count[str(ctx.guild.id)] = {}
+            ban_count[str(ctx.guild.id)][member] = 0
+
+        ban_count[str(ctx.guild.id)][member] += 1
+
+        await ctx.send(f'{ban_count[str(ctx.guild.id)][member]} users have voted to ban {member}. Let\'s get to 10!')
+        print(f'banmember: {banmember}')
+        print(f'member: {member}')
+
+        if ban_count[str(ctx.guild.id)][member] == 10:
+            user_banlist.append(member)
+
+            with open('server&user_data/user_banlist.json', 'w') as f:
+                json.dump(user_banlist, f, indent = 4)
+
+            #delete their team
+
+            await ctx.send(f'{member}\'s team has been deleted and they will no longer be able to create another one')
+
+    elif member in user_banlist:
+        await ctx.send('This user has already been banned from playing, silly')
+        print(member)
+
+@client.command()
+async def banlist(ctx):
+    with open('server&user_data/user_banlist.json', 'r') as f:
+            user_banlist = json.load(f)
+
+    return_str = ''
+
+    for char in user_banlist:
+        if not char in '<>[]\'':
+            return_str += char
+
+    await ctx.send(user_banlist)
 # --- ---
 
 
