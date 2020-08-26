@@ -766,9 +766,8 @@ Pokemon_dictionary = {
                     'special defense': '',
                     'speed': ''
                }),
-}
-try:
-    merger_dic = { 51: Mon(51, 'Dugtrio', 'Mole',
+
+    51: Mon(51, 'Dugtrio', 'Mole',
                 'A team of Diglett triplets. It triggers huge earthquakes by burrowing 60 miles underground.',
                 ('Ground', None), ('Sand Veil', 'Arena Trap'), '',
                 
@@ -1500,8 +1499,9 @@ try:
                     'special defense': '',
                     'speed': ''
                }),
-
-    108: Mon(108, 'Lickitung', '',
+}
+try:
+    merger_dic = { 108: Mon(108, 'Lickitung', '',
                 '',
                 ('', None), ('', ''), '',
                 
