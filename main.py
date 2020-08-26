@@ -109,6 +109,7 @@ async def setprefix(ctx, prefix=None):
 
 
 @client.command()
+@commands.has_permissions(manage_messages=True)
 async def purge(ctx, amount=6):
     await ctx.channel.purge(limit=amount + 1)
     print('deleted {} messages'.format(amount))
@@ -141,8 +142,7 @@ async def teambattle(ctx, member):
 
 @client.command(aliases=['team-init', 'team_init'])
 async def teaminit(ctx):
-    with open('server&user_data/teams.json') as f:
-        teams = json.load(f)
+    pass
 
 
 @client.command()
@@ -207,6 +207,7 @@ async def info(ctx, *, mon):
 
 
 @client.command(aliases=['pokeban', 'poke-ban', 'poke ban'])
+@commands.has_permissions(ban_members=True)
 async def ban(ctx, banmember=None, *, reason=None):
     with open('server&user_data/user_banlist.json', 'r') as f:
         user_banlist = json.load(f)
@@ -237,6 +238,7 @@ async def ban(ctx, banmember=None, *, reason=None):
 
 
 @client.command()
+@commands.has_permissions(ban_members=True)
 async def unban(ctx, banmember=None):
     with open('server&user_data/user_banlist.json', 'r') as f:
         user_banlist = json.load(f)
