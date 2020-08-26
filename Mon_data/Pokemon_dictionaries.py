@@ -469,7 +469,7 @@ Pokemon_dictionary = {
                }),
 
     28: Mon(28, 'Sandslash', 'Mouse',
-                'The drier the area Sandslash lives in, the harder and smoother the Pokémon’s spikes will feel when touched.',
+                'The drier the area Sandslash lives in, the harder and smoother the Pokémon\'s spikes will feel when touched.',
                 ('Ground', None), ('Sand Veil', None),  '',
                 
                 stats = {
@@ -766,11 +766,10 @@ Pokemon_dictionary = {
                     'special defense': '',
                     'speed': ''
                }),
-}
-try:
-    merger_dic = { 51: Mon(51, 'Dugtrio', '',
-                '',
-                ('', None), ('', ''), '',
+
+    51: Mon(51, 'Dugtrio', 'Mole',
+                'A team of Diglett triplets. It triggers huge earthquakes by burrowing 60 miles underground.',
+                ('Ground', None), ('Sand Veil', 'Arena Trap'), '',
                 
                 stats = {
                     'hp': '',
@@ -781,9 +780,9 @@ try:
                     'speed': ''
                }),
 
-    52: Mon(52, 'Meowth', '',
-                '',
-                ('', None), ('', ''), '',
+    52: Mon(52, 'Meowth', 'Scratch cat',
+                'It loves to collect shiny things. If it\'s in a good mood, it might even let its Trainer have a look at its hoard of treasures.',
+                ('Normal', None), ('Pickup', 'Technician'), '',
                 
                 stats = {
                     'hp': '',
@@ -794,9 +793,9 @@ try:
                     'speed': ''
                }),
 
-    53: Mon(53, 'Persian', '',
-                '',
-                ('', None), ('', ''), '',
+    53: Mon(53, 'Persian', 'Classy cat',
+                'Getting this prideful Pokémon to warm up to you takes a lot of effort, and it will claw at you the moment it gets annoyed.',
+                ('Normal', None), ('Technician', 'Limber'), '',
                 
                 stats = {
                     'hp': '',
@@ -807,9 +806,9 @@ try:
                     'speed': ''
                }),
 
-    54: Mon(54, 'Psyduck', '',
-                '',
-                ('', None), ('', ''), '',
+    54: Mon(54, 'Psyduck', 'Duck',
+                'Psyduck is constantly beset by headaches. If the Pokémon lets its strange power erupt, apparently the pain subsides for a while.',
+                ('Water', None), ('Damp', 'Cloud Nine'), '',
                 
                 stats = {
                     'hp': '',
@@ -820,9 +819,9 @@ try:
                     'speed': ''
                }),
 
-    55: Mon(55, 'Golduck', '',
-                '',
-                ('', None), ('', ''), '',
+    55: Mon(55, 'Golduck', 'Duck',
+                'This Pokémon lives in gently flowing rivers. It paddles through the water with its long limbs, putting its graceful swimming skills on display.',
+                ('Water', None), ('Damp', 'Cloud Nine'), '',
                 
                 stats = {
                     'hp': '',
@@ -833,9 +832,9 @@ try:
                     'speed': ''
                }),
 
-    56: Mon(56, 'Mankey', '',
-                '',
-                ('', None), ('', ''), '',
+    56: Mon(56, 'Mankey', 'Pig monkey',
+                'An agile Pokémon that lives in trees. It angers easily and will not hesitate to attack anything.',
+                ('Fighting', None), ('Vital Spirit', 'Anger Point'), '',
                 
                 stats = {
                     'hp': '',
@@ -846,9 +845,9 @@ try:
                     'speed': ''
                }),
 
-    57: Mon(57, 'Primeape', '',
-                '',
-                ('', None), ('', ''), '',
+    57: Mon(57, 'Primeape', 'Pig Monkey',
+                'It stops being angry only when nobody else is around. To view this moment is very difficult.',
+                ('Fighting', None), ('Vital Spirit', 'Anger Point'), '',
                 
                 stats = {
                     'hp': '',
@@ -859,9 +858,9 @@ try:
                     'speed': ''
                }),
 
-    58: Mon(58, 'Growlithe', '',
-                '',
-                ('', None), ('', ''), '',
+    58: Mon(58, 'Growlithe', 'Puppy',
+                'It has a brave and trustworthy nature. It fearlessly stands up to bigger and stronger foes.',
+                ('Fire', None), ('Intimidate', 'Flash Fire'), '',
                 
                 stats = {
                     'hp': '',
@@ -872,9 +871,9 @@ try:
                     'speed': ''
                }),
 
-    59: Mon(59, 'Arcanine', '',
-                '',
-                ('', None), ('', ''), '',
+    59: Mon(59, 'Arcanine', 'Legendary',
+                'The sight of it running over 6,200 miles in a single day and night has captivated many people.',
+                ('Fire', None), ('Intimidate', 'Flash Fire'), '',
                 
                 stats = {
                     'hp': '',
@@ -885,9 +884,9 @@ try:
                     'speed': ''
                }),
 
-    60: Mon(60, 'Poliwag', '',
-                '',
-                ('', None), ('', ''), '',
+    60: Mon(60, 'Poliwag', 'Tadpole',
+                'For Poliwag, swimming is easier than walking. The swirl pattern on its belly is actually part of the Pokémon\'s innards showing through the skin.',
+                ('Water', None), ('Damp', 'Water Absorb'), '',
                 
                 stats = {
                     'hp': '',
@@ -898,9 +897,9 @@ try:
                     'speed': ''
                }),
 
-    61: Mon(61, 'Poliwhirl', '',
-                '',
-                ('', None), ('', ''), '',
+    61: Mon(61, 'Poliwhirl', 'Tadpole',
+                'Staring at the swirl on its belly causes drowsiness. This trait of Poliwhirl\'s has been used in place of lullabies to get children to go to sleep.',
+                ('Water', None), ('Damp', 'Water Absorb'), '',
                 
                 stats = {
                     'hp': '',
@@ -911,9 +910,9 @@ try:
                     'speed': ''
                }),
 
-    62: Mon(62, 'Poliwrath', '',
-                '',
-                ('', None), ('', ''), '',
+    62: Mon(62, 'Poliwrath', 'Tadpole',
+                'Its body is solid muscle. When swimming through cold seas, Poliwrath uses its impressive arms to smash through drift ice and plow forward.',
+                ('Water', 'Fighting'), ('Damp', 'Water Absorb'), '',
                 
                 stats = {
                     'hp': '',
@@ -924,9 +923,9 @@ try:
                     'speed': ''
                }),
 
-    63: Mon(63, 'Abra', '',
-                '',
-                ('', None), ('', ''), '',
+    63: Mon(63, 'Abra', 'Psi',
+                'This Pokémon uses its psychic powers while it sleeps. The contents of Abra\'s dreams affect the powers that the Pokémon wields.',
+                ('Psychic', None), ('Inner Focus', 'Synchronize'), '',
                 
                 stats = {
                     'hp': '',
@@ -937,9 +936,9 @@ try:
                     'speed': ''
                }),
 
-    64: Mon(64, 'Kadabra', '',
-                '',
-                ('', None), ('', ''), '',
+    64: Mon(64, 'Kadabra', 'Psi',
+                'Using its psychic power, Kadabra levitates as it sleeps. It uses its springy tail as a pillow.',
+                ('Psychic', None), ('Inner Focus', 'Synchronize'), '',
                 
                 stats = {
                     'hp': '',
@@ -950,9 +949,9 @@ try:
                     'speed': ''
                }),
 
-    65: Mon(65, 'Alakazam', '',
-                '',
-                ('', None), ('', ''), '',
+    65: Mon(65, 'Alakazam', 'Psi',
+                'It has an incredibly high level of intelligence. Some say that Alakazam remembers everything that ever happens to it, from birth till death.',
+                ('Psychic', None), ('Inner Focus', 'Synchronize'), '',
                 
                 stats = {
                     'hp': '',
@@ -963,9 +962,9 @@ try:
                     'speed': ''
                }),
 
-    66: Mon(66, 'Machop', '',
-                '',
-                ('', None), ('', ''), '',
+    66: Mon(66, 'Machop', 'Superpower',
+                'Its whole body is composed of muscles. Even though it\'s the size of a human child, it can hurl 100 grown-ups.',
+                ('Fighting', None), ('Guts', 'No Guard'), '',
                 
                 stats = {
                     'hp': '',
@@ -976,9 +975,9 @@ try:
                     'speed': ''
                }),
 
-    67: Mon(67, 'Machoke', '',
-                '',
-                ('', None), ('', ''), '',
+    67: Mon(67, 'Machoke', 'Superpower',
+                'Its muscular body is so powerful, it must wear a power-save belt to be able to regulate its motions.',
+                ('Fighting', None), ('Guts', 'No Guard'), '',
                 
                 stats = {
                     'hp': '',
@@ -989,9 +988,9 @@ try:
                     'speed': ''
                }),
 
-    68: Mon(68, 'Machamp', '',
-                '',
-                ('', None), ('', ''), '',
+    68: Mon(68, 'Machamp', 'Superpower',
+                'It quickly swings its four arms to rock its opponents with ceaseless punches and chops from all angles.',
+                ('Fighting', None), ('Guts', 'No Guard'), '',
                 
                 stats = {
                     'hp': '',
@@ -1002,9 +1001,9 @@ try:
                     'speed': ''
                }),
 
-    69: Mon(69, 'Bellsprout', '',
-                '',
-                ('', None), ('', ''), '',
+    69: Mon(69, 'Bellsprout', 'Flower',
+                'Prefers hot and humid places. It ensnares tiny bugs with its vines and devours them.',
+                ('Grass', 'Poison'), ('Chlorophyll', None), '',
                 
                 stats = {
                     'hp': '',
@@ -1015,9 +1014,9 @@ try:
                     'speed': ''
                }),
 
-    70: Mon(70, 'Weepinbell', '',
-                '',
-                ('', None), ('', ''), '',
+    70: Mon(70, 'Weepinbell', 'Flycatcher',
+                'When hungry, it swallows anything that moves. Its hapless prey is dissolved by strong acids.',
+                ('Grass', 'Poison'), ('Chlorophyll', None), '',
                 
                 stats = {
                     'hp': '',
@@ -1028,9 +1027,9 @@ try:
                     'speed': ''
                }),
 
-    71: Mon(71, 'Victreebel', '',
-                '',
-                ('', None), ('', ''), '',
+    71: Mon(71, 'Victreebel', 'Flycatcher',
+                'Lures prey with the sweet aroma of honey. Swallowed whole, the prey is dissolved in a day, bones and all.',
+                ('Grass', 'Poison'), ('Chlorophyll', None), '',
                 
                 stats = {
                     'hp': '',
@@ -1041,9 +1040,9 @@ try:
                     'speed': ''
                }),
 
-    72: Mon(72, 'Tentacool', '',
-                '',
-                ('', None), ('', ''), '',
+    72: Mon(72, 'Tentacool', 'Jellyfish',
+                'Tentacool is not a particularly strong swimmer. It drifts across the surface of shallow seas as it searches for prey.',
+                ('Water', 'Poison'), ('Clear Body', 'Liquid Ooze'), '',
                 
                 stats = {
                     'hp': '',
@@ -1054,9 +1053,9 @@ try:
                     'speed': ''
                }),
 
-    73: Mon(73, 'Tentacruel', '',
-                '',
-                ('', None), ('', ''), '',
+    73: Mon(73, 'Tentacruel', 'Jellyfish',
+                'When the red orbs on Tentacruel\'s head glow brightly, watch out. The Pokémon is about to fire off a burst of ultrasonic waves.',
+                ('Water', 'Poison'), ('Clear Body', 'Liquid Ooze'), '',
                 
                 stats = {
                     'hp': '',
@@ -1107,7 +1106,7 @@ try:
                }),
 
     77: Mon(77, 'Ponyta', 'Fire Horse',
-                'It can\'t run properly when it’s newly born. As it races around with others of its kind, its legs grow stronger.',
+                'It can\'t run properly when it\'s newly born. As it races around with others of its kind, its legs grow stronger.',
                 ('Fire', None), ('Run Away', 'Flash Fire'), '',
                 
                 stats = {
@@ -1430,7 +1429,7 @@ try:
                }),
 
     102: Mon(102, 'Exeggcute', 'Egg',
-                 'Though it may look like it\'s just a bunch of eggs, it’s a proper Pokémon. Exeggcute communicates with others of its kind via telepathy, apparently.',
+                 'Though it may look like it\'s just a bunch of eggs, it\'s a proper Pokémon. Exeggcute communicates with others of its kind via telepathy, apparently.',
                  ('Grass', 'Psychic'), ('Chlorophyll', None), '',                 
                  stats = {
                     'hp': '',
@@ -1500,8 +1499,9 @@ try:
                     'special defense': '',
                     'speed': ''
                }),
-
-    108: Mon(108, 'Lickitung', '',
+}
+try:
+    merger_dic = { 108: Mon(108, 'Lickitung', '',
                 '',
                 ('', None), ('', ''), '',
                 
