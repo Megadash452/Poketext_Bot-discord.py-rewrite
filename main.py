@@ -11,7 +11,7 @@ def read_token(file):
         return lines[0].strip()
 
 bot_ping = '<@!725225223346978816> '
-ban_count = {}
+#ban_count = {} ---goes with voteban---
 
 def get_prefix(client, message):
     with open('server&user_data/prefixes.json', 'r') as f:
@@ -83,7 +83,7 @@ async def help(ctx):
     embed.add_field(
         name='Game Management Commands:',
         value='\n\n\t-  **ban <user> <reason(optional)>**: Will delete an user\'s team data and will prevent them from creating a team (undo with *`{}`unban*)'.format(prefix) +
-            '\n\n\t-  **voteban <user>**: If a total of `10` members use this command, the specified user will be banned from usign this bot' +
+            #'\n\n\t-  **voteban <user>**: If a total of `10` members use this command, the specified user will be banned from usign this bot' +
             '\n\n\t-  **banlist**: See all the users that have been banned'
     )
 
@@ -134,14 +134,15 @@ async def randombattle(ctx, member : discord.Member):
     print('starting Random Battle with {}'.format(member.mention))
 
 
-@client.command(aliases=['team-init', 'team_init'])
-async def teaminit(ctx):
-    pass
-
-
 @client.command(aliases=['team-battle'])
 async def teambattle(ctx, member):
     pass
+
+
+@client.command(aliases=['team-init', 'team_init'])
+async def teaminit(ctx):
+    with open('server&user_data/teams.json') as f:
+        teams = json.load(f)
 
 
 @client.command()
@@ -262,13 +263,15 @@ async def unban(ctx, banmember=None):
         print(f'banmember: {banmember}')
         print(f'member: {member}')
 
-
+"""
 @client.command(aliases=['vote-pokeban', 'vote-poke-ban'])
 async def voteban(ctx, banmember=None):
     with open('server&user_data/user_banlist.json', 'r') as f:
             user_banlist = json.load(f)
 
     member = ''
+    author = ''
+    voters = []
 
     for char in banmember:
         if not char in '!&':
@@ -285,10 +288,10 @@ async def voteban(ctx, banmember=None):
             ban_count[str(ctx.guild.id)][member] = 0
 
         ban_count[str(ctx.guild.id)][member] += 1
+        voters.append(str(ctx.author.id))
 
         await ctx.send(f'{ban_count[str(ctx.guild.id)][member]} users have voted to ban {member}. Let\'s get to 10!')
-        print(f'banmember: {banmember}')
-        print(f'member: {member}')
+        print(voters)
 
         if ban_count[str(ctx.guild.id)][member] == 10:
             user_banlist.append(member)
@@ -303,6 +306,7 @@ async def voteban(ctx, banmember=None):
     elif member in user_banlist:
         await ctx.send('This user has already been banned from playing, silly')
         print(member)
+"""
 
 @client.command()
 async def banlist(ctx):
