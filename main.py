@@ -136,17 +136,6 @@ async def randombattle(ctx, member : discord.Member):
     await ctx.send('starting Random Battle with {}'.format(member.display_name))
     print('starting Random Battle with {}'.format(member.display_name))
 
-    Prandom.Player(
-        ctx.author.display_name,
-        ctx.author.id,
-        team = {
-
-        },
-        backpack = {
-            
-        }
-        )
-
 
 @client.command(aliases=['team-battle'])
 async def teambattle(ctx, member):
