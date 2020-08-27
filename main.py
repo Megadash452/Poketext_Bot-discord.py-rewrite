@@ -15,6 +15,8 @@ def read_token(file):
 bot_ping = '<@!725225223346978816> '
 #ban_count = {} ---goes with voteban---
 
+add_reaction_messages = [', do you accept?', 'yee haw']
+
 def get_prefix(client, message):
     with open('server&user_data/prefixes.json', 'r') as f:
         prefixes = json.load(f)
@@ -58,6 +60,17 @@ async def on_member_remove(member):
     print('{} member has server "{}"'.format(member, member.guild))
     #delete the member's pokemon data
 
+@client.event
+async def on_message(message):
+    if message.author.id == 725225223346978816:
+        for item in add_reaction_messages:
+            if item in message.content:
+                await message.add_reaction('✅')
+                await message.add_reaction('❌')
+                break
+
+    await client.process_commands(message)
+
 
 # --- Commands ---
 @client.command(aliases=[bot_ping])
@@ -69,9 +82,11 @@ async def help(ctx):
     embed.add_field(
         name='My Commands are:', 
         value='\n\t-  **setprefix <prefix>**: Changes the default prefix (*you can make the prefix pinging the bot if you want*)' +
+            '\n\n\t-  **addgamechannel <channel>**: add a channel to have battles in (could be an existent or non existent channel). If there are no channels set to have battles in, the bot will just start battles in the current channel, possibly making the battle unconfortable.' +
+            '\n\n\t-  **gamechannels**: a list of all game channels in the server'
             '\n\n\t-  **say <message>**: I will say whatever you tell me to (the message you send will be deleted)' +
             '\n\n\t-  **purge <message count>**: I will delete a certain number of messages' +
-            '\n\n\t-  **invite**: The dewfault link to use to invite me to one of your servers'
+            '\n\n\t-  **invite**: The default link to use to invite me to one of your servers'
     )
     embed.add_field(
         name='Game Commands:',
@@ -110,6 +125,35 @@ async def setprefix(ctx, prefix=None):
         #add chain
 
 
+@client.command(aliases=['add_game_channel', 'add-game-channel', 'add_gamechannel', 'add-gamechannel'])
+@commands.has_permissions(manage_channels=True)
+async def addgamechannel(ctx, channel=None):
+    guild_channels = []
+
+    for chan in ctx.guild.channels:
+        guild_channels.append(chan.name)
+
+    if not channel:
+        await ctx.send('You didn\'t provide a channel, try again')
+    elif channel in guild_channels:
+        with open('server&user_data/game_channels.json', 'r') as f:
+            game_channels = json.load(f)
+
+        if not str(ctx.guild.id) in game_channels:
+            game_channels[str(ctx.guild.id)] = [channel]
+        else:
+            game_channels[str(ctx.guild.id)].append(channel)
+
+        with open('server&user_data/game_channels.json', 'w') as f:
+            json.dump(game_channels, f, indent=4)
+
+        await ctx.send('Added **{} to game channels**'.format(channel))
+    
+    elif not channel in ctx.guild.channels:
+        await ctx.send('creating channel **{}**'.format(channel))
+        print('create channel')
+
+
 @client.command()
 @commands.has_permissions(manage_messages=True)
 async def purge(ctx, amount=6):
@@ -131,10 +175,22 @@ async def invite(ctx):
 # --- Game Commands ---
 
 
-@client.command(aliases=['random-battle', 'randbattle', 'rand-battle'])
+@client.command(aliases=['random-battle', 'random_battle', 'randbattle', 'rand-battle'])
 async def randombattle(ctx, member : discord.Member):
-    await ctx.send('starting Random Battle with {}'.format(member.display_name))
-    print('starting Random Battle with {}'.format(member.display_name))
+    with open('server&user_data/game_channels.json', 'r') as f:
+        game_channels = json.load(f)
+    
+    if str(ctx.channel) in game_channels[str(ctx.guild.id)]:
+        if not ctx.author.id == member.id:
+            await ctx.send('Starting Random Battle with {}'.format(member.display_name))
+            print('Starting Random Battle with <@{}> in server --{}--'.format(member.id, ctx.guild))
+
+            await ctx.channel.send('{}, do you accept?'.format(member.mention))
+        
+        else:
+            await ctx.send('You can\'t battle yourself')
+    else:
+        await ctx.send('Cannot have a battle in this channel. Please go to a channel designated for battles (you can check what those channels are by using command `{}`gamechannels)'.format(client.command_prefix(ctx.guild, ctx.message)[0]))
 
 
 @client.command(aliases=['team-battle'])
