@@ -4,7 +4,7 @@ from discord.utils import get
 
 import Prandom
 
-from Mon_data.Pokemon_dictionaries import Pokemon_dictionary as Pokemon_dic
+from Mon_data.Mon_dictionaries import Mon_dictionary as Mon_dic
 from Mon_data.type_data import type_data
 
 def read_token(file):
@@ -167,19 +167,19 @@ async def team(ctx, member):
 async def rand(ctx):
     random_num = random.randrange(1, 50+1, 1)
 
-    embed = discord.Embed(title=Pokemon_dic[random_num].name, colour=int(type_data[Pokemon_dic[random_num].types[0]]['color']['hex'], 16))
+    embed = discord.Embed(title=Mon_dic[random_num].name, colour=int(type_data[Mon_dic[random_num].types[0]]['color']['hex'], 16))
 
-    embed.add_field(name=Pokemon_dic[random_num].poke_specie, value=Pokemon_dic[random_num].desc)
+    embed.add_field(name=Mon_dic[random_num].poke_specie, value=Mon_dic[random_num].desc)
 
-    if not Pokemon_dic[random_num].types[1]:
-        embed.add_field(name='Type', value=f'{Pokemon_dic[random_num].types[0]}', inline=False)
+    if not Mon_dic[random_num].types[1]:
+        embed.add_field(name='Type', value=f'{Mon_dic[random_num].types[0]}', inline=False)
     else:
-        embed.add_field(name='Types', value=f'{Pokemon_dic[random_num].types[0]}\n{Pokemon_dic[random_num].types[1]}', inline=False)
+        embed.add_field(name='Types', value=f'{Mon_dic[random_num].types[0]}\n{Mon_dic[random_num].types[1]}', inline=False)
 
-    embed.set_image(url=Pokemon_dic[random_num].sprite['big']['url'])
-    embed.set_thumbnail(url=Pokemon_dic[random_num].sprite['small']['url'])
+    embed.set_image(url=Mon_dic[random_num].sprite['big']['url'])
+    embed.set_thumbnail(url=Mon_dic[random_num].sprite['small']['url'])
 
-    embed.set_footer(text=f'weaknesses: \n{Pokemon_dic[random_num].get_w_s_str("weaknesses")}\n\nstrengths: \n{Pokemon_dic[random_num].get_w_s_str("strengths")}')
+    embed.set_footer(text=f'weaknesses: \n{Mon_dic[random_num].get_w_s_str("weaknesses")}\n\nstrengths: \n{Mon_dic[random_num].get_w_s_str("strengths")}')
     
 
     await ctx.send(embed=embed)
@@ -192,24 +192,24 @@ async def info(ctx, *, mon):
             int(mon) + 1
             call = int(mon)
         except:
-            from Mon_data.Pokemon_dictionaries import Number_dictionary as Dic
+            from Mon_data.Mon_dictionaries import Number_dictionary as Dic
             call = int(Dic[mon.lower()])
     else:
         call = random.randrange(1, 50+1, 1)
 
-    embed = discord.Embed(title=Pokemon_dic[call].name, colour=int(type_data[Pokemon_dic[call].types[0]]['color']['hex'], 16))
+    embed = discord.Embed(title=Mon_dic[call].name, colour=int(type_data[Mon_dic[call].types[0]]['color']['hex'], 16))
 
-    embed.add_field(name=Pokemon_dic[call].poke_specie, value=Pokemon_dic[call].desc)
+    embed.add_field(name=Mon_dic[call].poke_specie, value=Mon_dic[call].desc)
 
-    if not Pokemon_dic[call].types[1]:
-        embed.add_field(name='Type', value=f'- {Pokemon_dic[call].types[0]}', inline=False)
+    if not Mon_dic[call].types[1]:
+        embed.add_field(name='Type', value=f'- {Mon_dic[call].types[0]}', inline=False)
     else:
-        embed.add_field(name='Types', value=f'{Pokemon_dic[call].types[0]}\n{Pokemon_dic[call].types[1]}', inline=False)
+        embed.add_field(name='Types', value=f'{Mon_dic[call].types[0]}\n{Mon_dic[call].types[1]}', inline=False)
 
-    embed.set_image(url=Pokemon_dic[call].sprite['big']['url'])
-    embed.set_thumbnail(url=Pokemon_dic[call].sprite['small']['url'])
+    embed.set_image(url=Mon_dic[call].sprite['big']['url'])
+    embed.set_thumbnail(url=Mon_dic[call].sprite['small']['url'])
 
-    embed.set_footer(text=f'strengths: \n{Pokemon_dic[call].get_w_s_str("strengths")}\n\nweaknesses: \n{Pokemon_dic[call].get_w_s_str("weaknesses")}')
+    embed.set_footer(text=f'strengths: \n{Mon_dic[call].get_w_s_str("strengths")}\n\nweaknesses: \n{Mon_dic[call].get_w_s_str("weaknesses")}')
     
 
     await ctx.send(embed=embed)

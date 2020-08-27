@@ -10,7 +10,7 @@ else:
 class Mon:
     total_num_of_pokemon = 0
 
-    def __init__(self, number, name, poke_specie, desc, types, abilities, clategory, stats):
+    def __init__(self, number, name, poke_specie, desc, types, abilities, category, stats):
         self.number = number
         self.name = name
         self.poke_specie = poke_specie + ' Pokémon'
@@ -104,7 +104,7 @@ class Mon:
 
 # ------ Dictionary ------ ------ ------ ------ ------ ------ ------ ------ ------
 
-Pokemon_dictionary = {
+Mon_dictionary = {
     #0: Mon(0, 'Generation 1', 'All',
                 #'Description',
                 #('PokeText', None),# 'Fighting', 'Water', 'Flying', 'Grass', 'Poison', 'Electric', 'Ground', 'Psychic', 'Rock', 'Ice', 'Bug', 'Dragon', 'Ghost', 'Dark', 'Steel', 'Fairy'),
