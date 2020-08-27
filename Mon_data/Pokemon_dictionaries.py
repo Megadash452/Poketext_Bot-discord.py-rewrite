@@ -7,12 +7,6 @@ else:
         pass
 
 
-class Item:
-    def __init__(self, name, type):
-        self.name = name
-        self.type = type
-
-
 class Mon:
     total_num_of_pokemon = 0
 

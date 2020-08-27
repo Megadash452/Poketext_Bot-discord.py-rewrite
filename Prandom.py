@@ -1,11 +1,13 @@
-def post():
-    print('PokeText random game: Function post() found and executed')
+from Mon_data.Pokemon_dictionaries import *
 
 
-def start():
-    print('random game will start')
-    # --- Write game code HERE ---
+class Pokemon(Mon):
+    def __init__(self, Mon, )
 
 
-def assign_team(member):
-    pass
+class Player:
+    def __init__(self, user_name, user_id, team, backpack):
+        self.user_name = user_name
+        self.user_id = user_id
+        self.team = team
+        self.backpack = backpack

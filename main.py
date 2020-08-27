@@ -2,6 +2,8 @@ import discord, json, random
 from discord.ext import commands
 from discord.utils import get
 
+import Prandom
+
 from Mon_data.Pokemon_dictionaries import Pokemon_dictionary as Pokemon_dic
 from Mon_data.type_data import type_data
 
@@ -131,8 +133,19 @@ async def invite(ctx):
 
 @client.command(aliases=['random-battle', 'randbattle', 'rand-battle'])
 async def randombattle(ctx, member : discord.Member):
-    await ctx.send('starting Random Battle with {}'.format(member.mention))
-    print('starting Random Battle with {}'.format(member.mention))
+    await ctx.send('starting Random Battle with {}'.format(member.display_name))
+    print('starting Random Battle with {}'.format(member.display_name))
+
+    Prandom.Player(
+        ctx.author.display_name,
+        ctx.author.id,
+        team = {
+
+        },
+        backpack = {
+            
+        }
+        )
 
 
 @client.command(aliases=['team-battle'])
