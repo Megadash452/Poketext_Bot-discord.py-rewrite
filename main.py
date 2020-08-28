@@ -71,6 +71,10 @@ async def on_message(message):
 
     await client.process_commands(message)
 
+#@client.event
+#async def on_reaction_add(reaction, user):
+
+
 
 # --- Commands ---
 @client.command(aliases=[bot_ping])
@@ -108,6 +112,7 @@ async def help(ctx):
 
 
 @client.command(aliases=['set-prefix', 'set_prefix'])
+@commands.has_permissions(administrator=True)
 async def setprefix(ctx, prefix=None):
     if prefix:
         with open('prefixes.json', 'r') as f:
@@ -128,29 +133,35 @@ async def setprefix(ctx, prefix=None):
 @client.command(aliases=['add_game_channel', 'add-game-channel', 'add_gamechannel', 'add-gamechannel'])
 @commands.has_permissions(manage_channels=True)
 async def addgamechannel(ctx, channel=None):
+    with open('server&user_data/game_channels.json', 'r') as f:
+        game_channels = json.load(f)
+
     guild_channels = []
+
+    if not channel:
+        chann = str(ctx.channel)
+    else:
+        chann = channel
 
     for chan in ctx.guild.channels:
         guild_channels.append(chan.name)
 
-    if not channel:
-        await ctx.send('You didn\'t provide a channel, try again')
-    elif channel in guild_channels:
-        with open('server&user_data/game_channels.json', 'r') as f:
-            game_channels = json.load(f)
+    if chann in game_channels[str(ctx.guild.id)]:
+        await ctx.send('This channel has already been added to game channels')
 
+    elif chann in guild_channels:
         if not str(ctx.guild.id) in game_channels:
-            game_channels[str(ctx.guild.id)] = [channel]
+            game_channels[str(ctx.guild.id)] = [chann]
         else:
-            game_channels[str(ctx.guild.id)].append(channel)
+            game_channels[str(ctx.guild.id)].append(chann)
 
         with open('server&user_data/game_channels.json', 'w') as f:
             json.dump(game_channels, f, indent=4)
 
-        await ctx.send('Added **{} to game channels**'.format(channel))
+        await ctx.send('Added **{}** to game channels'.format(chann))
     
-    elif not channel in ctx.guild.channels:
-        await ctx.send('creating channel **{}**'.format(channel))
+    elif not chann in ctx.guild.channels:
+        await ctx.send('creating channel **{}**'.format(chann))
         print('create channel')
 
 
