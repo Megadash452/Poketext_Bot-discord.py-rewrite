@@ -1,8 +1,7 @@
 import discord, json, random
 from discord.ext import commands
 from discord.utils import get
-
-import Prandom
+import os
 
 from Mon_data.Mon_dictionaries import Mon_dictionary as Mon_dic
 from Mon_data.type_data import type_data
@@ -59,21 +58,6 @@ async def on_member_join(member):
 async def on_member_remove(member):
     print('{} member has server "{}"'.format(member, member.guild))
     #delete the member's pokemon data
-
-@client.event
-async def on_message(message):
-    if message.author.id == 725225223346978816:
-        for item in add_reaction_messages:
-            if item in message.content:
-                await message.add_reaction('✅')
-                await message.add_reaction('❌')
-                break
-
-    await client.process_commands(message)
-
-#@client.event
-#async def on_reaction_add(reaction, user):
-
 
 
 # --- Commands ---
@@ -193,15 +177,21 @@ async def randombattle(ctx, member : discord.Member):
     
     if str(ctx.channel) in game_channels[str(ctx.guild.id)]:
         if not ctx.author.id == member.id:
+            challenged_players = {}
+            client.load_extension('cogs.random_battle')
+
             await ctx.send('Starting Random Battle with {}'.format(member.display_name))
             print('Starting Random Battle with <@{}> in server --{}--'.format(member.id, ctx.guild))
 
             await ctx.channel.send('{}, do you accept?'.format(member.mention))
+
+            print(challenged_players)
         
         else:
             await ctx.send('You can\'t battle yourself')
     else:
         await ctx.send('Cannot have a battle in this channel. Please go to a channel designated for battles (you can check what those channels are by using command `{}`gamechannels)'.format(client.command_prefix(ctx.guild, ctx.message)[0]))
+    client.unload_extension('cogs.Prandom')
 
 
 @client.command(aliases=['team-battle'])
@@ -393,5 +383,10 @@ async def banlist(ctx):
     await ctx.send(user_banlist)
 # --- ---
 
+"""
+for filename in os.listdir('./cogs'):
+    if filename.endswith('.py'):
+        client.load_extension(f'cogs.{filename[:-3]}')
+"""
 
 client.run(read_token('token.txt'))
