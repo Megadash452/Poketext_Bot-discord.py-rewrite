@@ -25,9 +25,7 @@ client.remove_command('help')
 bot_ping = '<@!725225223346978816> '
 #ban_count = {} ---goes with voteban---
 
-challenged_players = {}
-
-add_reaction_messages = [', do you accept?', 'yee haw']
+battle_players = {}
 # --- ---
 
 
@@ -68,13 +66,17 @@ async def on_member_remove(member):
 @client.event
 async def on_reaction_add(reaction, user):
     if not user.id == 725225223346978816:
-        if reaction.emoji == '✅':
-            if user.id in challenged_players:
+        if user.id == battle_players[str(user.guild.id)][str(reaction.message.channel)]['challenged']:
+            if reaction.emoji == '✅':
+                client.unload_extension('cogs.addreactionoptions')
+                # --- When battle ends --- del battle_players[str(user.guild.id)][str(reaction.message.channel)]
                 print(reaction.emoji)
+                # Start battle
 
-        elif reaction.emoji == '❌':
-            if user.id in challenged_players:
-                print(reaction.emoji)
+            elif reaction.emoji == '❌':
+                if user.id in battle_players:
+                    client.unload_extension('cogs.addreactionoptions')
+                    print(reaction.emoji)
 
 
 # --- Commands ---
@@ -191,23 +193,34 @@ async def invite(ctx):
 async def randombattle(ctx, member : discord.Member):
     with open('server&user_data/game_channels.json', 'r') as f:
         game_channels = json.load(f)
+
+    allow_battle = True
+
+    try:
+        if str(ctx.channel) in battle_players[str(ctx.guild.id)]:
+            await ctx.send('People are already battling here. Please use another channel')
+            await ctx.channel.purge(limit=1)
+            allow_battle = False
+    except:
+        pass
     
-    if str(ctx.channel) in game_channels[str(ctx.guild.id)]:
+    if str(ctx.channel) in game_channels[str(ctx.guild.id)] and allow_battle:
         if not ctx.author.id == member.id:
             await ctx.send('Starting Random Battle with {}'.format(member.display_name))
             print('Starting Random Battle with <@{}> in server --{}--'.format(member.id, ctx.guild))
 
             client.load_extension('cogs.addreactionoptions')
 
-            challenged_players[str(ctx.guild.id)] = {str(ctx.channel): {'challenger': ctx.author.id, 'challenged': member.id}}
+            battle_players[str(ctx.guild.id)] = {str(ctx.channel): {'challenger': ctx.author.id, 'challenged': member.id}}
 
             await ctx.channel.send('{}, do you accept?'.format(member.mention))
 
-            print(challenged_players)
+            print(battle_players)
         
         else:
             await ctx.send('You can\'t battle yourself')
-    else:
+
+    elif not str(ctx.channel) in game_channels[str(ctx.guild.id)]:
         await ctx.send('Cannot have a battle in this channel. Please go to a channel designated for battles (you can check what those channels are by using command `{}`gamechannels)'.format(client.command_prefix(ctx.guild, ctx.message)[0]))
 
 
