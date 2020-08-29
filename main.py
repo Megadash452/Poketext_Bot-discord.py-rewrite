@@ -11,11 +11,6 @@ def read_token(file):
         lines = f.readlines()
         return lines[0].strip()
 
-bot_ping = '<@!725225223346978816> '
-#ban_count = {} ---goes with voteban---
-
-add_reaction_messages = [', do you accept?', 'yee haw']
-
 def get_prefix(client, message):
     with open('server&user_data/prefixes.json', 'r') as f:
         prefixes = json.load(f)
@@ -24,6 +19,16 @@ def get_prefix(client, message):
 
 client = commands.Bot(command_prefix = get_prefix)
 client.remove_command('help')
+
+
+# --- Global Variables ---
+bot_ping = '<@!725225223346978816> '
+#ban_count = {} ---goes with voteban---
+
+challenged_players = {}
+
+add_reaction_messages = [', do you accept?', 'yee haw']
+# --- ---
 
 
 @client.event
@@ -58,6 +63,18 @@ async def on_member_join(member):
 async def on_member_remove(member):
     print('{} member has server "{}"'.format(member, member.guild))
     #delete the member's pokemon data
+
+
+@client.event
+async def on_reaction_add(reaction, user):
+    if not user.id == 725225223346978816:
+        if reaction.emoji == '✅':
+            if user.id in challenged_players:
+                print(reaction.emoji)
+
+        elif reaction.emoji == '❌':
+            if user.id in challenged_players:
+                print(reaction.emoji)
 
 
 # --- Commands ---
@@ -177,11 +194,12 @@ async def randombattle(ctx, member : discord.Member):
     
     if str(ctx.channel) in game_channels[str(ctx.guild.id)]:
         if not ctx.author.id == member.id:
-            challenged_players = {}
-            client.load_extension('cogs.random_battle')
-
             await ctx.send('Starting Random Battle with {}'.format(member.display_name))
             print('Starting Random Battle with <@{}> in server --{}--'.format(member.id, ctx.guild))
+
+            client.load_extension('cogs.addreactionoptions')
+
+            challenged_players[str(ctx.guild.id)] = {str(ctx.channel): {'challenger': ctx.author.id, 'challenged': member.id}}
 
             await ctx.channel.send('{}, do you accept?'.format(member.mention))
 
@@ -191,7 +209,7 @@ async def randombattle(ctx, member : discord.Member):
             await ctx.send('You can\'t battle yourself')
     else:
         await ctx.send('Cannot have a battle in this channel. Please go to a channel designated for battles (you can check what those channels are by using command `{}`gamechannels)'.format(client.command_prefix(ctx.guild, ctx.message)[0]))
-    client.unload_extension('cogs.Prandom')
+
 
 
 @client.command(aliases=['team-battle'])

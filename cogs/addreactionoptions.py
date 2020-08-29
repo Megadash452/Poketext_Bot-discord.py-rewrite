@@ -13,11 +13,8 @@ class Random_battle(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self, message):
         if message.author.id == 725225223346978816:
-            for item in self.add_reaction_messages:
-                if item in message.content:
-                    await message.add_reaction('✅')
-                    await message.add_reaction('❌')
-                    break
+            await message.add_reaction('✅')
+            await message.add_reaction('❌')
 
         await self.client.process_commands(message)
 
