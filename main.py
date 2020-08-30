@@ -66,7 +66,7 @@ async def on_member_remove(member):
 @client.event
 async def on_reaction_add(reaction, user):
     if not user.id == 725225223346978816:
-        if user.id == battle_players[str(user.guild.id)][str(reaction.message.channel)]['challenged']:
+        if user.id == battle_players[str(reaction.guild.id)][str(reaction.message.channel)]['challenged']:
             if reaction.emoji == '✅':
                 client.unload_extension('cogs.addreactionoptions')
                 # --- When battle ends --- del battle_players[str(user.guild.id)][str(reaction.message.channel)]
