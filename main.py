@@ -87,7 +87,7 @@ async def on_reaction_add(reaction, user):
 # --- --- vBeta Commands (to be deleted on release) --- ----
 @client.command(aliases=['forece_random', 'force_random_battle'])
 async def randominit(ctx, challenged_member: discord.Member):
-    Battle = Prandom(ctx.author, challenged_Player)
+    Battle = Prandom(ctx.author, challenged_member)
 
 
     P1_starter = discord.Embed(title=Battle.P1.team[0].name, colour=int(type_data[Battle.P1.team[0].types[0]]['color']['hex'], 16))
@@ -112,7 +112,7 @@ async def randominit(ctx, challenged_member: discord.Member):
     await ctx.send(f'{ctx.author.mention}\'s starter Pokemon')
     await ctx.send(embed=P1_starter)
 
-    await ctx.send(f'{challenged_Player.mention}\'s starter Pokemon')
+    await ctx.send(f'{challenged_member.mention}\'s starter Pokemon')
     await ctx.send(embed=P2_starter)
 # --- --- --- ---
 
