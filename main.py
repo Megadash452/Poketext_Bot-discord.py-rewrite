@@ -28,6 +28,9 @@ bot_ping = '<@!725225223346978816> '
 #ban_count = {} ---goes with voteban---
 
 battle_players = {}
+
+
+# --- --- Game Functions --- ---
 # --- ---
 
 
@@ -230,32 +233,30 @@ async def invite(ctx):
 async def randombattle(ctx, member : discord.Member):
     with open('server&user_data/game_channels.json', 'r') as f:
         game_channels = json.load(f)
-
-    allow_battle = True
-
-    try:
-        if str(ctx.channel) in battle_players[str(ctx.guild.id)]:
-            await ctx.send('People are already battling here. Please use another channel')
-            await ctx.channel.purge(limit=1)
-            allow_battle = False
-    except:
-        pass
     
-    if str(ctx.channel) in game_channels[str(ctx.guild.id)] and allow_battle:
-        if not ctx.author.id == member.id:
-            await ctx.send('Starting Random Battle with {}'.format(member.display_name))
-            print('Starting Random Battle with <@{}> in server --{}--'.format(member.id, ctx.guild))
+    if str(ctx.channel) in game_channels[str(ctx.guild.id)]:
+        if not str(ctx.guild.id) in battle_players:
+            battle_players[str(ctx.guild.id)] = {str(ctx.channel): {'challenger': '', 'challenged': ''}}
 
-            client.load_extension('cogs.addreactionoptions')
+            if not member in battle_players[str(ctx.guild.id)][str(ctx.channel)]['challenged']:
+                if not ctx.author.id == member.id:
+                    await ctx.send('Starting Random Battle with {}'.format(member.display_name))
+                    print('Starting Random Battle with <@{}> in server --{}--'.format(member.id, ctx.guild))
 
-            battle_players[str(ctx.guild.id)] = {str(ctx.channel): {'challenger': ctx.author.id, 'challenged': member.id}}
+                    client.load_extension('cogs.addreactionoptions')
 
-            await ctx.channel.send('{}, do you accept?'.format(member.mention))
+                    #battle_players[str(ctx.guild.id)] = {str(ctx.channel): {'challenger': ctx.author, 'challenged': member}}
 
-            print(battle_players)
-        
+                    await ctx.channel.send('{}, do you accept?'.format(member.mention))
+
+                    print(battle_players)
+                
+                else:
+                    await ctx.send('You can\'t battle yourself')
+            else:
+                await ctx.send('This person is already in battle with someone else. Please wait until they are finished')
         else:
-            await ctx.send('You can\'t battle yourself')
+            await ctx.send('People are already battling here. Please use another channel')
 
     elif not str(ctx.channel) in game_channels[str(ctx.guild.id)]:
         await ctx.send('Cannot have a battle in this channel. Please go to a channel designated for battles (you can check what those channels are by using command `{}`gamechannels)'.format(client.command_prefix(ctx.guild, ctx.message)[0]))
