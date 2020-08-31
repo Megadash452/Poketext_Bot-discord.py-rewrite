@@ -20,6 +20,7 @@ class Pokemon(Mon_data.Mon_dictionaries.Mon):
         self.stats = self.Mon.stats
 
         self.sprite = self.Mon.sprite
+        self.item = ''
 
     def get_ability(self):
         if not self.Mon.abilities[1]:
@@ -39,9 +40,12 @@ class Player:
 
         self.backpack = backpack
 
-def initiate_random(author, challenged):
-    Player1 = Player(author.display_name, author.id,
-        backpack = {
+class Prandom():
+    def __init__(self, challenger, challenged):
+        self.challenger = challenger
+        self.challenged = challenged
+        self.P1 = Player(self.challenger.display_name, self.challenger.id, backpack = {})
+        self.P2 = Player(self.challenged.display_name, self.challenged.id, backpack = {})
 
-        }
-    )
+        self.P1_starter = self.P1.team[0]
+        self.P2_starter = self.P2.team[0]

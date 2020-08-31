@@ -3,6 +3,8 @@ from discord.ext import commands
 from discord.utils import get
 import os
 
+from Prandom import Prandom
+
 from Mon_data.Mon_dictionaries import Mon_dictionary as Mon_dic
 from Mon_data.type_data import type_data
 
@@ -80,6 +82,41 @@ async def on_reaction_add(reaction, user):
 
 
 # --- Commands ---
+
+
+# --- --- vBeta Commands (to be deleted on release) --- ----
+@client.command(aliases=['forece_random', 'force_random_battle'])
+async def randominit(ctx, challenged_member: discord.Member):
+    Battle = Prandom(ctx.author, challenged_Player)
+
+
+    P1_starter = discord.Embed(title=Battle.P1.team[0].name, colour=int(type_data[Battle.P1.team[0].types[0]]['color']['hex'], 16))
+    P1_starter.add_field(name=Battle.P1.team[0].poke_specie, value=Battle.P1.team[0].desc)
+    if not Battle.P1.team[0].types[1]:
+        P1_starter.add_field(name='Type', value=f'- {Battle.P1.team[0].types[0]}', inline=False)
+    else:
+        P1_starter.add_field(name='Types', value=f'{Battle.P1.team[0].types[0]}\n{Battle.P1.team[0].types[1]}', inline=False)
+    P1_starter.set_image(url=Battle.P1.team[0].sprite['big']['url'])
+    P1_starter.set_thumbnail(url=Battle.P1.team[0].sprite['small']['url'])
+
+    P2_starter = discord.Embed(title=Battle.P2.team[0].name, colour=int(type_data[Battle.P2.team[0].types[0]]['color']['hex'], 16))
+    P2_starter.add_field(name=Battle.P2.team[0].poke_specie, value=Battle.P2.team[0].desc)
+    if not Battle.P2.team[0].types[1]:
+        P2_starter.add_field(name='Type', value=f'- {Battle.P2.team[0].types[0]}', inline=False)
+    else:
+        P2_starter.add_field(name='Types', value=f'{Battle.P2.team[0].types[0]}\n{Battle.P2.team[0].types[1]}', inline=False)
+    P2_starter.set_image(url=Battle.P2.team[0].sprite['big']['url'])
+    P2_starter.set_thumbnail(url=Battle.P2.team[0].sprite['small']['url'])
+
+
+    await ctx.send(f'{ctx.author.mention}\'s starter Pokemon')
+    await ctx.send(embed=P1_starter)
+
+    await ctx.send(f'{challenged_Player.mention}\'s starter Pokemon')
+    await ctx.send(embed=P2_starter)
+# --- --- --- ---
+
+
 @client.command(aliases=[bot_ping])
 async def help(ctx):
     prefix = client.command_prefix(ctx.guild, ctx.message)[0]
