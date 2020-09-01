@@ -238,7 +238,7 @@ async def randombattle(ctx, member : discord.Member):
         if not str(ctx.guild.id) in battle_players:
             battle_players[str(ctx.guild.id)] = {str(ctx.channel): {'challenger': '', 'challenged': ''}}
 
-            if not member in battle_players[str(ctx.guild.id)][str(ctx.channel)]['challenged']:
+            if not battle_players[str(ctx.guild.id)][str(ctx.channel)]['challenged'] == str(member):
                 if not ctx.author.id == member.id:
                     await ctx.send('Starting Random Battle with {}'.format(member.display_name))
                     print('Starting Random Battle with <@{}> in server --{}--'.format(member.id, ctx.guild))
