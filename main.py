@@ -75,13 +75,13 @@ async def on_reaction_add(reaction, user):
             if reaction.emoji == '✅':
                 client.unload_extension('cogs.addreactionoptions')
                 # --- When battle ends --- del battle_players[str(user.guild.id)][str(reaction.message.channel)]
-                print(reaction.emoji)
                 # Start battle
 
             elif reaction.emoji == '❌':
                 if user.id in battle_players:
                     client.unload_extension('cogs.addreactionoptions')
-                    print(reaction.emoji)
+                    del battle_players[str(reaction.guild.id)][str(reaction.channel)]
+                    print(battle_players[str(reaction.guild.id)][str(reaction.channel)])
 
 
 # --- Commands ---
