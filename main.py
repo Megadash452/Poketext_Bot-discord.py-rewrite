@@ -226,7 +226,7 @@ async def invite(ctx):
     await ctx.send('https://discord.com/api/oauth2/authorize?client_id=725225223346978816&permissions=37584704&scope=bot')
 
 
-@client.command(aliases=['emote'])
+@client.command(aliases=['emote', 'e'])
 async def emoji(ctx, name, id):
     try:
         await ctx.channel.purge(limit=1)
