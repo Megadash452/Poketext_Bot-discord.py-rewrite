@@ -226,6 +226,24 @@ async def invite(ctx):
     await ctx.send('https://discord.com/api/oauth2/authorize?client_id=725225223346978816&permissions=37584704&scope=bot')
 
 
+@client.command(aliases=['emote'])
+async def emoji(ctx, name, id):
+    try:
+        await ctx.channel.purge(limit=1)
+    except:
+        print('Missing `[delete message]` permissions in "{}"'.format(ctx.guild.name))
+    await ctx.send(f'<:{name}:{id}>')
+
+
+@client.command(aliases=['animated', 'a', 'a_emote', 'a-emote', 'a_emoji', 'a-emoji'])
+async def animate(ctx, name, id):
+    try:
+        await ctx.channel.purge(limit=1)
+    except:
+        print('Missing `[delete message]` permissions in "{}"'.format(ctx.guild.name))
+    await ctx.send(f'<a:{name}:{id}>')
+
+
 # --- Game Commands ---
 
 
@@ -328,7 +346,6 @@ async def info(ctx, *, mon):
     
 
     await ctx.send(embed=embed)
-    #await ctx.send(' <a:1717_Crab_Rave:626579304049803294> ')
 
 
 # --- Game Management Commands ---
