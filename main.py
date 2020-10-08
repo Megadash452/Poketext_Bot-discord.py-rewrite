@@ -27,7 +27,7 @@ client.remove_command('help')
 bot_ping = '<@!725225223346978816> '
 #ban_count = {} ---goes with voteban---
 
-battle_players = {}
+battles = {}
 
 
 # --- --- Game Functions --- ---
@@ -66,22 +66,22 @@ async def on_ready():
 
 @client.event
 async def on_guild_join(guild):
-    with open('prefixes.json', 'r') as f:
+    with open('server&user_data/prefixes.json', 'r') as f:
         prefixes = json.load(f)
 
     prefixes[str(guild.id)] = '/'
 
-    with open('prefixes.json', 'w') as f:
+    with open('server&user_data/prefixes.json', 'w') as f:
         json.dump(prefixes, f, indent = 4)
 
 @client.event
 async def on_guild_remove(guild):
-    with open('prefixes.json', 'r') as f:
+    with open('server&user_data/prefixes.json', 'r') as f:
         prefixes = json.load(f)
 
     prefixes.pop(str(guild.id))
 
-    with open('prefixes.json', 'w') as f:
+    with open('server&user_data/prefixes.json', 'w') as f:
         json.dump(prefixes, f, indent = 4)
 
 @client.event
@@ -97,17 +97,17 @@ async def on_member_remove(member):
 @client.event
 async def on_reaction_add(reaction, user):
     if not user.id == 725225223346978816:
-        if user.id == battle_players[str(reaction.guild.id)][str(reaction.message.channel)]['challenged']:
+        if user.id == battles[str(reaction.guild.id)][str(reaction.message.channel)]['challenged']:
             if reaction.emoji == '✅':
                 client.unload_extension('cogs.addreactionoptions')
-                # --- When battle ends --- del battle_players[str(user.guild.id)][str(reaction.message.channel)]
+                # --- When battle ends --- del battles[str(user.guild.id)][str(reaction.message.channel)]
                 # Start battle
 
             elif reaction.emoji == '❌':
-                if user.id in battle_players:
+                if user.id in battles:
                     client.unload_extension('cogs.addreactionoptions')
-                    del battle_players[str(reaction.guild.id)][str(reaction.channel)]
-                    print(battle_players[str(reaction.guild.id)][str(reaction.channel)])
+                    del battles[str(reaction.guild.id)][str(reaction.channel)]
+                    print(battles[str(reaction.guild.id)][str(reaction.channel)])
 
 
 # --- Commands ---
@@ -151,6 +151,7 @@ async def help(ctx):
     )
 
     await ctx.send(embed=embed)
+    print(ctx.channel)
 
 
 @client.command(aliases=['set-prefix', 'set_prefix'])
@@ -177,6 +178,13 @@ async def gamechannels(ctx, action = "", channel=""):
     with open('server&user_data/game_channels.json', 'r') as f:
         game_channels = json.load(f)
 
+    try:
+        game_channels[str(ctx.guild.id)]
+    except:
+        game_channels[str(ctx.guild.id)] = []
+        with open('server&user_data/game_channels.json', 'w') as f:
+            json.dump(game_channels, f, indent=4)
+
     if not action:
         message = ""
 
@@ -200,13 +208,6 @@ async def gamechannels(ctx, action = "", channel=""):
         if not channel:
             await ctx.send("Please specify a channel")
         else:
-            try:
-                game_channels[str(ctx.guild.id)]
-            except:
-                game_channels[str(ctx.guild.id)] = []
-                with open('server&user_data/game_channels.json', 'w') as f:
-                    json.dump(game_channels, f, indent=4)
-
             channel_added = False
             for chann in ctx.guild.channels:
                 if chann.name == channel:
@@ -242,7 +243,7 @@ async def say(ctx, *, message):
 
 @client.command()
 async def invite(ctx):
-    await ctx.send('https://discord.com/api/oauth2/authorize?client_id=725225223346978816&permissions=37584704&scope=bot')
+    await ctx.send('https://discord.com/api/oauth2/authorize?client_id=725225223346978816&permissions=3436112&scope=bot')
 
 
 @client.command(aliases=['emote', 'e'])
@@ -279,21 +280,32 @@ async def randombattle(ctx, member : discord.Member):
             json.dump(game_channels, f, indent=4)
     
     if str(ctx.channel) in game_channels[str(ctx.guild.id)]:
-        if not str(ctx.guild.id) in battle_players:
-            battle_players[str(ctx.guild.id)] = {str(ctx.channel): {'challenger': '', 'challenged': ''}}
 
-            if not battle_players[str(ctx.guild.id)][str(ctx.channel)]['challenged'] == str(member):
+        try:
+            pass
+        except:
+            pass
+
+
+        if not str(ctx.channel) in battles[str(ctx.guild.id)]:
+            
+            try:
+                battles[str(ctx.guild.id)][str(ctx.channel)]['challenged']
+            except:
+                battles[str(ctx.guild.id)] = {str(ctx.channel): {}}
+
+            if not battles[str(ctx.guild.id)][str(ctx.channel)]['challenged'] == member:
                 if not ctx.author.id == member.id:
                     await ctx.send('Starting Random Battle with {}'.format(member.display_name))
                     print('Starting Random Battle with <@{}> in server --{}--'.format(member.id, ctx.guild))
 
                     client.load_extension('cogs.addreactionoptions')
 
-                    #battle_players[str(ctx.guild.id)] = {str(ctx.channel): {'challenger': ctx.author, 'challenged': member}}
+                    battles[str(ctx.guild.id)][str(ctx.channel)] = {'battle type': "random", 'challenger': ctx.author, 'challenged': member}
 
                     await ctx.channel.send('{}, do you accept?'.format(member.mention))
 
-                    print(battle_players)
+                    print(battles)
                 
                 else:
                     await ctx.send('You can\'t battle yourself')
