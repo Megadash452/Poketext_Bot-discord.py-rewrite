@@ -31,6 +31,32 @@ battle_players = {}
 
 
 # --- --- Game Functions --- ---
+async def init_Prandom(ctx, challenged_member: discord.Member):
+    Battle = Prandom(ctx.author, challenged_member)
+
+    P1_starter = discord.Embed(title=Battle.P1.team[0].name, colour=int(type_data[Battle.P1.team[0].types[0]]['color']['hex'], 16))
+    P1_starter.add_field(name=Battle.P1.team[0].poke_specie, value=Battle.P1.team[0].desc)
+    if not Battle.P1.team[0].types[1]:
+        P1_starter.add_field(name='Type', value=f'- {Battle.P1.team[0].types[0]}', inline=False)
+    else:
+        P1_starter.add_field(name='Types', value=f'{Battle.P1.team[0].types[0]}\n{Battle.P1.team[0].types[1]}', inline=False)
+    P1_starter.set_image(url=Battle.P1.team[0].sprite['big']['url'])
+    P1_starter.set_thumbnail(url=Battle.P1.team[0].sprite['small']['url'])
+
+    P2_starter = discord.Embed(title=Battle.P2.team[0].name, colour=int(type_data[Battle.P2.team[0].types[0]]['color']['hex'], 16))
+    P2_starter.add_field(name=Battle.P2.team[0].poke_specie, value=Battle.P2.team[0].desc)
+    if not Battle.P2.team[0].types[1]:
+        P2_starter.add_field(name='Type', value=f'- {Battle.P2.team[0].types[0]}', inline=False)
+    else:
+        P2_starter.add_field(name='Types', value=f'{Battle.P2.team[0].types[0]}\n{Battle.P2.team[0].types[1]}', inline=False)
+    P2_starter.set_image(url=Battle.P2.team[0].sprite['big']['url'])
+    P2_starter.set_thumbnail(url=Battle.P2.team[0].sprite['small']['url'])
+
+    await ctx.send(f'{ctx.author.mention}\'s starter Pokemon')
+    await ctx.send(embed=P1_starter)
+
+    await ctx.send(f'{challenged_member.mention}\'s starter Pokemon')
+    await ctx.send(embed=P2_starter)
 # --- ---
 
 
@@ -90,33 +116,7 @@ async def on_reaction_add(reaction, user):
 # --- --- vBeta Commands (to be deleted on release) --- ----
 @client.command(aliases=['forece_random', 'force_random_battle'])
 async def randominit(ctx, challenged_member: discord.Member):
-    Battle = Prandom(ctx.author, challenged_member)
-
-
-    P1_starter = discord.Embed(title=Battle.P1.team[0].name, colour=int(type_data[Battle.P1.team[0].types[0]]['color']['hex'], 16))
-    P1_starter.add_field(name=Battle.P1.team[0].poke_specie, value=Battle.P1.team[0].desc)
-    if not Battle.P1.team[0].types[1]:
-        P1_starter.add_field(name='Type', value=f'- {Battle.P1.team[0].types[0]}', inline=False)
-    else:
-        P1_starter.add_field(name='Types', value=f'{Battle.P1.team[0].types[0]}\n{Battle.P1.team[0].types[1]}', inline=False)
-    P1_starter.set_image(url=Battle.P1.team[0].sprite['big']['url'])
-    P1_starter.set_thumbnail(url=Battle.P1.team[0].sprite['small']['url'])
-
-    P2_starter = discord.Embed(title=Battle.P2.team[0].name, colour=int(type_data[Battle.P2.team[0].types[0]]['color']['hex'], 16))
-    P2_starter.add_field(name=Battle.P2.team[0].poke_specie, value=Battle.P2.team[0].desc)
-    if not Battle.P2.team[0].types[1]:
-        P2_starter.add_field(name='Type', value=f'- {Battle.P2.team[0].types[0]}', inline=False)
-    else:
-        P2_starter.add_field(name='Types', value=f'{Battle.P2.team[0].types[0]}\n{Battle.P2.team[0].types[1]}', inline=False)
-    P2_starter.set_image(url=Battle.P2.team[0].sprite['big']['url'])
-    P2_starter.set_thumbnail(url=Battle.P2.team[0].sprite['small']['url'])
-
-
-    await ctx.send(f'{ctx.author.mention}\'s starter Pokemon')
-    await ctx.send(embed=P1_starter)
-
-    await ctx.send(f'{challenged_member.mention}\'s starter Pokemon')
-    await ctx.send(embed=P2_starter)
+    await init_Prandom(ctx, challenged_member)
 # --- --- --- ---
 
 
@@ -129,8 +129,7 @@ async def help(ctx):
     embed.add_field(
         name='My Commands are:', 
         value='\n\t-  **setprefix <prefix>**: Changes the default prefix (*you can make the prefix pinging the bot if you want*)' +
-            '\n\n\t-  **addgamechannel <channel>**: add a channel to have battles in (could be an existent or non existent channel). If there are no channels set to have battles in, the bot will just start battles in the current channel, possibly making the battle unconfortable.' +
-            '\n\n\t-  **gamechannels**: a list of all channels in the server in which you can have pokemon battles in'
+            '\n\n\t-  **gamechannels <add>** *or* **<remove/rm>**: if no parameters called, a list of all channels in the server in which you can have pokemon battles in.'
             '\n\n\t-  **say <message>**: I will say whatever you tell me to (the message you send will be deleted)' +
             '\n\n\t-  **purge <message count>**: I will delete a certain number of messages' +
             '\n\n\t-  **invite**: The default link to use to invite me to one of your servers'
@@ -142,7 +141,7 @@ async def help(ctx):
             '\n\n\t-  **teaminit**: if this is your first time using the bot, do this command to make a team (no need to do this if you already have a team in another server, as it will be automatically carried here)'
             '\n\n\t-  **team <user>**: show a person\'s team (leave empty to see your own team)' +
             '\n\n\t-  **random**: show a random pokemon' +
-            '\n\n\t-  **info <pokemon>**: show the information of a certain pokemon (you can also do {}info random to show a random Pokémon)'.format(prefix)
+            '\n\n\t-  **info <pokemon>**: show the information of a certain pokemon (you can also do `{}`info random to show a random Pokémon)'.format(prefix)
     )
     embed.add_field(
         name='Game Management Commands:',
@@ -187,7 +186,7 @@ async def gamechannels(ctx, action = "", channel=""):
         if message:
             await ctx.send('These are all the game channels in this server: {}'.format(message))
         else:
-            await ctx.send(f'There are no game channels in this server. Please add one using `{client.command_prefix(ctx.guild, ctx.message)[0]}`gamechannel add <channel>')
+            await ctx.send(f'There are no game channels in this server. Please add one using `{client.command_prefix(ctx.guild, ctx.message)[0]}`gamechannels add <channel>')
 
     elif action == "remove" or action == "rm":
         if not channel:
@@ -202,26 +201,30 @@ async def gamechannels(ctx, action = "", channel=""):
             await ctx.send("Please specify a channel")
         else:
             try:
-                print(game_channels[str(ctx.guild.id)])
+                game_channels[str(ctx.guild.id)]
             except:
                 game_channels[str(ctx.guild.id)] = []
                 with open('server&user_data/game_channels.json', 'w') as f:
                     json.dump(game_channels, f, indent=4)
 
-            if channel in ctx.guild.channels:
-                if channel in game_channels[str(ctx.guild.id)]:
-                    await ctx.send('This channel has already been added to game channels')
-                else:
-                    game_channels[str(ctx.guild.id)].append(channel)
+            channel_added = False
+            for chann in ctx.guild.channels:
+                if chann.name == channel:
+                    if channel in game_channels[str(ctx.guild.id)]:
+                        await ctx.send('This channel has already been added to game channels')
+                    else:
+                        game_channels[str(ctx.guild.id)].append(channel)
 
-                    with open('server&user_data/game_channels.json', 'w') as f:
-                        json.dump(game_channels, f, indent=4)
-
-                await ctx.send('Added **{}** to game channels'.format(channel))
-            
-            elif not channel in ctx.guild.channels:
-                await ctx.send('creating channel **{}**(not actually)'.format(channel))
-                print('create channel') # --- --- Create a channel --- ---
+                        with open('server&user_data/game_channels.json', 'w') as f:
+                            json.dump(game_channels, f, indent=4)
+                
+                        await ctx.send('Added #{} to game channels'.format(channel))
+                        channel_added = True
+                    break
+            if not channel_added:
+                await ctx.send('Channel `{}` not found'.format(channel))
+    # --- add parameter to create channel with message:
+    # 'Created channel #{} and added it to game channels'.format(channel) 
 
 
 @client.command()
