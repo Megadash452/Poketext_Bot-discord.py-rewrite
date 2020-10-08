@@ -173,39 +173,51 @@ async def setprefix(ctx, prefix=None):
         #add chain
 
 
-@client.command(aliases=['add_game_channel', 'add-game-channel', 'add_gamechannel', 'add-gamechannel'])
-@commands.has_permissions(manage_channels=True)
-async def addgamechannel(ctx, channel=None):
+@client.command(aliases=['game-channels'])
+async def gamechannels(ctx, action = "", channel=""):
     with open('server&user_data/game_channels.json', 'r') as f:
         game_channels = json.load(f)
 
-    guild_channels = []
+    if not action:
+        message = ""
 
-    if not channel:
-        chann = str(ctx.channel)
-    else:
-        chann = channel
+        for channel in game_channels[str(ctx.guild.id)]:
+            message += f"\n\t{channel}"
 
-    for chan in ctx.guild.channels:
-        guild_channels.append(chan.name)
+        await ctx.send('These are all the game channels in this server: {}'.format(message))
 
-    if chann in game_channels[str(ctx.guild.id)]:
-        await ctx.send('This channel has already been added to game channels')
-
-    elif chann in guild_channels:
-        if not str(ctx.guild.id) in game_channels:
-            game_channels[str(ctx.guild.id)] = [chann]
+    elif action == "remove" or action == "rm":
+        if not channel:
+            await ctx.send("Please Specify a channel")
         else:
-            game_channels[str(ctx.guild.id)].append(chann)
+            pass
+            
 
-        with open('server&user_data/game_channels.json', 'w') as f:
-            json.dump(game_channels, f, indent=4)
+    elif action == "add":
+        if not channel:
+            await ctx.send("Please specify a channel")
+        else:
+            try:
+                print(game_channels[str(ctx.guild.id)])
+            except:
+                game_channels[str(ctx.guild.id)] = []
+                with open('server&user_data/game_channels.json', 'w') as f:
+                    json.dump(game_channels, f, indent=4)
 
-        await ctx.send('Added **{}** to game channels'.format(chann))
-    
-    elif not chann in ctx.guild.channels:
-        await ctx.send('creating channel **{}**'.format(chann))
-        print('create channel')
+            if channel in ctx.guild.channels:
+                if channel in game_channels[str(ctx.guild.id)]:
+                    await ctx.send('This channel has already been added to game channels')
+                else:
+                    game_channels[str(ctx.guild.id)].append(channel)
+
+                    with open('server&user_data/game_channels.json', 'w') as f:
+                        json.dump(game_channels, f, indent=4)
+
+                await ctx.send('Added **{}** to game channels'.format(channel))
+            
+            elif not channel in ctx.guild.channels:
+                await ctx.send('creating channel **{}**'.format(channel))
+                print('create channel') # --- --- Create a channel --- ---
 
 
 @client.command()
@@ -251,6 +263,13 @@ async def animate(ctx, name, id):
 async def randombattle(ctx, member : discord.Member):
     with open('server&user_data/game_channels.json', 'r') as f:
         game_channels = json.load(f)
+
+    try:
+        print(game_channels[str(ctx.guild.id)])
+    except:
+        game_channels[str(ctx.guild.id)] = []
+        with open('server&user_data/game_channels.json', 'w') as f:
+            json.dump(game_channels, f, indent=4)
     
     if str(ctx.channel) in game_channels[str(ctx.guild.id)]:
         if not str(ctx.guild.id) in battle_players:
@@ -335,7 +354,7 @@ async def info(ctx, *, mon):
     embed.add_field(name=Mon_dic[call].poke_specie, value=Mon_dic[call].desc)
 
     if not Mon_dic[call].types[1]:
-        embed.add_field(name='Type', value=f'- {Mon_dic[call].types[0]}', inline=False)
+        embed.add_field(name='Type', value=f'{Mon_dic[call].types[0]}', inline=False)
     else:
         embed.add_field(name='Types', value=f'{Mon_dic[call].types[0]}\n{Mon_dic[call].types[1]}', inline=False)
 
