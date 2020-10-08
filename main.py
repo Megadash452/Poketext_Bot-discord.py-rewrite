@@ -130,7 +130,7 @@ async def help(ctx):
         name='My Commands are:', 
         value='\n\t-  **setprefix <prefix>**: Changes the default prefix (*you can make the prefix pinging the bot if you want*)' +
             '\n\n\t-  **addgamechannel <channel>**: add a channel to have battles in (could be an existent or non existent channel). If there are no channels set to have battles in, the bot will just start battles in the current channel, possibly making the battle unconfortable.' +
-            '\n\n\t-  **gamechannels**: a list of all game channels in the server'
+            '\n\n\t-  **gamechannels**: a list of all channels in the server in which you can have pokemon battles in'
             '\n\n\t-  **say <message>**: I will say whatever you tell me to (the message you send will be deleted)' +
             '\n\n\t-  **purge <message count>**: I will delete a certain number of messages' +
             '\n\n\t-  **invite**: The default link to use to invite me to one of your servers'
@@ -173,7 +173,7 @@ async def setprefix(ctx, prefix=None):
         #add chain
 
 
-@client.command(aliases=['game-channels'])
+@client.command(aliases=['game-channels', 'game_channels'])
 async def gamechannels(ctx, action = "", channel=""):
     with open('server&user_data/game_channels.json', 'r') as f:
         game_channels = json.load(f)
@@ -183,15 +183,19 @@ async def gamechannels(ctx, action = "", channel=""):
 
         for channel in game_channels[str(ctx.guild.id)]:
             message += f"\n\t{channel}"
-
-        await ctx.send('These are all the game channels in this server: {}'.format(message))
+        
+        if message:
+            await ctx.send('These are all the game channels in this server: {}'.format(message))
+        else:
+            await ctx.send(f'There are no game channels in this server. Please add one using `{client.command_prefix(ctx.guild, ctx.message)[0]}`gamechannel add <channel>')
 
     elif action == "remove" or action == "rm":
         if not channel:
             await ctx.send("Please Specify a channel")
         else:
-            pass
-            
+            game_channels.remove(channel)
+            with open('server&user_data/game_channels.json', 'w') as f:
+                json.dump(game_channels, f, indent=4)
 
     elif action == "add":
         if not channel:
@@ -216,7 +220,7 @@ async def gamechannels(ctx, action = "", channel=""):
                 await ctx.send('Added **{}** to game channels'.format(channel))
             
             elif not channel in ctx.guild.channels:
-                await ctx.send('creating channel **{}**'.format(channel))
+                await ctx.send('creating channel **{}**(not actually)'.format(channel))
                 print('create channel') # --- --- Create a channel --- ---
 
 
