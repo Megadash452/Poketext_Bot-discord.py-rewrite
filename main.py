@@ -158,12 +158,12 @@ async def help(ctx):
 @commands.has_permissions(administrator=True)
 async def setprefix(ctx, prefix=None):
     if prefix:
-        with open('prefixes.json', 'r') as f:
+        with open('server&user_data/prefixes.json', 'r') as f:
             prefixes = json.load(f)
 
         prefixes[str(ctx.guild.id)] = prefix
 
-        with open('prefixes.json', 'w') as f:
+        with open('server&user_data/prefixes.json', 'w') as f:
             json.dump(prefixes, f, indent = 4)
 
         await ctx.send('This server\'s prefix is now {}'.format(prefix))
