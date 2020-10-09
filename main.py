@@ -114,7 +114,6 @@ async def on_reaction_add(reaction, user):
         if user.id == battles[str(reaction.message.guild.id)][str(reaction.message.channel)]['challenged'].id:
             if reaction.emoji == '✅':
                 client.unload_extension('cogs.addreactionoptions')
-                # --- When battle ends --- del battles[str(user.guild.id)][str(reaction.message.channel)]
                 print('Starting Random Battle with <@{}> and <@{}> in server --{}--'.format(
                     battles[str(reaction.message.guild.id)][str(reaction.message.channel)]['challenger'],
                     battles[str(reaction.message.guild.id)][str(reaction.message.channel)]['challenged'],
@@ -125,12 +124,13 @@ async def on_reaction_add(reaction, user):
                     channel = reaction.message.channel,
                     challenged = battles[str(reaction.message.guild.id)][str(reaction.message.channel)]['challenged']
                 )
-                del battles[str(reaction.guild.id)][str(reaction.channel)]
+                del battles[str(reaction.message.guild.id)][str(reaction.message.channel)]
+                # --- Move the line above to when battle ends ---
 
             elif reaction.emoji == '❌':
                 if user.id in battles:
                     client.unload_extension('cogs.addreactionoptions')
-                    del battles[str(reaction.guild.id)][str(reaction.channel)]
+                    del battles[str(reaction.message.guild.id)][str(reaction.message.channel)]
 
 
 # --- Commands ---
