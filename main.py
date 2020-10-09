@@ -43,7 +43,7 @@ async def init_Prandom(ctx, channel, challenged: discord.Member,):
     P1_starter.add_field(name=Battle.P1.team[0].poke_specie, value=Battle.P1.team[0].desc)
 
     if not Battle.P1.team[0].types[1]:
-        P1_starter.add_field(name='Type', value=f'- {Battle.P1.team[0].types[0]}', inline=False)
+        P1_starter.add_field(name='Type', value=f'{Battle.P1.team[0].types[0]}', inline=False)
     else:
         P1_starter.add_field(name='Types', value=f'{Battle.P1.team[0].types[0]}\n{Battle.P1.team[0].types[1]}', inline=False)
 
@@ -54,7 +54,7 @@ async def init_Prandom(ctx, channel, challenged: discord.Member,):
     P2_starter.add_field(name=Battle.P2.team[0].poke_specie, value=Battle.P2.team[0].desc)
 
     if not Battle.P2.team[0].types[1]:
-        P2_starter.add_field(name='Type', value=f'- {Battle.P2.team[0].types[0]}', inline=False)
+        P2_starter.add_field(name='Type', value=f'{Battle.P2.team[0].types[0]}', inline=False)
     else:
         P2_starter.add_field(name='Types', value=f'{Battle.P2.team[0].types[0]}\n{Battle.P2.team[0].types[1]}', inline=False)
 
