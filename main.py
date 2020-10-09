@@ -31,32 +31,46 @@ battles = {}
 
 
 # --- --- Game Functions --- ---
-async def init_Prandom(ctx, challenged_member: discord.Member):
-    Battle = Prandom(ctx.author, challenged_member)
+async def init_Prandom(ctx, channel, challenged: discord.Member,):
+    if ctx:
+        challenger = battles[str(ctx.author)][str(ctx.channel)]["challenger"]
+        Battle = Prandom(ctx.author, challenged)
+    elif channel:
+        challenger = battles[str(channel.guild.id)][str(channel)]["challenger"]
+        Battle = Prandom(challenger, challenged)
 
     P1_starter = discord.Embed(title=Battle.P1.team[0].name, colour=int(type_data[Battle.P1.team[0].types[0]]['color']['hex'], 16))
     P1_starter.add_field(name=Battle.P1.team[0].poke_specie, value=Battle.P1.team[0].desc)
+
     if not Battle.P1.team[0].types[1]:
         P1_starter.add_field(name='Type', value=f'- {Battle.P1.team[0].types[0]}', inline=False)
     else:
         P1_starter.add_field(name='Types', value=f'{Battle.P1.team[0].types[0]}\n{Battle.P1.team[0].types[1]}', inline=False)
+
     P1_starter.set_image(url=Battle.P1.team[0].sprite['big']['url'])
     P1_starter.set_thumbnail(url=Battle.P1.team[0].sprite['small']['url'])
 
     P2_starter = discord.Embed(title=Battle.P2.team[0].name, colour=int(type_data[Battle.P2.team[0].types[0]]['color']['hex'], 16))
     P2_starter.add_field(name=Battle.P2.team[0].poke_specie, value=Battle.P2.team[0].desc)
+
     if not Battle.P2.team[0].types[1]:
         P2_starter.add_field(name='Type', value=f'- {Battle.P2.team[0].types[0]}', inline=False)
     else:
         P2_starter.add_field(name='Types', value=f'{Battle.P2.team[0].types[0]}\n{Battle.P2.team[0].types[1]}', inline=False)
+
     P2_starter.set_image(url=Battle.P2.team[0].sprite['big']['url'])
     P2_starter.set_thumbnail(url=Battle.P2.team[0].sprite['small']['url'])
 
-    await ctx.send(f'{ctx.author.mention}\'s starter Pokemon')
-    await ctx.send(embed=P1_starter)
-
-    await ctx.send(f'{challenged_member.mention}\'s starter Pokemon')
-    await ctx.send(embed=P2_starter)
+    if ctx:
+        await ctx.send(f'{challenger.mention}\'s starter Pokemon')
+        await ctx.send(embed=P1_starter)
+        await ctx.send(f'{challenged.mention}\'s starter Pokemon')
+        await ctx.send(embed=P2_starter)
+    elif channel:
+        await channel.send(f'{challenger.mention}\'s starter Pokemon')
+        await channel.send(embed=P1_starter)
+        await channel.send(f'{challenged.mention}\'s starter Pokemon')
+        await channel.send(embed=P2_starter)
 # --- ---
 
 
@@ -101,18 +115,22 @@ async def on_reaction_add(reaction, user):
             if reaction.emoji == '✅':
                 client.unload_extension('cogs.addreactionoptions')
                 # --- When battle ends --- del battles[str(user.guild.id)][str(reaction.message.channel)]
-                # Start battle
                 print('Starting Random Battle with <@{}> and <@{}> in server --{}--'.format(
                     battles[str(reaction.message.guild.id)][str(reaction.message.channel)]['challenger'],
                     battles[str(reaction.message.guild.id)][str(reaction.message.channel)]['challenged'],
                     reaction.message.guild
                 ))
+                await init_Prandom(
+                    ctx = None,
+                    channel = reaction.message.channel,
+                    challenged = battles[str(reaction.message.guild.id)][str(reaction.message.channel)]['challenged']
+                )
+                del battles[str(reaction.guild.id)][str(reaction.channel)]
 
             elif reaction.emoji == '❌':
                 if user.id in battles:
                     client.unload_extension('cogs.addreactionoptions')
                     del battles[str(reaction.guild.id)][str(reaction.channel)]
-                    print(battles[str(reaction.guild.id)][str(reaction.channel)])
 
 
 # --- Commands ---
@@ -121,7 +139,7 @@ async def on_reaction_add(reaction, user):
 # --- --- vBeta Commands (to be deleted on release) --- ----
 @client.command(aliases=['forece_random', 'force_random_battle'])
 async def randominit(ctx, challenged_member: discord.Member):
-    await init_Prandom(ctx, challenged_member)
+    await init_Prandom(ctx=ctx, channel=None, challenged=challenged_member)
 # --- --- --- ---
 
 
