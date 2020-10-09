@@ -197,7 +197,7 @@ async def setprefix(ctx, prefix=None):
 
 
 @client.command(aliases=['game-channels', 'game_channels'])
-async def gamechannels(ctx, action = "", channel=""):
+async def gamechannels(ctx, action="", channel=""):
     with open('server&user_data/game_channels.json', 'r') as f:
         game_channels = json.load(f)
 
@@ -223,9 +223,22 @@ async def gamechannels(ctx, action = "", channel=""):
         if not channel:
             await ctx.send("Please Specify a channel")
         else:
-            game_channels.remove(channel)
-            with open('server&user_data/game_channels.json', 'w') as f:
-                json.dump(game_channels, f, indent=4)
+            channel_rmd = False
+            for chann in ctx.guild.channels:
+                if chann.name == channel:
+                    if not channel in game_channels[str(ctx.guild.id)]:
+                        await ctx.send('This channel is not part of game channels')
+                    else:
+                        game_channels[str(ctx.guild.id)].remove(channel)
+                        with open('server&user_data/game_channels.json', 'w') as f:
+                            json.dump(game_channels, f, indent=4)
+
+                        channel_rmd = True
+                        await ctx.send("Removed `#{}` from game channels".format(channel))
+                    break
+            
+            if not channel_rmd:
+                await ctx.send('Channel `#{}` not found'.format(channel))
 
     elif action == "add":
         if not channel:
@@ -238,15 +251,15 @@ async def gamechannels(ctx, action = "", channel=""):
                         await ctx.send('This channel has already been added to game channels')
                     else:
                         game_channels[str(ctx.guild.id)].append(channel)
-
                         with open('server&user_data/game_channels.json', 'w') as f:
                             json.dump(game_channels, f, indent=4)
                 
-                        await ctx.send('Added #{} to game channels'.format(channel))
                         channel_added = True
+                        await ctx.send('Added `#{}` to game channels'.format(channel))
                     break
+
             if not channel_added:
-                await ctx.send('Channel `{}` not found'.format(channel))
+                await ctx.send('Channel `#{}` not found'.format(channel))
     # --- add parameter to create channel with message:
     # 'Created channel #{} and added it to game channels'.format(channel) 
 
