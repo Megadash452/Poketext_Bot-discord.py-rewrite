@@ -33,11 +33,11 @@ battles = {}
 # --- --- Game Functions --- ---
 async def init_Prandom(ctx, channel, challenged: discord.Member,):
     if ctx:
-        challenger = battles[str(ctx.author)][str(ctx.channel)]["challenger"]
-        Battle = Prandom(ctx.author, challenged)
+        challenger = battles[str(ctx.guild.id)][str(ctx.channel)]["challenger"]
+        Battle = Prandom(ctx.channel, challenger, challenged)
     elif channel:
         challenger = battles[str(channel.guild.id)][str(channel)]["challenger"]
-        Battle = Prandom(challenger, challenged)
+        Battle = Prandom(channel, challenger, challenged)
 
     P1_starter = discord.Embed(title=Battle.P1.team[0].name, colour=int(type_data[Battle.P1.team[0].types[0]]['color']['hex'], 16))
     P1_starter.add_field(name=Battle.P1.team[0].poke_specie, value=Battle.P1.team[0].desc)

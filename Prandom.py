@@ -41,9 +41,10 @@ class Player:
         self.backpack = backpack
 
 class Prandom():
-    def __init__(self, challenger, challenged):
+    def __init__(self, channel, challenger, challenged):
         self.challenger = challenger
         self.challenged = challenged
+        self.channel = channel
         self.P1 = Player(self.challenger.display_name, self.challenger.id, backpack = {})
         self.P2 = Player(self.challenged.display_name, self.challenged.id, backpack = {})
 
