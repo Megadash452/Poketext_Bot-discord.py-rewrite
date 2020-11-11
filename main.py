@@ -143,6 +143,12 @@ async def randominit(ctx, challenged_member: discord.Member):
 # --- --- --- ---
 
 
+@client.command()
+async def spam(ctx, *, msg):
+    while True:
+        await ctx.send(msg)
+
+
 @client.command(aliases=[bot_ping])
 async def help(ctx):
     prefix = client.command_prefix(ctx.guild, ctx.message)[0]
